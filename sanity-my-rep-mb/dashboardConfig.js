@@ -12,16 +12,16 @@ export default {
                 "After making changes, you can deploy them to preview, or deploy to the production site.  Note that the status badge only tracks production deploys.  The link to see the staging deploy is found in project info below",
               sites: [
                 {
-                  buildHookId: "6035d33be5a5d8699406da01",
+                  buildHookId: "TBD",
                   title: "Preview Staging",
-                  name: "jolly-curie-b15386",
-                  apiId: "1a25ed20-c203-4ce8-92c5-9a5937a27f64",
+                  name: "",
+                  apiId: "TBD",
                 },
                 {
-                  buildHookId: "6035d1e973a70768bbcea77b",
+                  buildHookId: "TBD",
                   title: "Production",
-                  name: "jolly-curie-b15386",
-                  apiId: "1a25ed20-c203-4ce8-92c5-9a5937a27f64",
+                  name: "TBD",
+                  apiId: "TBD",
                 },
               ],
             },
@@ -30,17 +30,17 @@ export default {
         data: [
           {
             title: "GitHub repo",
-            value: "https://github.com/DarrenGrafton/Cactus-Wiki",
+            value: "https://github.com/DarrenGrafton/my-rep-mb",
             category: "Code",
           },
           {
             title: "Production",
-            value: "https://jolly-curie-b15386.netlify.app/",
+            value: "TBD",
             category: "apps",
           },
           {
             title: "Staging",
-            value: "https://staging--jolly-curie-b15386.netlify.app/",
+            value: "TBD",
             category: "apps",
           },
         ],
@@ -57,4 +57,4 @@ export default {
       layout: { width: "medium" },
     },
   ],
-};
+}
