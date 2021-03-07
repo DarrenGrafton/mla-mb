@@ -1,0 +1,33 @@
+{
+  "name": "sanity-my-rp-mb",
+  "private": true,
+  "version": "1.0.1",
+  "description": "",
+  "main": "package.json",
+  "author": "Darren Grafton <darren.cactus@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.2.5",
+    "@sanity/components": "^2.1.4",
+    "@sanity/core": "^2.2.3",
+    "@sanity/dashboard": "^2.2.6",
+    "@sanity/default-layout": "^2.2.5",
+    "@sanity/default-login": "^2.1.4",
+    "@sanity/desk-tool": "^2.2.5",
+    "@sanity/google-maps-input": "^2.2.5",
+    "@sanity/vision": "^2.1.4",
+    "prop-types": "^15.7",
+    "react": "^16.9",
+    "react-dom": "^16.9",
+    "react-icons": "^3.11.0",
+    "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
+    "sanity-plugin-media": "^1.0.1"
+  }
+}
