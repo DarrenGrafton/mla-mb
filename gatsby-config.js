@@ -31,7 +31,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon/android-chrome-192x192.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -45,6 +45,16 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd,
         token: process.env.SANITY_READ_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-source-firestore-easy`,
+      options: {
+        adminCredential: {
+          credential: process.env.FIREBASE_SERVICE_ACCOUNT_JSON, //See details for this option
+          databaseURL: process.env.FIREBASE_DATABASE_URL,
+        },
+        collections: ["cons", "reps"],
       },
     },
     `gatsby-plugin-gatsby-cloud`,

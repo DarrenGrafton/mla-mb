@@ -12,8 +12,16 @@ import schemaTypes from "all:part:@sanity/base/schema-type"
 // We import object and document schemas
 import blockContent from "./components/blockContent"
 
-import page from "./page"
 import mainImage from "./components/mainImage"
+import consImage from "./Images/consImage"
+import repImage from "./Images/repImage"
+import backgroundImage from "./Images/backgroundImage"
+
+import Faq from "./faq/Faq"
+import FaqOrder from "./faq/FaqOrder"
+
+import thanks from "./thanks/thanks"
+import thanksOrder from "./thanks/thanksOrder"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,12 +36,13 @@ export default createSchema({
     mainImage,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    page,
-
+    backgroundImage,
+    consImage,
+    repImage,
+    Faq,
+    FaqOrder,
+    thanks,
+    thanksOrder,
     blockContent,
-    // plotSummary,
-    // plotSummaries,
-    // castMember,
-    // crewMember,
   ]),
 })
