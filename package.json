@@ -5,6 +5,7 @@
   "version": "0.9.9",
   "author": "Darren Grafton <darren.cactus@gmail.com>",
   "dependencies": {
+    "framer-motion": "^3.10.2",
     "gatsby": "^3.0.1",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
     "gatsby-plugin-image": "^1.0.0",

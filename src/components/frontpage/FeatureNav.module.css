@@ -1,10 +1,11 @@
 .mapbox {
-  border: solid var(--primary) 4px;
+  border: solid var(--accent) 4px;
   display: flex;
   border-radius: 10%;
   max-width: 300px;
   max-height: 200px;
   font-family: var(--headingFont);
+  box-shadow: var(--level-1);
 }
 
 .mapbox a {
@@ -13,6 +14,12 @@
   font-size: 350%;
   text-align: center;
   line-height: normal;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mapbox a:hover {
+  transition: ease 0.2;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .mapbox a span {
@@ -24,17 +31,20 @@
   flex-direction: column;
   list-style-type: none;
   justify-self: left;
+  padding: 0;
 }
 
 .linklist li {
-  border: solid var(--primary) 2px;
+  border: solid var(--accent) 2px;
   margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: var(--level-1);
 }
 
-.linklist li a::after {
-  background: white;
-  opacity: 0.5;
-  z-index: 2;
+.linklist li:hover {
+  transition: ease 0.2;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--level-3);
 }
 
 .linklist li a {
