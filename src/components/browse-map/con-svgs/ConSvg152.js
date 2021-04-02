@@ -9,9 +9,9 @@ export const ConSvg152 = ({ width, height, strokeWidth, stroke, fill }) => {
     >
       <g
         transform="scale(1,-1)"
-        stroke-width={strokeWidth}
-        stroke={stroke}
-        fill={fill}
+        strokeWidth={strokeWidth}
+        //stroke={stroke}
+        //fill={fill}
       >
         <path
           id="polygon96"

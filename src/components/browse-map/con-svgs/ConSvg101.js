@@ -1,6 +1,8 @@
 import React from "react"
 
 export const ConSvg101 = ({ width, height, strokeWidth, stroke, fill }) => {
+  strokeWidth = strokeWidth * 10 //normalize stroke sizes hack
+
   return (
     <svg
       width={width}
@@ -9,9 +11,9 @@ export const ConSvg101 = ({ width, height, strokeWidth, stroke, fill }) => {
     >
       <g
         transform="scale(1,-1)"
-        stroke-width={strokeWidth}
-        stroke={stroke}
-        fill={fill}
+        strokeWidth={strokeWidth}
+        //stroke={stroke}
+        //fill={fill}
       >
         <path
           id="polygon96"

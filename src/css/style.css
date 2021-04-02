@@ -46,7 +46,7 @@
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
   --containerPadding: 2.5%;
-  --headerHeight: 2rem;
+  --headerHeight: 0rem;
   --borderRadius: 10px;
 }
 
@@ -77,14 +77,9 @@ body {
   /* overflow-wrap: anywhere; */
   word-break: break-word;
 }
-
-/* 
-@supports (mix-blend-mode: hue) {
-  opacity: 1;
-  mix-blend-mode: color;
-  mix-blend-mode: hard-light;
-  mix-blend-mode: hue;
-} */
+body[noOverflow="true"] {
+  overflow: hidden;
+}
 
 header {
   color: white;
@@ -241,7 +236,7 @@ button[disabled] {
 
 main {
   /* padding: calc(1rem + var(--headerHeight)) var(--containerPadding); */
-  padding: 1rem var(--containerPadding);
+  /* padding: 1rem var(--containerPadding); */
 }
 
 .grid {

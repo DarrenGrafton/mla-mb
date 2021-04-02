@@ -19,7 +19,8 @@ const BrowseMap = () => {
   }
   return (
     <Layout>
-      <SEO title="Browse Map" />
+      {/*Tell the helmet to tell body NO Overflow on the MAP SVGs*/}
+      <SEO title="Browse Map" noOverflow="true" />
 
       <StaticImage
         // src="../images/mahesh-gupta.jpg"
@@ -36,7 +37,7 @@ const BrowseMap = () => {
           position: "fixed",
           left: 0,
           top: 0,
-          zIndex: -1,
+          zIndex: -2,
           opacity: 1,
         }}
       />

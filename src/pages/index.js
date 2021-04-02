@@ -18,7 +18,7 @@ const IndexPage = () => {
   // console.log(image)
 
   return (
-    <Layout>
+    <Layout overflow="hidden">
       <SEO title="Home" />
 
       <StaticImage

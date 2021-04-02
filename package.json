@@ -15,7 +15,7 @@
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-source-firestore-easy": "^1.0.0",
-    "gatsby-source-sanity": "^6.0.5",
+    "gatsby-source-sanity": "^7.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
