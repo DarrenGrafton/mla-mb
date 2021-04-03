@@ -5,20 +5,24 @@ import { ConSvg } from "./ConSvg"
 import { mainCon, conInfo } from "./Map.module.css"
 import { Link } from "gatsby"
 
-const variants = {
-  initial: { opacity: 0, y: -30 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 100 },
-}
-
-export const MainCon = ({ con }) => {
-  console.log(variants)
+export const MainCon = ({
+  con,
+  mainConVariants,
+  mainConH1Variants,
+  mainConPVariants,
+  mainConRepVariants,
+}) => {
   return (
-    <div className={mainCon}>
+    <motion.div
+      className={mainCon}
+      variants={mainConVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <div className={conInfo}>
         <motion.h1
-          transition={{ duration: 1 }}
-          variants={variants}
+          variants={mainConH1Variants}
           initial="initial"
           animate="animate"
           exit="exit"
@@ -26,8 +30,7 @@ export const MainCon = ({ con }) => {
           {con.Name}
         </motion.h1>
         <motion.p
-          transition={{ duration: 2 }}
-          variants={variants}
+          variants={mainConPVariants}
           initial="initial"
           animate="animate"
           exit="exit"
@@ -37,12 +40,18 @@ export const MainCon = ({ con }) => {
           Area In Square Km: {con.AreaInSquareKm}
         </motion.p>
         <Link to="#">Read More</Link>
-        <div className="rep">
+        <motion.div
+          className="rep"
+          variants={mainConRepVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
           <h3>{con.CurrenRep}</h3>
-        </div>
+        </motion.div>
       </div>
 
       <ConSvg conId={con.Number} fill="white" stroke="red" strokeWidth="20" />
-    </div>
+    </motion.div>
   )
 }
