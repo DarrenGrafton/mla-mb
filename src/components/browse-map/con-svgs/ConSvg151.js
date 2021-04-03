@@ -1,6 +1,8 @@
 import React from "react"
 
 export const ConSvg151 = ({ width, height, strokeWidth, stroke, fill }) => {
+  strokeWidth = strokeWidth * 1.1 //normalize stroke sizes hack
+
   return (
     <svg
       width={width}

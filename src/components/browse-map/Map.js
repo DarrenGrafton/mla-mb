@@ -28,7 +28,20 @@ import {
 //how to message
 
 const variants = {
-  initial: { opacity: 0, y: -100 },
+  initial: { y: 0, x: 0 },
+  initialWest: { y: 0, x: "-15vw" },
+  moveFromEast: {
+    y: 0,
+    x: "-30vw",
+    scale: 2,
+    transition: { delay: 2, duration: 2 },
+  },
+  moveFromWest: {
+    y: "-10vh",
+    x: "30vw",
+    scale: 2,
+    transition: { delay: 2, duration: 2 },
+  },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: 100 },
 }
@@ -60,6 +73,7 @@ export const Map = ({ latitude, longitude }) => {
   return (
     <AnimatePresence>
       <motion.div
+        key="map"
         className={map}
         drag
         dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
@@ -104,6 +118,9 @@ export const Map = ({ latitude, longitude }) => {
       >
         <SideCon
           className={`${west} ${sideCon}`}
+          // variants={variants}
+          // initial="initialWest"
+          // animate="moveFromWest"
           con={mainCon.WestCon}
           onClick={() => {
             if (mainCon.West != -1) setConNumber(mainCon.West)
@@ -132,6 +149,9 @@ export const Map = ({ latitude, longitude }) => {
         />
         <SideCon
           className={`${east} ${sideCon}`}
+          // variants={variants}
+          // initial="initial"
+          // animate="moveFromEast"
           con={mainCon.EastCon}
           onClick={() => {
             if (mainCon.East != -1) setConNumber(mainCon.East)

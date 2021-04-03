@@ -9,9 +9,9 @@ const variants = {
   exit: { opacity: 0, y: 100 },
 }
 
-export const SideCon = ({ className, con, onClick }) => {
+export const SideCon = ({ con, ...other }) => {
   return (
-    <motion.div onClick={onClick} className={className}>
+    <motion.div {...other}>
       {con && (
         <ConSvg
           conId={con.Number}
@@ -19,7 +19,7 @@ export const SideCon = ({ className, con, onClick }) => {
           height="35vh"
           fill="white"
           stroke="red"
-          strokeWidth="5"
+          strokeWidth="10"
         />
       )}
     </motion.div>

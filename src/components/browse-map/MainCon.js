@@ -12,6 +12,7 @@ const variants = {
 }
 
 export const MainCon = ({ con }) => {
+  console.log(variants)
   return (
     <div className={mainCon}>
       <div className={conInfo}>
@@ -25,7 +26,7 @@ export const MainCon = ({ con }) => {
           {con.Name}
         </motion.h1>
         <motion.p
-          transition={{ duration: 1 }}
+          transition={{ duration: 2 }}
           variants={variants}
           initial="initial"
           animate="animate"

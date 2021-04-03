@@ -161,11 +161,16 @@ h3 {
 }
 
 .navInstructions {
-  /* z-index: -2; */
   pointer-events: none;
   position: absolute;
-  top: 92vh;
   width: 100%;
+  top: 80vh;
+}
+
+@media only screen and (min-width: 720px) {
+  .navInstructions {
+    top: 92vh;
+  }
 }
 
 .navInstructions h2 {
