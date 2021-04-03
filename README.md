@@ -1,6 +1,13 @@
 ## 💫 Deploy
 
-Might deploy on gatsby cloud thanks for making it the default Kyle **wink**
+
+Deployed on Netlify for testing on mobile:
+
+https://vibrant-cray-33306c.netlify.app/
+
+
+
+Might deploy on gatsby cloud at some point
 
 [Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
 
