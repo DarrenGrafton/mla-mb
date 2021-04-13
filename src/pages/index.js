@@ -22,11 +22,10 @@ const IndexPage = () => {
       <SEO title="Home" />
 
       <StaticImage
-        // src="../images/mahesh-gupta.jpg"
         width={1800}
-        quality={95}
-        //fluid={data.allSanityBackgroundImage.nodes[0].image.asset.fluid}
-        src="../images/mahesh-gupta.jpg"
+        quality={50}
+        //  src="../images/mahesh-gupta.jpg"
+        src="../images/under-construction.jpg"
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Manitoba Legislature"
         placeholder="tracedSVG"

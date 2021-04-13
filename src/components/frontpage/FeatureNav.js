@@ -24,6 +24,7 @@ export const FeatureNav = () => {
           exit="exit"
           style={{ fontSize: "150%" }}
         >
+          <h2>UNDER CONTRUCTION!</h2>
           <p>Find your MLA using the map or through the lists.</p>
         </motion.div>
 

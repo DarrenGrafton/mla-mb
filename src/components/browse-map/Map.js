@@ -138,11 +138,6 @@ const sideConVariants = {
   },
 }
 
-const swipeConfidenceThreshold = 10000
-const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity
-}
-
 export const Map = ({ latitude, longitude }) => {
   const data = useStaticQuery(BROWSE_MAP)
 
@@ -188,9 +183,12 @@ export const Map = ({ latitude, longitude }) => {
         dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
         dragElastic={0.5}
         onDragEnd={(e, { offset, velocity }) => {
-          if (offset.x < -100) {
+          const xPower = (Math.abs(offset.x) * velocity.x) / 10
+          const yPower = (Math.abs(offset.y) * velocity.y) / 10
+
+          if (xPower < -100) {
             //East
-            if (offset.y < -100) {
+            if (yPower < -100) {
               //South
 
               if (mainCon.SouthEast != -1)
@@ -198,7 +196,7 @@ export const Map = ({ latitude, longitude }) => {
                   Number: mainCon.SouthEast,
                   direction: "SouthEast",
                 })
-            } else if (offset.y > 100) {
+            } else if (yPower > 100) {
               //North
               if (mainCon.NorthEast != -1)
                 setConState({
@@ -210,16 +208,16 @@ export const Map = ({ latitude, longitude }) => {
               if (mainCon.East != -1)
                 setConState({ Number: mainCon.East, direction: "East" })
             }
-          } else if (offset.x > 100) {
+          } else if (xPower > 100) {
             //West
-            if (offset.y < -100) {
+            if (yPower < -100) {
               //South
               if (mainCon.SouthWest != -1)
                 setConState({
                   Number: mainCon.SouthWest,
                   direction: "SouthWest",
                 })
-            } else if (offset.y > 100) {
+            } else if (yPower > 100) {
               //North
               if (mainCon.NorthWest != -1)
                 setConState({
@@ -232,11 +230,11 @@ export const Map = ({ latitude, longitude }) => {
                 setConState({ Number: mainCon.West, direction: "West" })
             }
           } else {
-            if (offset.y < -100) {
+            if (yPower < -100) {
               //South
               if (mainCon.South != -1)
                 setConState({ Number: mainCon.South, direction: "South" })
-            } else if (offset.y > 100) {
+            } else if (yPower > 100) {
               //North
               if (mainCon.North != -1)
                 setConState({ Number: mainCon.North, direction: "North" })
@@ -294,7 +292,7 @@ export const Map = ({ latitude, longitude }) => {
           initial="initialNorthEast"
           animate="none"
           exit="moveFromNorthEast"
-          key={conState.Number + "East"}
+          key={conState.Number + "NorthEast"}
           onClick={() => {
             if (mainCon.NorthEast != -1)
               setConState({ Number: mainCon.NorthEast, direction: "NorthEast" })
