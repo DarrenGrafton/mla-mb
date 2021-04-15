@@ -4,6 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 import { SideCon } from "./SideCon"
 import { MainCon } from "./MainCon"
+import { createConObj } from "../../helpers/MapConstituencies"
 import {
   map,
   main,
@@ -143,26 +144,7 @@ export const Map = ({ latitude, longitude }) => {
 
   const [conState, setConState] = useState({ Number: 101, direction: null })
 
-  const createConObj = conState => {
-    const mainCon = data.allCons.nodes.find(
-      con => con.Number === conState.Number
-    )
-
-    const sideCons = data.allCons.nodes.map(con => {
-      if (mainCon.West === con.Number) mainCon.WestCon = con
-      if (mainCon.NorthWest === con.Number) mainCon.NorthWestCon = con
-      if (mainCon.North === con.Number) mainCon.NorthCon = con
-      if (mainCon.NorthEast === con.Number) mainCon.NorthEastCon = con
-      if (mainCon.East === con.Number) mainCon.EastCon = con
-      if (mainCon.SouthEast === con.Number) mainCon.SouthEastCon = con
-      if (mainCon.South === con.Number) mainCon.SouthCon = con
-      if (mainCon.SouthWest === con.Number) mainCon.SouthWestCon = con
-    })
-
-    return mainCon
-  }
-
-  const mainCon = createConObj(conState)
+  const mainCon = createConObj(conState, data)
 
   return (
     <AnimatePresence exitBeforeEnter custom={conState.direction}>
@@ -191,52 +173,52 @@ export const Map = ({ latitude, longitude }) => {
             if (yPower < -100) {
               //South
 
-              if (mainCon.SouthEast != -1)
+              if (mainCon.SouthEast !== -1)
                 setConState({
                   Number: mainCon.SouthEast,
                   direction: "SouthEast",
                 })
             } else if (yPower > 100) {
               //North
-              if (mainCon.NorthEast != -1)
+              if (mainCon.NorthEast !== -1)
                 setConState({
                   Number: mainCon.NorthEast,
                   direction: "NorthEast",
                 })
             } else {
               //East
-              if (mainCon.East != -1)
+              if (mainCon.East !== -1)
                 setConState({ Number: mainCon.East, direction: "East" })
             }
           } else if (xPower > 100) {
             //West
             if (yPower < -100) {
               //South
-              if (mainCon.SouthWest != -1)
+              if (mainCon.SouthWest !== -1)
                 setConState({
                   Number: mainCon.SouthWest,
                   direction: "SouthWest",
                 })
             } else if (yPower > 100) {
               //North
-              if (mainCon.NorthWest != -1)
+              if (mainCon.NorthWest !== -1)
                 setConState({
                   Number: mainCon.NorthWest,
                   direction: "NorthWest",
                 })
             } else {
               //West
-              if (mainCon.West != -1)
+              if (mainCon.West !== -1)
                 setConState({ Number: mainCon.West, direction: "West" })
             }
           } else {
             if (yPower < -100) {
               //South
-              if (mainCon.South != -1)
+              if (mainCon.South !== -1)
                 setConState({ Number: mainCon.South, direction: "South" })
             } else if (yPower > 100) {
               //North
-              if (mainCon.North != -1)
+              if (mainCon.North !== -1)
                 setConState({ Number: mainCon.North, direction: "North" })
             } else {
               //West
@@ -362,10 +344,10 @@ export const Map = ({ latitude, longitude }) => {
           mainConPVariants={mainConPVariants}
           mainConRepVariants={mainConRepVariants}
         />
+        <div className={navInstructions}>
+          <h2>Click or Drag Map to Browse</h2>
+        </div>
       </motion.div>
-      <div className={navInstructions}>
-        <h2>Click or Drag Map to Browse</h2>
-      </div>
     </AnimatePresence>
   )
 }
@@ -399,11 +381,10 @@ const BROWSE_MAP = graphql`
     }
     allSanityRepImage {
       nodes {
+        title
         image {
           asset {
-            fixed {
-              src
-            }
+            gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
           }
         }
       }

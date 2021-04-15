@@ -2,8 +2,9 @@ import React from "react"
 
 import { motion } from "framer-motion"
 import { ConSvg } from "./ConSvg"
-import { mainCon, conInfo } from "./Map.module.css"
+import { mainCon, conInfo, rep } from "./Map.module.css"
 import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const MainCon = ({
   con,
@@ -41,12 +42,16 @@ export const MainCon = ({
         </motion.p>
         <Link to="#">Read More</Link>
         <motion.div
-          className="rep"
+          className={rep}
           variants={mainConRepVariants}
           initial="initial"
           animate="animate"
           exit="exit"
         >
+          <GatsbyImage
+            image={con.repImage?.image.asset.gatsbyImageData}
+            alt={con.CurrenRep}
+          />
           <h3>{con.CurrenRep}</h3>
         </motion.div>
       </div>

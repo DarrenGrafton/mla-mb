@@ -102,6 +102,12 @@ h3 {
     height: 80vh; */
   }
 }
+.conInfo p {
+  display: none;
+}
+.rep img {
+  width: 12vw;
+}
 
 .sideCon svg {
   z-index: 1;
