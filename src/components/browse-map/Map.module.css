@@ -105,8 +105,19 @@ h3 {
 .conInfo p {
   display: none;
 }
+.rep {
+  display: flex;
+}
 .rep img {
-  width: 12vw;
+  width: 10vw;
+}
+@media only screen and (min-width: 720px) {
+  .rep img {
+    width: 8vw;
+  }
+}
+.rep h3 {
+  /* width: 40px; */
 }
 
 .sideCon svg {

@@ -68,8 +68,6 @@ export const ConSvg = ({ conId, ...other }) => {
       return <ConSvg101 {...other} />
     case 102:
       return <ConSvg102 {...other} />
-    case 102:
-      return <ConSvg102 {...other} />
     case 103:
       return <ConSvg103 {...other} />
     case 104:

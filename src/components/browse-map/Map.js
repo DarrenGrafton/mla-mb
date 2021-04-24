@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 import { motion, AnimatePresence } from "framer-motion"
 import { SideCon } from "./SideCon"
@@ -7,7 +7,7 @@ import { MainCon } from "./MainCon"
 import { createConObj } from "../../helpers/MapConstituencies"
 import {
   map,
-  main,
+  //main,
   west,
   northWest,
   southWest,
@@ -27,6 +27,7 @@ import {
 // - current rep
 //how to message
 
+//the whole map
 const mapVariants = {
   initial: { opacity: 1, y: 0, x: 0 },
   animate: { opacity: 1, y: 0 },
@@ -34,13 +35,14 @@ const mapVariants = {
   none: {},
 }
 
+//the current constituency
 const mainConVariants = {
   initial: { opacity: 0.8, y: 0, x: 0 },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, transition: { delay: 0, duration: 0.4 } },
 }
 const mainConH1Variants = {
-  initial: { opacity: 0, y: -100, x: 0 },
+  initial: { opacity: 0, y: 0, x: 0 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.2 } },
   exit: { opacity: 0, transition: { delay: 0, duration: 0.4 } },
 }
@@ -50,7 +52,7 @@ const mainConPVariants = {
   exit: { opacity: 0, transition: { delay: 0, duration: 0.4 } },
 }
 const mainConRepVariants = {
-  initial: { opacity: 0.8, y: 0, x: 0 },
+  initial: { opacity: 0, y: 0, x: 0 },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, transition: { delay: 0, duration: 0.4 } },
 }
@@ -236,7 +238,7 @@ export const Map = ({ latitude, longitude }) => {
           className={`${west} ${sideCon}`}
           con={mainCon.WestCon}
           onClick={() => {
-            if (mainCon.West != -1)
+            if (mainCon.West !== -1)
               setConState({ Number: mainCon.West, direction: "West" })
           }}
         />
@@ -250,7 +252,7 @@ export const Map = ({ latitude, longitude }) => {
           key={conState.Number + "NorthWest"}
           custom={conState.direction}
           onClick={() => {
-            if (mainCon.NorthWest != -1)
+            if (mainCon.NorthWest !== -1)
               setConState({ Number: mainCon.NorthWest, direction: "NorthWest" })
           }}
         />
@@ -263,7 +265,7 @@ export const Map = ({ latitude, longitude }) => {
           exit="moveFromNorth"
           key={conState.Number + "North"}
           onClick={() => {
-            if (mainCon.North != -1)
+            if (mainCon.North !== -1)
               setConState({ Number: mainCon.North, direction: "North" })
           }}
         />
@@ -276,7 +278,7 @@ export const Map = ({ latitude, longitude }) => {
           exit="moveFromNorthEast"
           key={conState.Number + "NorthEast"}
           onClick={() => {
-            if (mainCon.NorthEast != -1)
+            if (mainCon.NorthEast !== -1)
               setConState({ Number: mainCon.NorthEast, direction: "NorthEast" })
           }}
         />
@@ -290,7 +292,7 @@ export const Map = ({ latitude, longitude }) => {
           className={`${east} ${sideCon}`}
           con={mainCon.EastCon}
           onClick={() => {
-            if (mainCon.East != -1)
+            if (mainCon.East !== -1)
               setConState({ Number: mainCon.East, direction: "East" })
           }}
         />
@@ -304,7 +306,7 @@ export const Map = ({ latitude, longitude }) => {
           key={conState.Number + "SouthEast"}
           custom={conState.direction}
           onClick={() => {
-            if (mainCon.SouthEast != -1)
+            if (mainCon.SouthEast !== -1)
               setConState({ Number: mainCon.SouthEast, direction: "SouthEast" })
           }}
         />
@@ -318,7 +320,7 @@ export const Map = ({ latitude, longitude }) => {
           key={conState.Number + "South"}
           custom={conState.direction}
           onClick={() => {
-            if (mainCon.South != -1)
+            if (mainCon.South !== -1)
               setConState({ Number: mainCon.South, direction: "South" })
           }}
         />
@@ -332,7 +334,7 @@ export const Map = ({ latitude, longitude }) => {
           key={conState.Number + "SouthWest"}
           custom={conState.direction}
           onClick={() => {
-            if (mainCon.SouthWest != -1)
+            if (mainCon.SouthWest !== -1)
               setConState({ Number: mainCon.SouthWest, direction: "SouthWest" })
           }}
         />
@@ -384,7 +386,7 @@ const BROWSE_MAP = graphql`
         title
         image {
           asset {
-            gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+            gatsbyImageData(fit: FILLMAX, placeholder: NONE)
           }
         }
       }

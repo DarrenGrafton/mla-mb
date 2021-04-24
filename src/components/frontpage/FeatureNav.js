@@ -1,5 +1,5 @@
 import React from "react"
-import { mapbox, linklist, findMLA } from "./FeatureNav.module.css"
+import { mapbox, linklist } from "./FeatureNav.module.css"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 
