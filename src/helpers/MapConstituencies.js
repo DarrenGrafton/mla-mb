@@ -1,8 +1,8 @@
 export const createConObj = (conState, data) => {
   //If Number comes from a cookie if might be string, do only == compare
-  let mainCon = data.allCons.nodes.find(con => con.Number == conState.Number)
-  //If somehow we get a bad number, set it back to aggasiz
-  if (!mainCon) mainCon = data.allCons.nodes[0]
+  const mainCon = data.allCons.nodes.find(con => con.Number == conState.Number)
+
+  if (!mainCon) return
 
   data.allCons.nodes.map(con => {
     if (mainCon.West === con.Number) mainCon.WestCon = con
