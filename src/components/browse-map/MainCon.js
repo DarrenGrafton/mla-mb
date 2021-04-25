@@ -5,6 +5,7 @@ import { ConSvg } from "./ConSvg"
 import { mainCon, conInfo, rep } from "./Map.module.css"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { slugifyConName } from "../../helpers/Utils"
 
 export const MainCon = ({
   con,
@@ -40,7 +41,7 @@ export const MainCon = ({
           <br />
           Area In Square Km: {con.AreaInSquareKm}
         </motion.p>
-        <Link to="#">Read More</Link>
+        <Link to={"/" + slugifyConName(con.Name)}>Read More</Link>
         <motion.div
           className={rep}
           variants={mainConRepVariants}

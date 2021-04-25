@@ -1,5 +1,8 @@
 export const createConObj = (conState, data) => {
-  const mainCon = data.allCons.nodes.find(con => con.Number === conState.Number)
+  //If Number comes from a cookie if might be string, do only == compare
+  let mainCon = data.allCons.nodes.find(con => con.Number == conState.Number)
+  //If somehow we get a bad number, set it back to aggasiz
+  if (!mainCon) mainCon = data.allCons.nodes[0]
 
   data.allCons.nodes.map(con => {
     if (mainCon.West === con.Number) mainCon.WestCon = con
@@ -20,8 +23,6 @@ export const createConObj = (conState, data) => {
       fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
       lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
   )
-
-  console.log(data.allSanityRepImage.nodes)
 
   return mainCon
 }

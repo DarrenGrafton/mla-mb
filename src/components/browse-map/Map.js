@@ -1,10 +1,8 @@
-import React, { useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
 
 import { motion, AnimatePresence } from "framer-motion"
 import { SideCon } from "./SideCon"
 import { MainCon } from "./MainCon"
-import { createConObj } from "../../helpers/MapConstituencies"
 import {
   map,
   //main,
@@ -141,255 +139,223 @@ const sideConVariants = {
   },
 }
 
-export const Map = ({ latitude, longitude }) => {
-  const data = useStaticQuery(BROWSE_MAP)
-
-  const [conState, setConState] = useState({ Number: 101, direction: null })
-
-  const mainCon = createConObj(conState, data)
-
+export const Map = ({ mainCon, data, conState, setConState }) => {
   return (
     <AnimatePresence exitBeforeEnter custom={conState.direction}>
-      <motion.div
-        key={conState.Number + "main"}
-        custom={conState.direction}
-        variants={mapVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        // transition={{
-        //   x: { type: "spring", stiffness: 300, damping: 30 },
-        //   opacity: { duration: 0.2 },
-        // }}
+      {mainCon && (
+        <motion.div
+          key={conState.Number + "main"}
+          custom={conState.direction}
+          variants={mapVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          // transition={{
+          //   x: { type: "spring", stiffness: 300, damping: 30 },
+          //   opacity: { duration: 0.2 },
+          // }}
 
-        className={map}
-        drag
-        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-        dragElastic={0.5}
-        onDragEnd={(e, { offset, velocity }) => {
-          const xPower = (Math.abs(offset.x) * velocity.x) / 10
-          const yPower = (Math.abs(offset.y) * velocity.y) / 10
+          className={map}
+          drag
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          dragElastic={0.5}
+          onDragEnd={(e, { offset, velocity }) => {
+            const xPower = (Math.abs(offset.x) * velocity.x) / 10
+            const yPower = (Math.abs(offset.y) * velocity.y) / 10
 
-          if (xPower < -100) {
-            //East
-            if (yPower < -100) {
-              //South
-
-              if (mainCon.SouthEast !== -1)
-                setConState({
-                  Number: mainCon.SouthEast,
-                  direction: "SouthEast",
-                })
-            } else if (yPower > 100) {
-              //North
-              if (mainCon.NorthEast !== -1)
-                setConState({
-                  Number: mainCon.NorthEast,
-                  direction: "NorthEast",
-                })
-            } else {
+            if (xPower < -100) {
               //East
-              if (mainCon.East !== -1)
-                setConState({ Number: mainCon.East, direction: "East" })
+              if (yPower < -100) {
+                //South
+
+                if (mainCon.SouthEast !== -1)
+                  setConState({
+                    Number: mainCon.SouthEast,
+                    direction: "SouthEast",
+                  })
+              } else if (yPower > 100) {
+                //North
+                if (mainCon.NorthEast !== -1)
+                  setConState({
+                    Number: mainCon.NorthEast,
+                    direction: "NorthEast",
+                  })
+              } else {
+                //East
+                if (mainCon.East !== -1)
+                  setConState({ Number: mainCon.East, direction: "East" })
+              }
+            } else if (xPower > 100) {
+              //West
+              if (yPower < -100) {
+                //South
+                if (mainCon.SouthWest !== -1)
+                  setConState({
+                    Number: mainCon.SouthWest,
+                    direction: "SouthWest",
+                  })
+              } else if (yPower > 100) {
+                //North
+                if (mainCon.NorthWest !== -1)
+                  setConState({
+                    Number: mainCon.NorthWest,
+                    direction: "NorthWest",
+                  })
+              } else {
+                //West
+                if (mainCon.West !== -1)
+                  setConState({ Number: mainCon.West, direction: "West" })
+              }
+            } else {
+              if (yPower < -100) {
+                //South
+                if (mainCon.South !== -1)
+                  setConState({ Number: mainCon.South, direction: "South" })
+              } else if (yPower > 100) {
+                //North
+                if (mainCon.North !== -1)
+                  setConState({ Number: mainCon.North, direction: "North" })
+              } else {
+                //West
+              }
             }
-          } else if (xPower > 100) {
-            //West
-            if (yPower < -100) {
-              //South
-              if (mainCon.SouthWest !== -1)
-                setConState({
-                  Number: mainCon.SouthWest,
-                  direction: "SouthWest",
-                })
-            } else if (yPower > 100) {
-              //North
+          }}
+        >
+          <SideCon
+            variants={sideConVariants}
+            initial="initialWest"
+            animate="none"
+            exit="moveFromWest"
+            key={conState.Number + "West"}
+            custom={conState.direction}
+            className={`${west} ${sideCon}`}
+            con={mainCon.WestCon}
+            onClick={() => {
+              if (mainCon.West !== -1)
+                setConState({ Number: mainCon.West, direction: "West" })
+            }}
+          />
+          <SideCon
+            className={`${northWest} ${sideCon}`}
+            con={mainCon.NorthWestCon}
+            variants={sideConVariants}
+            initial="initialNorthWest"
+            animate="none"
+            exit="moveFromNorthWest"
+            key={conState.Number + "NorthWest"}
+            custom={conState.direction}
+            onClick={() => {
               if (mainCon.NorthWest !== -1)
                 setConState({
                   Number: mainCon.NorthWest,
                   direction: "NorthWest",
                 })
-            } else {
-              //West
-              if (mainCon.West !== -1)
-                setConState({ Number: mainCon.West, direction: "West" })
-            }
-          } else {
-            if (yPower < -100) {
-              //South
-              if (mainCon.South !== -1)
-                setConState({ Number: mainCon.South, direction: "South" })
-            } else if (yPower > 100) {
-              //North
+            }}
+          />
+          <SideCon
+            className={`${north} ${sideCon}`}
+            con={mainCon.NorthCon}
+            variants={sideConVariants}
+            initial="initialNorth"
+            animate="none"
+            exit="moveFromNorth"
+            key={conState.Number + "North"}
+            onClick={() => {
               if (mainCon.North !== -1)
                 setConState({ Number: mainCon.North, direction: "North" })
-            } else {
-              //West
-            }
-          }
-        }}
-      >
-        <SideCon
-          variants={sideConVariants}
-          initial="initialWest"
-          animate="none"
-          exit="moveFromWest"
-          key={conState.Number + "West"}
-          custom={conState.direction}
-          className={`${west} ${sideCon}`}
-          con={mainCon.WestCon}
-          onClick={() => {
-            if (mainCon.West !== -1)
-              setConState({ Number: mainCon.West, direction: "West" })
-          }}
-        />
-        <SideCon
-          className={`${northWest} ${sideCon}`}
-          con={mainCon.NorthWestCon}
-          variants={sideConVariants}
-          initial="initialNorthWest"
-          animate="none"
-          exit="moveFromNorthWest"
-          key={conState.Number + "NorthWest"}
-          custom={conState.direction}
-          onClick={() => {
-            if (mainCon.NorthWest !== -1)
-              setConState({ Number: mainCon.NorthWest, direction: "NorthWest" })
-          }}
-        />
-        <SideCon
-          className={`${north} ${sideCon}`}
-          con={mainCon.NorthCon}
-          variants={sideConVariants}
-          initial="initialNorth"
-          animate="none"
-          exit="moveFromNorth"
-          key={conState.Number + "North"}
-          onClick={() => {
-            if (mainCon.North !== -1)
-              setConState({ Number: mainCon.North, direction: "North" })
-          }}
-        />
-        <SideCon
-          className={`${northEast} ${sideCon}`}
-          con={mainCon.NorthEastCon}
-          variants={sideConVariants}
-          initial="initialNorthEast"
-          animate="none"
-          exit="moveFromNorthEast"
-          key={conState.Number + "NorthEast"}
-          onClick={() => {
-            if (mainCon.NorthEast !== -1)
-              setConState({ Number: mainCon.NorthEast, direction: "NorthEast" })
-          }}
-        />
-        <SideCon
-          variants={sideConVariants}
-          initial="initialEast"
-          animate="none"
-          exit="moveFromEast"
-          key={conState.Number + "East"}
-          custom={conState.direction}
-          className={`${east} ${sideCon}`}
-          con={mainCon.EastCon}
-          onClick={() => {
-            if (mainCon.East !== -1)
-              setConState({ Number: mainCon.East, direction: "East" })
-          }}
-        />
-        <SideCon
-          className={`${southEast} ${sideCon}`}
-          con={mainCon.SouthEastCon}
-          variants={sideConVariants}
-          initial="initialSouthEast"
-          animate="none"
-          exit="moveFromSouthEast"
-          key={conState.Number + "SouthEast"}
-          custom={conState.direction}
-          onClick={() => {
-            if (mainCon.SouthEast !== -1)
-              setConState({ Number: mainCon.SouthEast, direction: "SouthEast" })
-          }}
-        />
-        <SideCon
-          className={`${south} ${sideCon}`}
-          con={mainCon.SouthCon}
-          variants={sideConVariants}
-          initial="initialSouth"
-          animate="none"
-          exit="moveFromSouth"
-          key={conState.Number + "South"}
-          custom={conState.direction}
-          onClick={() => {
-            if (mainCon.South !== -1)
-              setConState({ Number: mainCon.South, direction: "South" })
-          }}
-        />
-        <SideCon
-          className={`${southWest} ${sideCon}`}
-          con={mainCon.SouthWestCon}
-          variants={sideConVariants}
-          initial="initialSouthWest"
-          animate="none"
-          exit="moveFromSouthWest"
-          key={conState.Number + "SouthWest"}
-          custom={conState.direction}
-          onClick={() => {
-            if (mainCon.SouthWest !== -1)
-              setConState({ Number: mainCon.SouthWest, direction: "SouthWest" })
-          }}
-        />
+            }}
+          />
+          <SideCon
+            className={`${northEast} ${sideCon}`}
+            con={mainCon.NorthEastCon}
+            variants={sideConVariants}
+            initial="initialNorthEast"
+            animate="none"
+            exit="moveFromNorthEast"
+            key={conState.Number + "NorthEast"}
+            onClick={() => {
+              if (mainCon.NorthEast !== -1)
+                setConState({
+                  Number: mainCon.NorthEast,
+                  direction: "NorthEast",
+                })
+            }}
+          />
+          <SideCon
+            variants={sideConVariants}
+            initial="initialEast"
+            animate="none"
+            exit="moveFromEast"
+            key={conState.Number + "East"}
+            custom={conState.direction}
+            className={`${east} ${sideCon}`}
+            con={mainCon.EastCon}
+            onClick={() => {
+              if (mainCon.East !== -1)
+                setConState({ Number: mainCon.East, direction: "East" })
+            }}
+          />
+          <SideCon
+            className={`${southEast} ${sideCon}`}
+            con={mainCon.SouthEastCon}
+            variants={sideConVariants}
+            initial="initialSouthEast"
+            animate="none"
+            exit="moveFromSouthEast"
+            key={conState.Number + "SouthEast"}
+            custom={conState.direction}
+            onClick={() => {
+              if (mainCon.SouthEast !== -1)
+                setConState({
+                  Number: mainCon.SouthEast,
+                  direction: "SouthEast",
+                })
+            }}
+          />
+          <SideCon
+            className={`${south} ${sideCon}`}
+            con={mainCon.SouthCon}
+            variants={sideConVariants}
+            initial="initialSouth"
+            animate="none"
+            exit="moveFromSouth"
+            key={conState.Number + "South"}
+            custom={conState.direction}
+            onClick={() => {
+              if (mainCon.South !== -1)
+                setConState({ Number: mainCon.South, direction: "South" })
+            }}
+          />
+          <SideCon
+            className={`${southWest} ${sideCon}`}
+            con={mainCon.SouthWestCon}
+            variants={sideConVariants}
+            initial="initialSouthWest"
+            animate="none"
+            exit="moveFromSouthWest"
+            key={conState.Number + "SouthWest"}
+            custom={conState.direction}
+            onClick={() => {
+              if (mainCon.SouthWest !== -1)
+                setConState({
+                  Number: mainCon.SouthWest,
+                  direction: "SouthWest",
+                })
+            }}
+          />
 
-        <MainCon
-          con={mainCon}
-          mainConVariants={mainConVariants}
-          mainConH1Variants={mainConH1Variants}
-          mainConPVariants={mainConPVariants}
-          mainConRepVariants={mainConRepVariants}
-        />
-        <div className={navInstructions}>
-          <h2>Click or Drag Map to Browse</h2>
-        </div>
-      </motion.div>
+          <MainCon
+            con={mainCon}
+            mainConVariants={mainConVariants}
+            mainConH1Variants={mainConH1Variants}
+            mainConPVariants={mainConPVariants}
+            mainConRepVariants={mainConRepVariants}
+          />
+          <div className={navInstructions}>
+            <h2>Click or Drag Map to Browse</h2>
+          </div>
+        </motion.div>
+      )}
     </AnimatePresence>
   )
 }
-
-const BROWSE_MAP = graphql`
-  query BrowseMap {
-    allCons {
-      nodes {
-        AreaInSquareKm
-        CurrenRep
-        Name
-        Number
-        Party
-        TotalPopulation
-        West
-        NorthWest
-        North
-        NorthEast
-        East
-        SouthEast
-        South
-        SouthWest
-      }
-    }
-    allReps {
-      nodes {
-        Constituency
-        Name
-        Party
-      }
-    }
-    allSanityRepImage {
-      nodes {
-        title
-        image {
-          asset {
-            gatsbyImageData(fit: FILLMAX, placeholder: NONE)
-          }
-        }
-      }
-    }
-  }
-`
