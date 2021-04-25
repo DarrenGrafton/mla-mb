@@ -12,7 +12,7 @@ import { createConObj } from "../helpers/MapConstituencies"
 import { parseQuery } from "../helpers/Utils"
 
 const REPRESENT_URL =
-  "http://represent.opennorth.ca/boundaries/manitoba-electoral-districts/?contains=" //49.802,-97.114
+  "https://represent.opennorth.ca/boundaries/manitoba-electoral-districts/?contains=" //49.802,-97.114
 
 function getPosition(options) {
   return new Promise((resolve, reject) =>

@@ -109,7 +109,7 @@ h3 {
   display: flex;
 }
 .rep img {
-  width: 10vw;
+  width: 6vw;
 }
 @media only screen and (min-width: 720px) {
   .rep img {
