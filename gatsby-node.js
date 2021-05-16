@@ -13,7 +13,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const conTemplate = require.resolve(`./src/templates/ConTemplate.js`)
   const result = await graphql(`
     {
-      allCons {
+      allConsJson {
         nodes {
           Name
           Number
@@ -26,7 +26,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-  result.data.allCons.nodes.forEach(node => {
+  result.data.allConsJson.nodes.forEach(node => {
     createPage({
       path: "/" + utils.slugifyConName(node.Name),
       component: conTemplate,

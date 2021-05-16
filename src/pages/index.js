@@ -52,9 +52,7 @@ const LANDING_PAGE = graphql`
           caption
           asset {
             title
-            fluid(maxWidth: 1600) {
-              ...GatsbySanityImageFluid
-            }
+            gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
           }
         }
       }

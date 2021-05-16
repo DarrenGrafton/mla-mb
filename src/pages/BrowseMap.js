@@ -71,7 +71,7 @@ const BrowseMap = ({ location }) => {
           if (representBoundry.objects.length > 0) {
             //if there are boundries returned that contain our position, get the name, then lookup the number based on our graphql data
             const InitialConName = representBoundry.objects[0].name
-            const initialCon = data.allCons.nodes.find(
+            const initialCon = data.allConsJson.nodes.find(
               con => con.Name == InitialConName
             )
             //load up the number and leave this init function
@@ -136,10 +136,10 @@ export default BrowseMap
 
 const BROWSE_MAP = graphql`
   query BrowseMap {
-    allCons {
+    allConsJson {
       nodes {
         AreaInSquareKm
-        CurrenRep
+        CurrentRep
         Name
         Number
         Party
@@ -154,7 +154,7 @@ const BROWSE_MAP = graphql`
         SouthWest
       }
     }
-    allReps {
+    allRepsJson {
       nodes {
         Constituency
         Name

@@ -51,9 +51,9 @@ export const MainCon = ({
         >
           <GatsbyImage
             image={con.repImage?.image.asset.gatsbyImageData}
-            alt={con.CurrenRep}
+            alt={con.CurrentRep}
           />
-          <h3>{con.CurrenRep}</h3>
+          <h3>{con.CurrentRep}</h3>
         </motion.div>
       </div>
 

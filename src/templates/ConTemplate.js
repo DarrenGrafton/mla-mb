@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function ConTemplate({ data }) {
-  const { cons, allReps, allSanityRepImage } = data
+  const { consJson: cons, allRepsJson, allSanityRepImage } = data
 
   console.log(data)
 
@@ -15,7 +15,7 @@ export default function ConTemplate({ data }) {
       fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
       lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
   )
-  const rep = allReps.nodes.find(
+  const rep = allRepsJson.nodes.find(
     node =>
       cons.Name.localeCompare(node.Constituency, "en", {
         sensitivity: "base",
@@ -125,7 +125,7 @@ export default function ConTemplate({ data }) {
 
 export const pageQuery = graphql`
   query ConDetail($slug: Int!) {
-    cons(Number: { eq: $slug }) {
+    consJson(Number: { eq: $slug }) {
       Name
       Number
       AreaInSquareKm
@@ -157,7 +157,7 @@ export const pageQuery = graphql`
       VoterTurnout2019
       West
     }
-    allReps {
+    allRepsJson {
       nodes {
         Constituency
         ConstituencyOffice

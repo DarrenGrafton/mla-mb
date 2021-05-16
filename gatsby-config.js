@@ -47,16 +47,24 @@ module.exports = {
         token: process.env.SANITY_READ_TOKEN,
       },
     },
+    // {
+    //   resolve: `gatsby-source-firestore-easy`,
+    //   options: {
+    //     adminCredential: {
+    //       credential: process.env.FIREBASE_SERVICE_ACCOUNT_JSON, //See details for this option
+    //       databaseURL: process.env.FIREBASE_DATABASE_URL,
+    //     },
+    //     collections: ["cons", "reps"],
+    //   },
+    // },
+    `gatsby-transformer-json`,
     {
-      resolve: `gatsby-source-firestore-easy`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        adminCredential: {
-          credential: process.env.FIREBASE_SERVICE_ACCOUNT_JSON, //See details for this option
-          databaseURL: process.env.FIREBASE_DATABASE_URL,
-        },
-        collections: ["cons", "reps"],
+        path: `./src/JSONData/`,
       },
     },
+
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
