@@ -40,7 +40,6 @@ const BrowseMap = ({ location }) => {
 
       //If query string number provided
       if (loadConNumber) {
-        console.log(loadConNumber + "conNum")
         setConState({ Number: loadConNumber, direction: null })
         return
       }
@@ -48,7 +47,6 @@ const BrowseMap = ({ location }) => {
       //If not force, check if there is a last map saved in the browser
       const cookieNum = cookies["last-constituency"]
       if (cookieNum && !forceLoadGeolocation) {
-        console.log(cookieNum + "cookie")
         setConState({ Number: cookieNum, direction: null })
         return
       }
@@ -84,7 +82,6 @@ const BrowseMap = ({ location }) => {
       }
 
       //else it will load a random number
-      console.log("random")
       setConState({
         Number: Math.floor(101 + Math.random() * 56),
         direction: null,
@@ -93,7 +90,6 @@ const BrowseMap = ({ location }) => {
     loadConstituency()
   }, [])
 
-  console.log(conState.Number)
   const mainCon = createConObj(conState, data)
 
   //if we loaded a con save it as the last con in the cooookie

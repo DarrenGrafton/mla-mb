@@ -17,6 +17,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           Name
           Number
+          CurrentRep
         }
       }
     }
@@ -33,6 +34,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         // additional data can be passed via context
         slug: node.Number,
+        rep: node.CurrentRep,
       },
     })
   })
