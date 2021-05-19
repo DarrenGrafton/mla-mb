@@ -46,7 +46,7 @@
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
   --containerPadding: 2.5%;
-  --headerHeight: 0rem;
+  --headerHeight: 5rem;
   --borderRadius: 10px;
 }
 
@@ -82,7 +82,7 @@ body[noOverflow="true"] {
 }
 
 header {
-  color: white;
+  color: var(--primary);
   /* box-shadow: var(--level-2); */
   height: var(--headerHeight);
   display: flex;
@@ -98,7 +98,6 @@ header {
 }
 
 footer {
-  display: none;
   color: white;
   background: var(--black);
   padding: 0 var(--containerPadding);
@@ -109,8 +108,12 @@ footer {
   --footerTextColor: var(--grey);
   color: var(--footerTextColor);
   background: var(--black);
-  padding: 2rem var(--containerPadding);
+  padding: 0.5rem var(--containerPadding);
   text-align: center;
+  position: absolute;
+  top: 95vh;
+  left: 0;
+  width: 100%;
 }
 
 footer nav a {

@@ -96,9 +96,9 @@ const BrowseMap = ({ location }) => {
   if (mainCon) setCookie("last-constituency", mainCon.Number, { path: "/" })
 
   return (
-    <Layout>
+    <Layout hide={true}>
       {/*Tell the helmet to tell body NO Overflow on the MAP SVGs*/}
-      <SEO title="Browse Map" noOverflow="true" />
+      <SEO title="Map of Provincial Consituencies" noOverflow="true" />
 
       <StaticImage
         width={1800}

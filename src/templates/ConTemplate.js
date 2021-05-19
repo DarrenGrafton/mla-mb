@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
+import Accordian from "../components/constituency/Accordian"
+import SEO from "../components/seo"
 
 export default function ConTemplate({ data }) {
   const {
@@ -22,156 +24,166 @@ export default function ConTemplate({ data }) {
       lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
   )
 
+  //header with  con name, back link,menu items
   return (
-    <Layout>
-      <h1>{cons.Name}</h1>
+    <Layout pageTitle={cons.Name}>
+      {/*Tell the helmet to tell body NO Overflow on the MAP SVGs*/}
+      <SEO title={`${cons.Name} - ${cons.CurrentRep}`} />
+
       <h2>
         {cons.CurrentRep} - {cons.Party}
       </h2>
-      <div className="repInfo flex">
-        <div>
-          <GatsbyImage
-            image={repImage?.image.asset.gatsbyImageData}
-            alt={cons.CurrentRep}
-          />
+      <Accordian title="MLA info">
+        <div className="repInfo flex">
+          <div>
+            <GatsbyImage
+              image={repImage?.image.asset.gatsbyImageData}
+              alt={cons.CurrentRep}
+            />
+          </div>
+          <div>
+            <p>
+              Constituency Office: {rep.ConstituencyOffice}
+              Email: {rep.ConstituencyOfficeEmail}
+              Fax: {rep.ConstituencyOfficeFax}
+              Phone: {rep.ConstituencyOfficePhone}
+            </p>
+            <p>
+              Legislative Office: {rep.Office}
+              Email: {rep.Email}
+              OfficeFax: {rep.OfficeFax}
+              OfficePhone: {rep.OfficePhone}
+            </p>
+          </div>
         </div>
-        <div>
-          <p>
-            Constituency Office: {rep.ConstituencyOffice}
-            Email: {rep.ConstituencyOfficeEmail}
-            Fax: {rep.ConstituencyOfficeFax}
-            Phone: {rep.ConstituencyOfficePhone}
-          </p>
-          <p>
-            Legislative Office: {rep.Office}
-            Email: {rep.Email}
-            OfficeFax: {rep.OfficeFax}
-            OfficePhone: {rep.OfficePhone}
-          </p>
+      </Accordian>
+      <Accordian title="Constituency info">
+        <div className="electionManitoba">
+          <table>
+            <tbody>
+              <tr>
+                <td>AreaInSquareKm</td>
+                <td>{cons.AreaInSquareKm}</td>
+              </tr>
+              <tr>
+                <td>AvgFamilySize</td>
+                <td>{cons.AvgFamilySize}</td>
+              </tr>
+              <tr>
+                <td>CorrectionalFacilities</td>
+                <td>{cons.CorrectionalFacilities}</td>
+              </tr>
+              <tr>
+                <td>Hospitals</td>
+                <td>{cons.Hospitals}</td>
+              </tr>
+              <tr>
+                <td>MedianAge</td>
+                <td>{cons.MedianAge}</td>
+              </tr>
+              <tr>
+                <td>MultipleDwellings</td>
+                <td>{cons.MultipleDwellings}</td>
+              </tr>
+              <tr>
+                <td>MedianHouseholdIncome</td>
+                <td>{cons.MedianHouseholdIncome}</td>
+              </tr>
+              <tr>
+                <td>NeighbouringElectoralDivisions</td>
+                <td>{cons.NeighbouringElectoralDivisions}</td>
+              </tr>
+              <tr>
+                <td>NumberOfvotingAreas</td>
+                <td>{cons.NumberOfvotingAreas}</td>
+              </tr>
+              <tr>
+                <td>PercentCanadianCitizens</td>
+                <td>{cons.PercentCanadianCitizens}</td>
+              </tr>
+              <tr>
+                <td>PersonalCareHomes</td>
+                <td>{cons.PersonalCareHomes}</td>
+              </tr>
+              <tr>
+                <td>Plurality</td>
+                <td>{cons.Plurality}</td>
+              </tr>
+              <tr>
+                <td>PostSecondaryInstitutions</td>
+                <td>{cons.PostSecondaryInstitutions}</td>
+              </tr>
+              <tr>
+                <td>RegisteredVoters</td>
+                <td>{cons.RegisteredVoters}</td>
+              </tr>
+              <tr>
+                <td>Schools</td>
+                <td>{cons.Schools}</td>
+              </tr>
+              <tr>
+                <td>TotalPopulation</td>
+                <td>{cons.TotalPopulation}</td>
+              </tr>
+              <tr>
+                <td> VoterTurnout2019</td>
+                <td>{cons.VoterTurnout2019}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
-
-      <div className="electionManitoba">
-        <table>
-          <tbody>
-            <tr>
-              <td>AreaInSquareKm</td>
-              <td>{cons.AreaInSquareKm}</td>
-            </tr>
-            <tr>
-              <td>AvgFamilySize</td>
-              <td>{cons.AvgFamilySize}</td>
-            </tr>
-            <tr>
-              <td>CorrectionalFacilities</td>
-              <td>{cons.CorrectionalFacilities}</td>
-            </tr>
-            <tr>
-              <td>Hospitals</td>
-              <td>{cons.Hospitals}</td>
-            </tr>
-            <tr>
-              <td>MedianAge</td>
-              <td>{cons.MedianAge}</td>
-            </tr>
-            <tr>
-              <td>MultipleDwellings</td>
-              <td>{cons.MultipleDwellings}</td>
-            </tr>
-            <tr>
-              <td>MedianHouseholdIncome</td>
-              <td>{cons.MedianHouseholdIncome}</td>
-            </tr>
-            <tr>
-              <td>NeighbouringElectoralDivisions</td>
-              <td>{cons.NeighbouringElectoralDivisions}</td>
-            </tr>
-            <tr>
-              <td>NumberOfvotingAreas</td>
-              <td>{cons.NumberOfvotingAreas}</td>
-            </tr>
-            <tr>
-              <td>PercentCanadianCitizens</td>
-              <td>{cons.PercentCanadianCitizens}</td>
-            </tr>
-            <tr>
-              <td>PersonalCareHomes</td>
-              <td>{cons.PersonalCareHomes}</td>
-            </tr>
-            <tr>
-              <td>Plurality</td>
-              <td>{cons.Plurality}</td>
-            </tr>
-            <tr>
-              <td>PostSecondaryInstitutions</td>
-              <td>{cons.PostSecondaryInstitutions}</td>
-            </tr>
-            <tr>
-              <td>RegisteredVoters</td>
-              <td>{cons.RegisteredVoters}</td>
-            </tr>
-            <tr>
-              <td>Schools</td>
-              <td>{cons.Schools}</td>
-            </tr>
-            <tr>
-              <td>TotalPopulation</td>
-              <td>{cons.TotalPopulation}</td>
-            </tr>
-            <tr>
-              <td> VoterTurnout2019</td>
-              <td>{cons.VoterTurnout2019}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div className="bills"></div>
-      <ul>
-        {bills.edges.map(edge => (
-          <li key={edge.node.billLink}>
-            {edge.node.session} Session - {edge.node.number} -{" "}
-            {edge.node.billName}
-            <a href={edge.node.billLink}>Link</a>
-          </li>
-        ))}
-      </ul>
-      <div className="hansard">
-        <ul>
-          {sessions.edges.map(edge => {
-            const referencedBills = hansardBills.edges.reduce(function (
-              arr,
-              item
-            ) {
-              if (
-                item.node.sessionKey === edge.node.key &&
-                !arr.includes(item.node.billNumber)
-              ) {
-                arr.push(item.node.billNumber)
-              }
-              return arr
-            },
-            [])
-
-            return (
-              <li key={`session${edge.node.key}`}>
-                {edge.node.legislature} {edge.node.session} Session -{" "}
-                {edge.node.volume}- {edge.node.date} - {edge.node.committee}
-                <a href={edge.node.link}>Link</a>
-                {referencedBills && (
-                  <ul>
-                    {referencedBills.map(billNumber => {
-                      return (
-                        <li key={`bill${billNumber}`}>Bill {billNumber}</li>
-                      )
-                    })}
-                  </ul>
-                )}
+      </Accordian>
+      <Accordian title="Bills">
+        <div className="bills">
+          <ul>
+            {bills.edges.map(edge => (
+              <li key={edge.node.billLink}>
+                {edge.node.session} Session - {edge.node.number} -{" "}
+                {edge.node.billName}
+                <a href={edge.node.billLink}>Link</a>
               </li>
-            )
-          })}
-        </ul>
-      </div>
+            ))}
+          </ul>
+        </div>
+      </Accordian>
+      <Accordian title="Hansard">
+        <div className="hansard">
+          <ul>
+            {sessions.edges.map(edge => {
+              const referencedBills = hansardBills.edges.reduce(function (
+                arr,
+                item
+              ) {
+                if (
+                  item.node.sessionKey === edge.node.key &&
+                  !arr.includes(item.node.billNumber)
+                ) {
+                  arr.push(item.node.billNumber)
+                }
+                return arr
+              },
+              [])
+
+              return (
+                <li key={`session${edge.node.key}`}>
+                  {edge.node.legislature} {edge.node.session} Session -{" "}
+                  {edge.node.volume}- {edge.node.date} - {edge.node.committee}
+                  <a href={edge.node.link}>Link</a>
+                  {referencedBills && (
+                    <ul>
+                      {referencedBills.map(billNumber => {
+                        return (
+                          <li key={`bill${billNumber}`}>Bill {billNumber}</li>
+                        )
+                      })}
+                    </ul>
+                  )}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </Accordian>
     </Layout>
   )
 }
@@ -234,7 +246,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allBillsJson(filter: { rep: { eq: $rep } }) {
+    allBillsJson(
+      sort: { order: DESC, fields: session }
+      filter: { rep: { eq: $rep } }
+    ) {
       edges {
         node {
           number

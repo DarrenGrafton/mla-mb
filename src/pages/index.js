@@ -6,22 +6,15 @@ import SEO from "../components/seo"
 import { FeatureNav } from "../components/frontpage/FeatureNav"
 
 const IndexPage = () => {
-  // const data = useStaticQuery(LANDING_PAGE)
-  // const image = getImage(
-  //   data.allSanityBackgroundImage.nodes[0].image.asset.fluid
-  // )
-  // console.log(data.allSanityBackgroundImage.nodes[0].image.asset.fluid)
-  // console.log(image)
-
   return (
-    <Layout overflow="hidden">
-      <SEO title="Home" />
+    <Layout pageTitle="My Rep MB">
+      <SEO title="Manitoban MLA information" />
 
       <StaticImage
         width={1800}
         quality={50}
-        //  src="../images/mahesh-gupta.jpg"
-        src="../images/under-construction.jpg"
+        src="../images/mahesh-gupta.jpg"
+        //   src="../images/under-construction.jpg"
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Manitoba Legislature"
         placeholder="tracedSVG"
