@@ -1,10 +1,10 @@
 import React from "react"
+import Navbar from "./nav/Navbar"
 
-const Header = ({ pageTitle }) => (
+const Header = ({ pageTitle, location, navbarOpen, setNavbarOpen }) => (
   <header>
-    <div>
-      <h1>{pageTitle}</h1>
-    </div>
+    <h1>{pageTitle}</h1>
+    <Navbar navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen} />
   </header>
 )
 

@@ -49,9 +49,9 @@
   z-index: 1;
 }
 
-.conInfo > h1,
-h2,
-h3 {
+.conInfo h1,
+.conInfo h2,
+.conInfo h3 {
   /* box-shadow: 0 4px 6px -1px var(--accent); */
   text-shadow: 2px 2px var(--accent);
 }

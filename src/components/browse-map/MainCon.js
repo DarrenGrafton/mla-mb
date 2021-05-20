@@ -2,7 +2,7 @@ import React from "react"
 
 import { motion } from "framer-motion"
 import { ConSvg } from "./ConSvg"
-import { mainCon, conInfo, rep } from "./Map.module.css"
+import * as styles from "./Map.module.css" //import { mainCon, conInfo, rep } from "./Map.module.css"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { slugifyConName } from "../../helpers/Utils"
@@ -16,13 +16,13 @@ export const MainCon = ({
 }) => {
   return (
     <motion.div
-      className={mainCon}
+      className={styles.mainCon}
       variants={mainConVariants}
       initial="initial"
       animate="animate"
       exit="exit"
     >
-      <div className={conInfo}>
+      <div className={styles.conInfo}>
         <motion.h1
           variants={mainConH1Variants}
           initial="initial"
@@ -43,7 +43,7 @@ export const MainCon = ({
         </motion.p>
         <Link to={"/" + slugifyConName(con.Name)}>Read More</Link>
         <motion.div
-          className={rep}
+          className={styles.rep}
           variants={mainConRepVariants}
           initial="initial"
           animate="animate"

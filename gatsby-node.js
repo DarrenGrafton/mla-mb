@@ -11,6 +11,7 @@ const utils = require("./src/helpers/Utils")
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const conTemplate = require.resolve(`./src/templates/ConTemplate.js`)
+  const billTemplate = require.resolve(`./src/templates/BillTemplate.js`)
   const result = await graphql(`
     {
       allConsJson {
@@ -18,6 +19,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           Name
           Number
           CurrentRep
+        }
+      }
+      allBillsJson {
+        nodes {
+          billKey
         }
       }
     }
@@ -35,6 +41,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         // additional data can be passed via context
         slug: node.Number,
         rep: node.CurrentRep,
+      },
+    })
+  })
+
+  result.data.allBillsJson.nodes.forEach(node => {
+    createPage({
+      path: "/bills/" + node.billKey,
+      component: billTemplate,
+      context: {
+        // additional data can be passed via context
+        billKey: node.billKey,
       },
     })
   })

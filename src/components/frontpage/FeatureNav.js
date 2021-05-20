@@ -41,7 +41,7 @@ export const FeatureNav = () => {
             transition: { duration: 0.1 },
           }}
         >
-          <Link to="/BrowseMap/">
+          <Link to="/Map/">
             Browse <span>Map</span>
           </Link>
         </motion.div>
@@ -53,16 +53,16 @@ export const FeatureNav = () => {
           exit={{ opacity: 0, y: 100 }}
         >
           <li>
-            <Link to="/ConstituencyList/">Constituency List</Link>
+            <Link to="/Constituencies/">Constituency List</Link>
           </li>
           <li>
-            <Link to="/MLAList/">MLA List</Link>
+            <Link to="/MLAs/">MLA List</Link>
           </li>
           <li>
-            <Link to="/PartyList/">Party List</Link>
+            <Link to="/Bills/">Party List</Link>
           </li>
           <li>
-            <Link to="/BillsList/">Bills List</Link>
+            <Link to="/About/">Bills List</Link>
           </li>
         </motion.ul>
       </div>

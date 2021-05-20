@@ -110,7 +110,7 @@ footer {
   background: var(--black);
   padding: 0.5rem var(--containerPadding);
   text-align: center;
-  position: absolute;
+  position: relative;
   top: 95vh;
   left: 0;
   width: 100%;
@@ -284,36 +284,6 @@ main {
   .flex {
     display: flex;
   }
-}
-
-.card {
-  padding: 1em;
-  margin: 0.5em;
-
-  /* background: var(--cardbg); */
-  border: solid 2px var(--primary);
-  box-shadow: var(--level-3);
-  border-radius: var(--borderRadius);
-  color: black;
-  display: grid;
-}
-
-.card > *:first-child {
-  margin-top: 0;
-}
-
-.card > *:last-child {
-  margin-bottom: 0;
-}
-
-.dark {
-  --background: var(--black);
-  --textColor: var(--lightGrey);
-  --headerBackground: #333;
-  --cardbg: #333;
-}
-.dark button {
-  --buttonTextColor: var(--black);
 }
 
 /*Custom Elements*/

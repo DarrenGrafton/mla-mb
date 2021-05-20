@@ -1,0 +1,16 @@
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.bills {
+  display: block;
+}
+
+.hansard {
+  display: block;
+}
+
+.repInfo {
+  display: block;
+}
