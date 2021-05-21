@@ -26,7 +26,7 @@ const Layout = ({ children, hide, pageTitle, location }) => {
           setNavbarOpen={setNavbarOpen}
         />
       )}
-      <div>
+      <div className="layout">
         {children}
 
         {!hide && (

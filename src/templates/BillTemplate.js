@@ -1,9 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import Accordian from "../components/constituency/Accordian"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 export default function BillTemplate({ data }) {
   const {
@@ -26,7 +24,7 @@ export default function BillTemplate({ data }) {
   return (
     <Layout pageTitle={`Bill ${bill.number}  ${bill.session} Session`}>
       {/*Tell the helmet to tell body NO Overflow on the MAP SVGs*/}
-      <SEO title={`Bill ${bill.number}  ${bill.session} Session`} />
+      <Seo title={`Bill ${bill.number}  ${bill.session} Session`} />
 
       <h2>{bill.billName}</h2>
       {note && (

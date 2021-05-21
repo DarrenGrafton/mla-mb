@@ -12,6 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const conTemplate = require.resolve(`./src/templates/ConTemplate.js`)
   const billTemplate = require.resolve(`./src/templates/BillTemplate.js`)
+  const sessionTemplate = require.resolve(`./src/templates/SessionTemplate.js`)
   const result = await graphql(`
     {
       allConsJson {
@@ -24,6 +25,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allBillsJson {
         nodes {
           billKey
+        }
+      }
+      allSessionsJson {
+        nodes {
+          key
         }
       }
     }
@@ -52,6 +58,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         // additional data can be passed via context
         billKey: node.billKey,
+      },
+    })
+  })
+  result.data.allSessionsJson.nodes.forEach(node => {
+    createPage({
+      path: "/session/" + node.key,
+      component: sessionTemplate,
+      context: {
+        // additional data can be passed via context
+        key: node.key,
       },
     })
   })

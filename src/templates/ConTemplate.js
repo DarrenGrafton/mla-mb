@@ -167,7 +167,7 @@ export default function ConTemplate({ data }) {
                   <li key={`session${edge.node.key}`}>
                     {edge.node.legislature} {edge.node.session} Session -{" "}
                     {edge.node.volume}- {edge.node.date} - {edge.node.committee}
-                    <a href={edge.node.link}>Link</a>
+                    <a href={`/session/${edge.node.key}`}>Link</a>
                     {referencedBills && (
                       <ul>
                         {referencedBills.map(billNumber => {

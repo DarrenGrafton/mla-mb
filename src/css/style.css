@@ -87,9 +87,8 @@ header {
   height: var(--headerHeight);
   display: flex;
   /* justify-content: space-between; bring nav beside*/
-  align-items: center;
   width: 100%;
-  padding: 0 var(--containerPadding);
+  padding: 1% var(--containerPadding);
   /* 
   fixed header:
   position: fixed;
@@ -237,9 +236,9 @@ button[disabled] {
   opacity: 0.4;
 }
 
-main {
+.layout {
   /* padding: calc(1rem + var(--headerHeight)) var(--containerPadding); */
-  /* padding: 1rem var(--containerPadding); */
+  padding: 1rem var(--containerPadding);
 }
 
 .grid {
