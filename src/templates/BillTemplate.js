@@ -29,7 +29,9 @@ export default function BillTemplate({ data }) {
       <SEO title={`Bill ${bill.number}  ${bill.session} Session`} />
 
       <h2>{bill.billName}</h2>
-      <div dangerouslySetInnerHTML={{ __html: note.explanatoryNote }} />
+      {note && (
+        <div dangerouslySetInnerHTML={{ __html: note?.explanatoryNote }} />
+      )}
     </Layout>
   )
 }
