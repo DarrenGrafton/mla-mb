@@ -7,32 +7,45 @@ export const RepContactInfo = ({ styles, rep }) => {
       <h5>Constituency Office</h5>
       <ul>
         <li>{rep.ConstituencyOffice}</li>
-        <li>
-          <span>Email:</span> {rep.ConstituencyOfficeEmail}
-        </li>
-        <li>
-          <span>Fax:</span> {rep.ConstituencyOfficeFax}
-        </li>
-        <li>
-          <span>Phone:</span>
-          {rep.ConstituencyOfficePhone}
-          {/* <a href={`tel:+${rep.ConstituencyOfficePhone}`}>
+        {rep.ConstituencyOfficeEmail && (
+          <li>
+            <span>Email:</span> {rep.ConstituencyOfficeEmail}
+          </li>
+        )}
+        {rep.ConstituencyOfficeFax && (
+          <li>
+            <span>Fax:</span> {rep.ConstituencyOfficeFax}
+          </li>
+        )}
+
+        {rep.ConstituencyOfficePhone && (
+          <li>
+            <span>Phone:</span>
+            {rep.ConstituencyOfficePhone}
+            {/* <a href={`tel:+${rep.ConstituencyOfficePhone}`}>
               {rep.ConstituencyOfficePhone}
             </a> */}
-        </li>
+          </li>
+        )}
       </ul>
       <h5>Legislative Office</h5>
       <ul>
-        <li>{rep.Office}</li>
-        <li>
-          <span>Email:</span> {rep.Email}
-        </li>
-        <li>
-          <span>Fax:</span> {rep.OfficeFax}
-        </li>
-        <li>
-          <span>Phone:</span> {rep.OfficePhone}
-        </li>
+        {rep.Office && <li>{rep.Office}</li>}
+        {rep.Email && (
+          <li>
+            <span>Email:</span> {rep.Email}
+          </li>
+        )}
+        {rep.OfficeFax && (
+          <li>
+            <span>Fax:</span> {rep.OfficeFax}
+          </li>
+        )}
+        {rep.OfficePhone && (
+          <li>
+            <span>Phone:</span> {rep.OfficePhone}
+          </li>
+        )}
       </ul>
     </aside>
   )

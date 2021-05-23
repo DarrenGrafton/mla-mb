@@ -6,7 +6,7 @@ const Header = ({
   location,
   navbarOpen,
   setNavbarOpen,
-  conNumber = { conNumber },
+  conNumber,
 }) => (
   <header>
     <h1>{pageTitle}</h1>
