@@ -1,23 +1,9 @@
-nav {
+.navBar {
   z-index: 5;
-  align-self: center;
-  flex-grow: 0;
+  flex-grow: 1;
 }
 
-.nav-toggle {
-  display: flex;
-  height: 100%;
-  cursor: pointer;
-  justify-content: flex-end;
-}
-
-@media only screen and (min-width: 920px) {
-  .nav-toggle {
-    display: none;
-  }
-}
-
-header nav div a {
+.navBar div a {
   display: inline-block;
   margin: 0 12px;
   transition: all 200ms ease-in;
@@ -28,9 +14,10 @@ header nav div a {
   font-size: 1.15rem;
   padding: 0 6px;
   font-size: var(--h6);
+  word-break: keep-all;
 }
 
-header nav div a:after {
+.navBar div a:after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -42,22 +29,35 @@ header nav div a:after {
   height: 1px;
   transition: all 0.4s ease-in;
 }
-header nav div a:hover {
+.navBar div a:hover {
   color: var(--primaryHighlight);
 }
-header nav div a:hover::after {
+.navBar div a:hover::after {
   width: 100%;
 }
 
 @media only screen and (max-width: 920px) {
-  header nav div a {
+  .navBar div a {
     padding: 20px 0;
     font-size: var(--h5);
     z-index: 6;
   }
 }
 
-.nav-box {
+.navToggle {
+  display: flex;
+  height: 100%;
+  cursor: pointer;
+  justify-content: flex-end;
+}
+
+@media only screen and (min-width: 920px) {
+  .navToggle {
+    display: none;
+  }
+}
+
+.navBox {
   display: flex;
   height: 100%;
   justify-content: flex-end;
@@ -65,13 +65,13 @@ header nav div a:hover::after {
 }
 
 @media only screen and (max-width: 920px) {
-  .nav-box {
+  .navBox {
     flex-direction: column;
     position: fixed;
     width: 100%;
     justify-content: flex-start;
     padding-top: 10vh;
-    background: var(--darkGray);
+    background: var(--background);
     /* background: linear-gradient(
       130deg,
       #44a2cd,
@@ -88,13 +88,13 @@ header nav div a:hover::after {
     z-index: -1;
   }
 
-  .nav-box-closed {
+  .navBoxClosed {
     left: -100%;
   }
 }
 
 .hamburger {
-  background-color: white;
+  background-color: var(--primary);
   width: 30px;
   height: 3px;
   transition: all 0.3s linear;
@@ -103,7 +103,7 @@ header nav div a:hover::after {
   transform: rotate(-45deg);
 }
 
-.hamburger-closed {
+.hamburgerClosed {
   transform: inherit;
 }
 
@@ -111,7 +111,7 @@ header nav div a:hover::after {
 .hamburger::after {
   width: 30px;
   height: 3px;
-  background-color: white;
+  background-color: var(--primary);
   content: "";
   position: absolute;
   transition: all 0.3s linear;
@@ -122,7 +122,7 @@ header nav div a:hover::after {
   top: -10px;
 }
 
-.hamburger-closed::before {
+.hamburgerClosed::before {
   transform: rotate(0deg);
 }
 .hamburger::after {
@@ -131,7 +131,7 @@ header nav div a:hover::after {
   top: 10px;
 }
 
-.hamburger-closed::after {
+.hamburgerClosed::after {
   opacity: 1;
   transform: rotate(0deg);
 }

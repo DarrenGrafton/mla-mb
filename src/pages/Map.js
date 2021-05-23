@@ -23,7 +23,6 @@ function getPosition(options) {
 const BrowseMap = ({ location }) => {
   const data = useStaticQuery(BROWSE_MAP)
 
-  //coords stores the users coordinates if they share
   const [cookies, setCookie, removeCookie] = useCookies([])
   const [conState, setConState] = useState({
     Number: null,

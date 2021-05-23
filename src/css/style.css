@@ -75,7 +75,7 @@ body {
   color: var(--textColor);
 
   /* overflow-wrap: anywhere; */
-  word-break: break-word;
+  /* word-break: break-word; */
 }
 body[noOverflow="true"] {
   overflow: hidden;
@@ -283,6 +283,13 @@ button[disabled] {
   .flex {
     display: flex;
   }
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /*Custom Elements*/

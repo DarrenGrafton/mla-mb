@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import Accordian from "../components/constituency/Accordian"
 import SEO from "../components/seo"
 import * as styles from "../components/constituency/Constituency.module.css"
+import { ConDemoData } from "../components/constituency/ConDemoData"
+import { RepContactInfo } from "../components/constituency/RepContactInfo"
 
 export default function ConTemplate({ data }) {
   const {
@@ -27,8 +29,7 @@ export default function ConTemplate({ data }) {
 
   //header with  con name, back link,menu items
   return (
-    <Layout pageTitle={cons.Name}>
-      {/*Tell the helmet to tell body NO Overflow on the MAP SVGs*/}
+    <Layout pageTitle={cons.Name} conNumber={cons.Number}>
       <SEO title={`${cons.Name} - ${cons.CurrentRep}`} />
       <div className={styles.mainGrid}>
         <div>
@@ -40,96 +41,8 @@ export default function ConTemplate({ data }) {
             image={repImage?.image.asset.gatsbyImageData}
             alt={cons.CurrentRep}
           />
-          <aside className={styles.repInfo}>
-            <h4>Contact Info</h4>
-            <p>
-              Constituency Office: {rep.ConstituencyOffice}
-              Email: {rep.ConstituencyOfficeEmail}
-              Fax: {rep.ConstituencyOfficeFax}
-              Phone: {rep.ConstituencyOfficePhone}
-            </p>
-            <p>
-              Legislative Office: {rep.Office}
-              Email: {rep.Email}
-              OfficeFax: {rep.OfficeFax}
-              OfficePhone: {rep.OfficePhone}
-            </p>
-          </aside>
-          <aside className="electionManitoba">
-            <h4>Constituency Info</h4>
-            <table>
-              <tbody>
-                <tr>
-                  <td>AreaInSquareKm</td>
-                  <td>{cons.AreaInSquareKm}</td>
-                </tr>
-                <tr>
-                  <td>AvgFamilySize</td>
-                  <td>{cons.AvgFamilySize}</td>
-                </tr>
-                <tr>
-                  <td>CorrectionalFacilities</td>
-                  <td>{cons.CorrectionalFacilities}</td>
-                </tr>
-                <tr>
-                  <td>Hospitals</td>
-                  <td>{cons.Hospitals}</td>
-                </tr>
-                <tr>
-                  <td>MedianAge</td>
-                  <td>{cons.MedianAge}</td>
-                </tr>
-                <tr>
-                  <td>MultipleDwellings</td>
-                  <td>{cons.MultipleDwellings}</td>
-                </tr>
-                <tr>
-                  <td>MedianHouseholdIncome</td>
-                  <td>{cons.MedianHouseholdIncome}</td>
-                </tr>
-                <tr>
-                  <td>NeighbouringElectoralDivisions</td>
-                  <td>{cons.NeighbouringElectoralDivisions}</td>
-                </tr>
-                <tr>
-                  <td>NumberOfvotingAreas</td>
-                  <td>{cons.NumberOfvotingAreas}</td>
-                </tr>
-                <tr>
-                  <td>PercentCanadianCitizens</td>
-                  <td>{cons.PercentCanadianCitizens}</td>
-                </tr>
-                <tr>
-                  <td>PersonalCareHomes</td>
-                  <td>{cons.PersonalCareHomes}</td>
-                </tr>
-                <tr>
-                  <td>Plurality</td>
-                  <td>{cons.Plurality}</td>
-                </tr>
-                <tr>
-                  <td>PostSecondaryInstitutions</td>
-                  <td>{cons.PostSecondaryInstitutions}</td>
-                </tr>
-                <tr>
-                  <td>RegisteredVoters</td>
-                  <td>{cons.RegisteredVoters}</td>
-                </tr>
-                <tr>
-                  <td>Schools</td>
-                  <td>{cons.Schools}</td>
-                </tr>
-                <tr>
-                  <td>TotalPopulation</td>
-                  <td>{cons.TotalPopulation}</td>
-                </tr>
-                <tr>
-                  <td> VoterTurnout2019</td>
-                  <td>{cons.VoterTurnout2019}</td>
-                </tr>
-              </tbody>
-            </table>
-          </aside>
+          <RepContactInfo styles={styles} rep={rep} />
+          <ConDemoData styles={styles} cons={cons} />
         </div>
         <div>
           <div className={styles.bills}>

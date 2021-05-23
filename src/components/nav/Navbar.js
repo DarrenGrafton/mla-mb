@@ -1,23 +1,47 @@
 import React from "react"
 import NavbarLinks from "./NavbarLinks"
 
-import "./Navbar.css"
+import * as styles from "./Navbar.module.css"
+import classNames from "classnames"
 
-const Navbar = ({ navbarOpen, setNavbarOpen }) => {
+const Navbar = ({ navbarOpen, setNavbarOpen, conNumber }) => {
   return (
-    <nav>
-      <div className="nav-toggle" onClick={() => setNavbarOpen(!navbarOpen)}>
+    <nav className={styles.navBar}>
+      <div
+        className={styles.navToggle}
+        onClick={() => setNavbarOpen(!navbarOpen)}
+      >
         <div
-          className={navbarOpen ? "hamburger" : "hamburger hamburger-closed"}
+          className={classNames(
+            styles.hamburger,
+            !navbarOpen && styles.hamburgerClosed
+          )} //
         />
       </div>
-      {navbarOpen ? (
-        <div className={navbarOpen ? "nav-box" : "nav-box nav-box-closed"}>
-          <NavbarLinks onClick={() => setNavbarOpen(false)} />
+
+      {navbarOpen ? ( //navbarOpen && styles.navBoxClosed
+        <div
+          className={classNames(
+            styles.navBox,
+            !navbarOpen && styles.navBoxClosed
+          )}
+        >
+          <NavbarLinks
+            onClick={() => setNavbarOpen(false)}
+            conNumber={conNumber}
+          />
         </div>
       ) : (
-        <div className={navbarOpen ? "nav-box" : "nav-box nav-box-closed"}>
-          <NavbarLinks onClick={() => setNavbarOpen(false)} />
+        <div
+          className={classNames(
+            styles.navBox,
+            !navbarOpen && styles.navBoxClosed
+          )}
+        >
+          <NavbarLinks
+            onClick={() => setNavbarOpen(false)}
+            conNumber={conNumber}
+          />
         </div>
       )}
     </nav>

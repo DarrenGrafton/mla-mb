@@ -1,7 +1,13 @@
 .mainGrid {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 3fr;
   grid-gap: 10px;
+}
+
+@media only screen and (max-width: 920px) {
+  .mainGrid {
+    display: block;
+  }
 }
 
 .bills {
@@ -14,4 +20,17 @@
 
 .repInfo {
   display: block;
+}
+.repInfo ul li span {
+  font-weight: bold;
+}
+
+.conDemoData {
+  display: block;
+}
+.conDemoData table tbody th {
+  text-align: left;
+}
+.conDemoData table tbody td {
+  text-align: right;
 }

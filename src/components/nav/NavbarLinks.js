@@ -10,7 +10,15 @@ const links = [
   { name: "About", link: "About" },
 ]
 
-const NavbarLinks = ({ onClick }) => {
+const NavbarLinks = ({ onClick, conNumber }) => {
+  //if a constituency Number was passed in
+  if (conNumber >= 101 && conNumber <= 157) {
+    for (const link of links) {
+      if (link.name === "Map") {
+        link.link = `Map?Number=${conNumber}`
+      }
+    }
+  }
   return (
     <>
       {links.map(link => (

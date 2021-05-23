@@ -13,7 +13,7 @@ import "../css/normalize.css"
 import "../css/main.css"
 import "../css/style.css"
 
-const Layout = ({ children, hide, pageTitle, location }) => {
+const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
@@ -24,6 +24,7 @@ const Layout = ({ children, hide, pageTitle, location }) => {
           location={location}
           navbarOpen={navbarOpen}
           setNavbarOpen={setNavbarOpen}
+          conNumber={conNumber}
         />
       )}
       <div className="layout">
