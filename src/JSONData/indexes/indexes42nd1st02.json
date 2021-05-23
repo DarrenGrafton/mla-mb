@@ -1,0 +1,832 @@
+{
+  "sessionKey": "42nd1st02",
+  "indexes": [
+    {
+      "indexLink": "#top",
+      "index": 0,
+      "heading2": "Vol. 2",
+      "heading3": "",
+      "heading4": "",
+      "heading5": "",
+      "text": "Vol. 2"
+    },
+    {
+      "indexLink": "#_Toc20954221",
+      "index": 1,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "",
+      "heading4": "",
+      "heading5": "",
+      "text": "ROUTINE PROCEEDINGS"
+    },
+    {
+      "indexLink": "#_Toc20954222",
+      "index": 2,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Tabling of Reports"
+    },
+    {
+      "indexLink": "#_Toc20954223",
+      "index": 3,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Goertzen  89",
+      "speaker": "Kelvin Goertzen"
+    },
+    {
+      "indexLink": "#_Toc20954224",
+      "index": 4,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Cullen  89",
+      "speaker": "Cliff Cullen"
+    },
+    {
+      "indexLink": "#_Toc20954225",
+      "index": 5,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Stefanson  89",
+      "speaker": "Heather Stefanson"
+    },
+    {
+      "indexLink": "#_Toc20954226",
+      "index": 6,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Friesen  89",
+      "speaker": "Cameron Friesen"
+    },
+    {
+      "indexLink": "#_Toc20954227",
+      "index": 7,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Fielding  89",
+      "speaker": "Scott Fielding"
+    },
+    {
+      "indexLink": "#_Toc20954228",
+      "index": 8,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Squires 89",
+      "speaker": "Rochelle Squires"
+    },
+    {
+      "indexLink": "#_Toc20954229",
+      "index": 9,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Eichler 89",
+      "speaker": "Ralph Eichler"
+    },
+    {
+      "indexLink": "#_Toc20954230",
+      "index": 10,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Cox  89",
+      "speaker": "Catherine Cox"
+    },
+    {
+      "indexLink": "#_Toc20954231",
+      "index": 11,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Pedersen  89",
+      "speaker": "Blaine Pedersen"
+    },
+    {
+      "indexLink": "#_Toc20954232",
+      "index": 12,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Clarke  89",
+      "speaker": "Eileen Clarke"
+    },
+    {
+      "indexLink": "#_Toc20954233",
+      "index": 13,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Wharton  89",
+      "speaker": "Jeff Wharton"
+    },
+    {
+      "indexLink": "#_Toc20954234",
+      "index": 14,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Schuler 89",
+      "speaker": "Ron Schuler"
+    },
+    {
+      "indexLink": "#_Toc20954235",
+      "index": 15,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Tabling of Reports",
+      "heading4": "",
+      "heading5": "",
+      "text": "Driedger 89",
+      "speaker": "Myrna Driedger"
+    },
+    {
+      "indexLink": "#_Toc20954236",
+      "index": 16,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Ministerial Statements",
+      "heading4": "",
+      "heading5": "",
+      "text": "Ministerial Statements"
+    },
+    {
+      "indexLink": "#_Toc20954237",
+      "index": 17,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Ministerial Statements",
+      "heading4": "Disability Employment Awareness Month",
+      "heading5": "",
+      "text": "Disability Employment Awareness Month"
+    },
+    {
+      "indexLink": "#_Toc20954238",
+      "index": 18,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Ministerial Statements",
+      "heading4": "Disability Employment Awareness Month",
+      "heading5": "",
+      "text": "Stefanson  90",
+      "speaker": "Heather Stefanson"
+    },
+    {
+      "indexLink": "#_Toc20954239",
+      "index": 19,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Ministerial Statements",
+      "heading4": "Disability Employment Awareness Month",
+      "heading5": "",
+      "text": "Adams 90",
+      "speaker": "Danielle Adams"
+    },
+    {
+      "indexLink": "#_Toc20954240",
+      "index": 20,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Ministerial Statements",
+      "heading4": "Disability Employment Awareness Month",
+      "heading5": "",
+      "text": "Lamont 90",
+      "speaker": "Dougald Lamont"
+    },
+    {
+      "indexLink": "#_Toc20954241",
+      "index": 21,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "",
+      "heading5": "",
+      "text": "Members' Statements"
+    },
+    {
+      "indexLink": "#_Toc20954242",
+      "index": 22,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "Conservation Officer Recognition Day",
+      "heading5": "",
+      "text": "Conservation Officer Recognition Day"
+    },
+    {
+      "indexLink": "#_Toc20954243",
+      "index": 23,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "Conservation Officer Recognition Day",
+      "heading5": "",
+      "text": "Lagimodiere  91",
+      "speaker": "Alan Lagimodiere"
+    },
+    {
+      "indexLink": "#_Toc20954244",
+      "index": 24,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "North End Women's Centre Anniversary",
+      "heading5": "",
+      "text": "North End Women's Centre Anniversary"
+    },
+    {
+      "indexLink": "#_Toc20954245",
+      "index": 25,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "North End Women's Centre Anniversary",
+      "heading5": "",
+      "text": "Fontaine  91",
+      "speaker": "Nahanni Fontaine"
+    },
+    {
+      "indexLink": "#_Toc20954246",
+      "index": 26,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "Inez Stevenson",
+      "heading5": "",
+      "text": "Inez Stevenson"
+    },
+    {
+      "indexLink": "#_Toc20954247",
+      "index": 27,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "Inez Stevenson",
+      "heading5": "",
+      "text": "Moses 92",
+      "speaker": "Jamie Moses"
+    },
+    {
+      "indexLink": "#_Toc20954248",
+      "index": 28,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "French Language in Manitoba",
+      "heading5": "",
+      "text": "French Language in Manitoba"
+    },
+    {
+      "indexLink": "#_Toc20954249",
+      "index": 29,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "French Language in Manitoba",
+      "heading5": "",
+      "text": "Lamont 92",
+      "speaker": "Dougald Lamont"
+    },
+    {
+      "indexLink": "#_Toc20954250",
+      "index": 30,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "Turtle Mountain Constituency",
+      "heading5": "",
+      "text": "Turtle Mountain Constituency"
+    },
+    {
+      "indexLink": "#_Toc20954251",
+      "index": 31,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Members' Statements",
+      "heading4": "Turtle Mountain Constituency",
+      "heading5": "",
+      "text": "Piwniuk  93",
+      "speaker": "Doyle Piwniuk"
+    },
+    {
+      "indexLink": "#_Toc20954252",
+      "index": 32,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "",
+      "heading5": "",
+      "text": "Oral Questions"
+    },
+    {
+      "indexLink": "#_Toc20954253",
+      "index": 33,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Global Climate Strike",
+      "heading5": "",
+      "text": "Global Climate Strike"
+    },
+    {
+      "indexLink": "#_Toc20954254",
+      "index": 34,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Global Climate Strike",
+      "heading5": "",
+      "text": "Kinew   94",
+      "speaker": "Wab Kinew"
+    },
+    {
+      "indexLink": "#_Toc20954255",
+      "index": 35,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Global Climate Strike",
+      "heading5": "",
+      "text": "Pallister 94",
+      "speaker": "Brian Pallister"
+    },
+    {
+      "indexLink": "#_Toc20954256",
+      "index": 36,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Action on Climate Change",
+      "heading5": "",
+      "text": "Action on Climate Change"
+    },
+    {
+      "indexLink": "#_Toc20954257",
+      "index": 37,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Action on Climate Change",
+      "heading5": "",
+      "text": "Kinew   94",
+      "speaker": "Wab Kinew"
+    },
+    {
+      "indexLink": "#_Toc20954258",
+      "index": 38,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Action on Climate Change",
+      "heading5": "",
+      "text": "Pallister 94",
+      "speaker": "Brian Pallister"
+    },
+    {
+      "indexLink": "#_Toc20954259",
+      "index": 39,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Health-Care Reform",
+      "heading5": "",
+      "text": "Health-Care Reform"
+    },
+    {
+      "indexLink": "#_Toc20954260",
+      "index": 40,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Health-Care Reform",
+      "heading5": "",
+      "text": "Kinew   95",
+      "speaker": "Wab Kinew"
+    },
+    {
+      "indexLink": "#_Toc20954261",
+      "index": 41,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Health-Care Reform",
+      "heading5": "",
+      "text": "Pallister 95",
+      "speaker": "Brian Pallister"
+    },
+    {
+      "indexLink": "#_Toc20954262",
+      "index": 42,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Health-Care System",
+      "heading5": "",
+      "text": "Health-Care System"
+    },
+    {
+      "indexLink": "#_Toc20954263",
+      "index": 43,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Health-Care System",
+      "heading5": "",
+      "text": "Asagwara  96",
+      "speaker": "Uzoma Asagwara"
+    },
+    {
+      "indexLink": "#_Toc20954264",
+      "index": 44,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Health-Care System",
+      "heading5": "",
+      "text": "Friesen  96",
+      "speaker": "Cameron Friesen"
+    },
+    {
+      "indexLink": "#_Toc20954265",
+      "index": 45,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Methamphetamine Addiction Crisis",
+      "heading5": "",
+      "text": "Methamphetamine Addiction Crisis"
+    },
+    {
+      "indexLink": "#_Toc20954266",
+      "index": 46,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Methamphetamine Addiction Crisis",
+      "heading5": "",
+      "text": "B. Smith  97",
+      "speaker": "Bernadette Smith"
+    },
+    {
+      "indexLink": "#_Toc20954267",
+      "index": 47,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Methamphetamine Addiction Crisis",
+      "heading5": "",
+      "text": "Friesen  97",
+      "speaker": "Cameron Friesen"
+    },
+    {
+      "indexLink": "#_Toc20954268",
+      "index": 48,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Northern Manitoba Health Care",
+      "heading5": "",
+      "text": "Northern Manitoba Health Care"
+    },
+    {
+      "indexLink": "#_Toc20954269",
+      "index": 49,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Northern Manitoba Health Care",
+      "heading5": "",
+      "text": "Marcelino  98",
+      "speaker": "Malaya Marcelino"
+    },
+    {
+      "indexLink": "#_Toc20954270",
+      "index": 50,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Northern Manitoba Health Care",
+      "heading5": "",
+      "text": "Friesen  98",
+      "speaker": "Cameron Friesen"
+    },
+    {
+      "indexLink": "#_Toc20954271",
+      "index": 51,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Education System",
+      "heading5": "",
+      "text": "Education System"
+    },
+    {
+      "indexLink": "#_Toc20954272",
+      "index": 52,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Education System",
+      "heading5": "",
+      "text": "Altomare  99",
+      "speaker": "Nello Altomare"
+    },
+    {
+      "indexLink": "#_Toc20954273",
+      "index": 53,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Education System",
+      "heading5": "",
+      "text": "Goertzen  99",
+      "speaker": "Kelvin Goertzen"
+    },
+    {
+      "indexLink": "#_Toc20954274",
+      "index": 54,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Crime in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Crime in Downtown Winnipeg"
+    },
+    {
+      "indexLink": "#_Toc20954275",
+      "index": 55,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Crime in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Lamont 100",
+      "speaker": "Dougald Lamont"
+    },
+    {
+      "indexLink": "#_Toc20954276",
+      "index": 56,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Crime in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Pallister 100",
+      "speaker": "Brian Pallister"
+    },
+    {
+      "indexLink": "#_Toc20954277",
+      "index": 57,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Public Intoxication in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Public Intoxication in Downtown Winnipeg"
+    },
+    {
+      "indexLink": "#_Toc20954278",
+      "index": 58,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Public Intoxication in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Lamont 101",
+      "speaker": "Dougald Lamont"
+    },
+    {
+      "indexLink": "#_Toc20954279",
+      "index": 59,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Public Intoxication in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Pallister 101",
+      "speaker": "Brian Pallister"
+    },
+    {
+      "indexLink": "#_Toc20954280",
+      "index": 60,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Crime in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Crime in Downtown Winnipeg"
+    },
+    {
+      "indexLink": "#_Toc20954281",
+      "index": 61,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Crime in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Lamont 101",
+      "speaker": "Dougald Lamont"
+    },
+    {
+      "indexLink": "#_Toc20954282",
+      "index": 62,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Crime in Downtown Winnipeg",
+      "heading5": "",
+      "text": "Pallister 101",
+      "speaker": "Brian Pallister"
+    },
+    {
+      "indexLink": "#_Toc20954283",
+      "index": 63,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Fiscal Stabilization Fund",
+      "heading5": "",
+      "text": "Fiscal Stabilization Fund"
+    },
+    {
+      "indexLink": "#_Toc20954284",
+      "index": 64,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Fiscal Stabilization Fund",
+      "heading5": "",
+      "text": "Gordon  101",
+      "speaker": "Audrey Gordon"
+    },
+    {
+      "indexLink": "#_Toc20954285",
+      "index": 65,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "Fiscal Stabilization Fund",
+      "heading5": "",
+      "text": "Fielding  102",
+      "speaker": "Scott Fielding"
+    },
+    {
+      "indexLink": "#_Toc20954286",
+      "index": 66,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "MPI Online Services",
+      "heading5": "",
+      "text": "MPI Online Services"
+    },
+    {
+      "indexLink": "#_Toc20954287",
+      "index": 67,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "MPI Online Services",
+      "heading5": "",
+      "text": "Sandhu  102",
+      "speaker": "Mintu Sandhu"
+    },
+    {
+      "indexLink": "#_Toc20954288",
+      "index": 68,
+      "heading2": "ROUTINE PROCEEDINGS",
+      "heading3": "Oral Questions",
+      "heading4": "MPI Online Services",
+      "heading5": "",
+      "text": "Pallister 102",
+      "speaker": "Brian Pallister"
+    },
+    {
+      "indexLink": "#_Toc20954289",
+      "index": 69,
+      "heading2": "ORDERS OF THE DAY",
+      "heading3": "",
+      "heading4": "",
+      "heading5": "",
+      "text": "ORDERS OF THE DAY"
+    },
+    {
+      "indexLink": "#_Toc20954290",
+      "index": 70,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "",
+      "heading4": "",
+      "heading5": "",
+      "text": "GOVERNMENT BUSINESS"
+    },
+    {
+      "indexLink": "#_Toc20954291",
+      "index": 71,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "",
+      "heading5": "",
+      "text": "Committee of Supply"
+    },
+    {
+      "indexLink": "#_Toc20954292",
+      "index": 72,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "",
+      "heading5": "(Concurrent Sections)",
+      "text": "(Concurrent Sections)"
+    },
+    {
+      "indexLink": "#_Toc20954293",
+      "index": 73,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Executive Council",
+      "heading5": "",
+      "text": "Executive Council"
+    },
+    {
+      "indexLink": "#_Toc20954294",
+      "index": 74,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Executive Council",
+      "heading5": "",
+      "text": "Kinew   102",
+      "speaker": "Wab Kinew"
+    },
+    {
+      "indexLink": "#_Toc20954295",
+      "index": 75,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Executive Council",
+      "heading5": "",
+      "text": "Pallister 103",
+      "speaker": "Brian Pallister"
+    },
+    {
+      "indexLink": "#_Toc20954296",
+      "index": 76,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Indigenous and Northern Relations",
+      "heading5": "",
+      "text": "Indigenous and Northern Relations"
+    },
+    {
+      "indexLink": "#_Toc20954297",
+      "index": 77,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Indigenous and Northern Relations",
+      "heading5": "",
+      "text": "Lindsey  135",
+      "speaker": "Tom Lindsey"
+    },
+    {
+      "indexLink": "#_Toc20954298",
+      "index": 78,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Indigenous and Northern Relations",
+      "heading5": "",
+      "text": "Clarke  135",
+      "speaker": "Eileen Clarke"
+    },
+    {
+      "indexLink": "#_Toc20954299",
+      "index": 79,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Indigenous and Northern Relations",
+      "heading5": "",
+      "text": "Bushie  136",
+      "speaker": "Ian Bushie"
+    },
+    {
+      "indexLink": "#_Toc20954300",
+      "index": 80,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Indigenous and Northern Relations",
+      "heading5": "",
+      "text": "Adams 145",
+      "speaker": "Danielle Adams"
+    },
+    {
+      "indexLink": "#_Toc20954301",
+      "index": 81,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Health, Seniors and Active Living",
+      "heading5": "",
+      "text": "Health, Seniors and Active Living"
+    },
+    {
+      "indexLink": "#_Toc20954302",
+      "index": 82,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Health, Seniors and Active Living",
+      "heading5": "",
+      "text": "Friesen  153",
+      "speaker": "Cameron Friesen"
+    },
+    {
+      "indexLink": "#_Toc20954303",
+      "index": 83,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Health, Seniors and Active Living",
+      "heading5": "",
+      "text": "Asagwara  153",
+      "speaker": "Uzoma Asagwara"
+    },
+    {
+      "indexLink": "#_Toc20954304",
+      "index": 84,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Health, Seniors and Active Living",
+      "heading5": "",
+      "text": "Marcelino  171",
+      "speaker": "Malaya Marcelino"
+    },
+    {
+      "index": 85,
+      "heading2": "GOVERNMENT BUSINESS",
+      "heading3": "Committee of Supply",
+      "heading4": "Health, Seniors and Active Living",
+      "heading5": "",
+      "text": " "
+    }
+  ]
+}

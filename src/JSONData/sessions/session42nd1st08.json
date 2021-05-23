@@ -1,1 +1,36 @@
-{"legislature":"42nd","session":"1st","volume":"08","type":"house","link":"vol_08/h08.html","key":"42nd1st08","date":"2019-10-09T05:00:00.000Z","committee":"LEGISLATIVE\nASSEMBLY OF MANITOBA","speakers":["Cameron Friesen","Scott Fielding","Rochelle Squires","Malaya Marcelino","Cindy Lamoureux","Andrew Smith","Uzoma Asagwara","Andrew Micklefield","Diljeet Brar","Derek Johnson","Wab Kinew","Brian Pallister","Mark Wasyliw","Danielle Adams","Heather Stefanson","Nello Altomare","Kelvin Goertzen","Dougald Lamont","Jamie Moses","Jeff Wharton","Dennis Smook","Lisa Naylor","Len Isleifson","Jon Gerrard","Adrien Sala","Ron Schuler","Matt Wiebe","Sarah Guillemard","Doyle Piwniuk","Bernadette Smith"]}
+{
+  "legislature": "42nd",
+  "session": "1st",
+  "volume": "08",
+  "type": "house",
+  "link": "vol_08/h08.html",
+  "key": "42nd1st08",
+  "date": "2019-10-09T05:00:00.000Z",
+  "speakers": [
+    "Cameron Friesen",
+    "Scott Fielding",
+    "Rochelle Squires",
+    "Malaya Marcelino",
+    "Cindy Lamoureux",
+    "Andrew Smith",
+    "Uzoma Asagwara",
+    "Andrew Micklefield",
+    "Diljeet Brar",
+    "Derek Johnson",
+    "Wab Kinew",
+    "Brian Pallister",
+    "Mark Wasyliw",
+    "Danielle Adams",
+    "Heather Stefanson",
+    "Nello Altomare",
+    "Kelvin Goertzen",
+    "Dougald Lamont",
+    "Jamie Moses",
+    "Jeff Wharton",
+    "Lisa Naylor",
+    "Jon Gerrard",
+    "Adrien Sala",
+    "Ron Schuler",
+    "Matt Wiebe"
+  ]
+}

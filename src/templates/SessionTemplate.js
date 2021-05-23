@@ -25,7 +25,6 @@ export default function SessionTemplate({ data }) {
     <Layout
       pageTitle={`Session ${session.session} - Volume ${session.volume} `}
     >
-      {/*Tell the helmet to tell body NO Overflow on the MAP SVGs*/}
       <Seo title={`Session ${session.session} - Volume ${session.volume} `} />
 
       <h2>{session.committee}</h2>
