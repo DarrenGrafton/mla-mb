@@ -2,13 +2,13 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { FeatureNav } from "../components/frontpage/FeatureNav"
 
 const IndexPage = () => {
   return (
     <Layout pageTitle="My Rep MB">
-      <SEO title="Manitoban MLA information" />
+      <Seo title="Manitoban MLA information" />
 
       <StaticImage
         width={1800}

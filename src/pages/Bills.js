@@ -1,15 +1,14 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { slugifyConName } from "../helpers/Utils"
+import Seo from "../components/seo"
 
 const Bills = () => {
   const data = useStaticQuery(BILLS_LIST)
 
   return (
     <Layout pageTitle="Bills by Session">
-      <SEO title="Bills by Legislative Session" />
+      <Seo title="Bills by Legislative Session" />
       <ol>
         {data.allBillsJson.edges.map(edge => (
           <li key={edge.node.billKey}>

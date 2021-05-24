@@ -12,14 +12,27 @@
 
 .bills {
   display: block;
+  border: 1px var(--primaryHighlight) dotted;
+  /* border-radius: 10%; */
+  background: var(--backgroundHighlight);
 }
 
 .hansard {
   display: block;
+  border: 1px var(--primaryHighlight) dotted;
+  /* border-radius: 10%; */
+  background: var(--backgroundHighlight);
+}
+
+.rep h2 {
+  margin: 0;
 }
 
 .repInfo {
   display: block;
+  border: 1px var(--primaryHighlight) dotted;
+  /* border-radius: 10%; */
+  background: var(--backgroundHighlight);
 }
 .repInfo ul li span {
   font-weight: bold;
@@ -27,6 +40,9 @@
 
 .conDemoData {
   display: block;
+  border: 1px var(--primaryHighlight) dotted;
+  /* border-radius: 10%; */
+  background: var(--backgroundHighlight);
 }
 .conDemoData table tbody th {
   text-align: left;

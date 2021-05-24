@@ -6,7 +6,7 @@ import Seo from "../components/seo"
 export default function SessionTemplate({ data }) {
   const {
     sessionsJson: session,
-    paragraphsJson: paragraphGroup,
+    // paragraphsJson: paragraphGroup,
 
     // allSanityRepImage,
   } = data

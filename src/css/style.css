@@ -4,7 +4,8 @@
   /*Define colors*/
   --black: #121212;
   --grey: #bfbfbf;
-  --lightGrey: #f2f4f6;
+  --lightGrey: #ebebeb;
+  --veryLightGrey: #f2f4f6;
 
   /**/
   --midnight-blue: #001b69ff;
@@ -14,7 +15,8 @@
   --lincoln-green: #0e4f0eff;
 
   /*Define color intentions*/
-  --background: var(--lightGrey);
+  --background: var(--veryLightGrey);
+  --backgroundHighlight: var(--lightGrey);
   --textColor: var(--primary);
   --lineColor: var(--grey);
   --primary: var(--fire-engine-red);
@@ -71,7 +73,7 @@ body {
   font-family: var(--bodyFont);
   font-weight: 400;
   line-height: 1.75;
-  /* background: var(--sheen-green); */
+  background: var(--background);
   color: var(--textColor);
 
   /* overflow-wrap: anywhere; */
@@ -84,16 +86,22 @@ body[noOverflow="true"] {
 header {
   color: var(--primary);
   /* box-shadow: var(--level-2); */
-  height: var(--headerHeight);
+  /* height: var(--headerHeight); */
   display: flex;
   /* justify-content: space-between; bring nav beside*/
   width: 100%;
-  padding: 1% var(--containerPadding);
+  padding: 1% var(--containerPadding) 0;
+
+  border-bottom: 2px var(--primaryHighlight) solid;
+  box-shadow: var(--level-2);
   /* 
   fixed header:
   position: fixed;
   top: 0;
   left: 0; */
+}
+header h1 {
+  margin: 0;
 }
 
 footer {

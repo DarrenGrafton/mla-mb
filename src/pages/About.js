@@ -1,15 +1,14 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { slugifyConName } from "../helpers/Utils"
+import Seo from "../components/seo"
 
 const About = () => {
-  //const data = useStaticQuery(ABOUT_INFO)
+  const data = useStaticQuery(ABOUT_INFO)
 
   return (
     <Layout pageTitle="Thanks and Attributions">
-      <SEO title="About My Rep MB" />
+      <Seo title="About My Rep MB" />
       <p>
         Thanks for checking out this site! It's under construction, but Watch
         this space

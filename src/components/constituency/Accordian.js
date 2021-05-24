@@ -8,11 +8,12 @@ const variants = {
 
 const Accordian = ({ title, body, children }) => {
   const [isToggled, setToggled] = useState(false)
+  setToggled = () => {}
   return (
     <>
-      <h2 role="button" onClick={() => setToggled(prevState => !isToggled)}>
+      {/* <h2 role="button" onClick={() => setToggled(prevState => !isToggled)}>
         {title}
-      </h2>
+      </h2> */}
       <AnimatePresence>
         {isToggled && (
           <motion.div

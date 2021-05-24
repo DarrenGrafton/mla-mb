@@ -2,12 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import Accordian from "../components/constituency/Accordian"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import * as styles from "../components/constituency/Constituency.module.css"
 import { ConDemoData } from "../components/constituency/ConDemoData"
 import { RepContactInfo } from "../components/constituency/RepContactInfo"
-
+import { ConHansardLinks } from "../components/constituency/ConHansardLinks"
 export default function ConTemplate({ data }) {
   const {
     consJson: cons,
@@ -15,6 +14,7 @@ export default function ConTemplate({ data }) {
     allBillsJson: bills,
     allHansardBillsJson: hansardBills,
     allSessionsJson: sessions,
+    allIndexesJson: hansardIndexes,
     allSanityRepImage,
   } = data
 
@@ -30,17 +30,15 @@ export default function ConTemplate({ data }) {
   //header with  con name, back link,menu items
   return (
     <Layout pageTitle={cons.Name} conNumber={cons.Number}>
-      <SEO title={`${cons.Name} - ${cons.CurrentRep}`} />
+      <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
       <div className={styles.mainGrid}>
-        <div>
-          <h2>
-            {cons.CurrentRep}
-            <br /> {cons.Party}
-          </h2>
+        <div className={styles.rep}>
+          <h2>{cons.CurrentRep}</h2>
           <GatsbyImage
             image={repImage?.image.asset.gatsbyImageData}
             alt={cons.CurrentRep}
           />
+          <h3>{cons.Party}</h3>
           <RepContactInfo styles={styles} rep={rep} />
           <ConDemoData styles={styles} cons={cons} />
         </div>
@@ -50,51 +48,20 @@ export default function ConTemplate({ data }) {
             <ul>
               {bills.edges.map(edge => (
                 <li key={edge.node.billLink}>
-                  {edge.node.session} Session - {edge.node.number} -{" "}
-                  {edge.node.billName}
-                  <a href={`/bills/${edge.node.billKey}`}>Link</a>
+                  <a href={`/bills/${edge.node.billKey}`}>
+                    Bill {edge.node.number}
+                  </a>{" "}
+                  ({edge.node.session} Session) - {edge.node.billName}
                 </li>
               ))}
             </ul>
           </div>
-          <div className={styles.hansard}>
-            <h3>Hansard</h3>
-
-            <ul>
-              {sessions.edges.map(edge => {
-                const referencedBills = hansardBills.edges.reduce(function (
-                  arr,
-                  item
-                ) {
-                  if (
-                    item.node.sessionKey === edge.node.key &&
-                    !arr.includes(item.node.billNumber)
-                  ) {
-                    arr.push(item.node.billNumber)
-                  }
-                  return arr
-                },
-                [])
-
-                return (
-                  <li key={`session${edge.node.key}`}>
-                    {edge.node.legislature} {edge.node.session} Session -{" "}
-                    {edge.node.volume}- {edge.node.date} - {edge.node.committee}
-                    <a href={`/session/${edge.node.key}`}>Link</a>
-                    {referencedBills && (
-                      <ul>
-                        {referencedBills.map(billNumber => {
-                          return (
-                            <li key={`bill${billNumber}`}>Bill {billNumber}</li>
-                          )
-                        })}
-                      </ul>
-                    )}
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+          <ConHansardLinks
+            styles={styles}
+            sessions={sessions}
+            hansardIndexes={hansardIndexes}
+            rep={rep}
+          />
         </div>
       </div>
     </Layout>
@@ -189,6 +156,23 @@ export const pageQuery = graphql`
           session
           type
           volume
+        }
+      }
+    }
+    allIndexesJson(
+      filter: { indexes: { elemMatch: { speaker: { eq: $rep } } } }
+    ) {
+      nodes {
+        sessionKey
+        indexes {
+          heading2
+          heading3
+          heading4
+          heading5
+          index
+          text
+          indexLink
+          speaker
         }
       }
     }

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { slugifyConName } from "../helpers/Utils"
 
 const MLAs = () => {
@@ -9,7 +9,7 @@ const MLAs = () => {
 
   return (
     <Layout pageTitle="MLA List">
-      <SEO title="Manitoban MLAs" />
+      <Seo title="Manitoban MLAs" />
       <ol>
         {data.allConsJson.edges.map(edge => (
           <li>
