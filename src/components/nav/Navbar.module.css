@@ -25,12 +25,12 @@
   width: 0%;
   content: ".";
   color: transparent;
-  background: var(--primaryHighlight);
+  background: var(--secondary);
   height: 1px;
   transition: all 0.4s ease-in;
 }
 .navBar div a:hover {
-  color: var(--primaryHighlight);
+  color: var(--secondary);
 }
 .navBar div a:hover::after {
   width: 100%;

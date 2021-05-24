@@ -20,7 +20,7 @@
   --textColor: var(--primary);
   --lineColor: var(--grey);
   --primary: var(--fire-engine-red);
-  --primaryHighlight: var(--dark-goldenrod);
+  --secondary: var(--dark-goldenrod);
   --accent: var(--midnight-blue);
   --accentHighlight: var(--midnight-blue);
   --danger: red;
@@ -92,7 +92,7 @@ header {
   width: 100%;
   padding: 1% var(--containerPadding) 0;
 
-  border-bottom: 2px var(--primaryHighlight) solid;
+  border-bottom: 2px var(--secondary) solid;
   box-shadow: var(--level-2);
   /* 
   fixed header:

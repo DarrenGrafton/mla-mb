@@ -4,23 +4,13 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
   return (
     <div className={styles.hansard}>
       <h3>Hansard</h3>
-
+      <p>
+        Links to transcripts of the debates of the Legislative Assembly of
+        Manitoba and its committees.
+      </p>
       <ul>
         {sessions.edges.map(edge => {
-          //DEPRECATED
-          // const referencedBills = hansardBills.edges.reduce(function (
-          //   arr,
-          //   item
-          // ) {
-          //   if (
-          //     item.node.sessionKey === edge.node.key &&
-          //     !arr.includes(item.node.billNumber)
-          //   ) {
-          //     arr.push(item.node.billNumber)
-          //   }
-          //   return arr
-          // },
-          // [])
+          //Split the hansard Indexes into an array of arrays of arrays representing the link structure
           const referencedIndexes = hansardIndexes.nodes.reduce(function (
             arr,
             item
@@ -81,67 +71,80 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
           },
           [])
 
-          //console.log(referencedIndexes)
-          //H2
-          //H3
-          //Do the link on the heading 4 text - if no text, just named link or rep name
-          //list the heading 5 text as details after the link
+          //Each LI is a volume/session
           return (
             <li key={`session${edge.node.key}`}>
-              {edge.node.date} - Volume: {edge.node.volume} -{" "}
-              {/* {edge.node.committee}
-                {edge.node.legislature} {edge.node.session} Session -{" "}
-                {edge.node.volume}- - */}
+              <span className={styles.hansardSession}>
+                {edge.node.date} - Volume {edge.node.volume}
+              </span>
+
               {referencedIndexes && (
                 <ul>
                   {referencedIndexes.map((heading2, i) => {
+                    //H2
                     return (
                       <li
                         key={`heading2-li${edge.node.key}${heading2.heading2}${i}`}
                       >
-                        <span>{heading2.heading2}</span>
-                        {heading2.heading3.map(heading3 => {
-                          return (
-                            <React.Fragment
-                              key={`heading3-${edge.node.key}${heading2.heading2}${heading3.heading3}`}
-                            >
-                              <span> - {heading3.heading3}</span>
-
-                              {heading3.heading4.map(heading4 => {
-                                return (
-                                  <React.Fragment
-                                    key={`heading4-${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}`}
-                                  >
-                                    {/* <span>- {heading4.heading4}</span> */}
-
-                                    {heading4.heading5.map(heading5 => {
-                                      const url = heading5.indexLink
-                                        ? `https://www.gov.mb.ca/legislature/hansard/${edge.node.legislature}_${edge.node.session}/${edge.node.link}${heading5.indexLink}`
-                                        : `https://www.gov.mb.ca/legislature/hansard/${edge.node.legislature}_${edge.node.session}/${edge.node.link}`
-                                      return (
-                                        <React.Fragment
-                                          key={`heading5-span${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}${heading5.indexLink}`}
-                                        >
-                                          {/* <span>
+                        <span className={styles.hansardH2}>
+                          {heading2.heading2}
+                        </span>
+                        <ul>
+                          {heading2.heading3.map(heading3 => {
+                            //H3
+                            return (
+                              <li
+                                key={`heading3-${edge.node.key}${heading2.heading2}${heading3.heading3}`}
+                              >
+                                <span className={styles.hansardH3}>
+                                  {heading3.heading3}
+                                </span>
+                                <ul>
+                                  {heading3.heading4.map(heading4 => {
+                                    //Do the link on the heading 4 text - if no text, just named link or rep name
+                                    return (
+                                      <li
+                                        key={`heading4-${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}`}
+                                      >
+                                        {/* <span>- {heading4.heading4}</span> */}
+                                        <ul>
+                                          {heading4.heading5.map(heading5 => {
+                                            const url = heading5.indexLink
+                                              ? `https://www.gov.mb.ca/legislature/hansard/${edge.node.legislature}_${edge.node.session}/${edge.node.link}${heading5.indexLink}`
+                                              : `https://www.gov.mb.ca/legislature/hansard/${edge.node.legislature}_${edge.node.session}/${edge.node.link}`
+                                            //list the heading 5 text as details after the link
+                                            return (
+                                              <li
+                                                key={`heading5-span${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}${heading5.indexLink}`}
+                                              >
+                                                {/* <span>
                                             - {heading5.heading5} -
                                             {heading5.indexLink}
                                           </span> */}
-                                          <a
-                                            key={`heading5-a${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}${heading5.indexLink}`}
-                                            href={url}
-                                            //         target="_blank"
-                                          >
-                                            - {heading4.heading4}
-                                          </a>
-                                        </React.Fragment>
-                                      )
-                                    })}
-                                  </React.Fragment>
-                                )
-                              })}
-                            </React.Fragment>
-                          )
-                        })}
+                                                <a
+                                                  className={styles.hansardLink}
+                                                  key={`heading5-a${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}${heading5.indexLink}`}
+                                                  href={url}
+                                                  //         target="_blank"
+                                                >
+                                                  {heading4.heading4
+                                                    ? ` ${heading4.heading4}`
+                                                    : "Link"}
+                                                  {heading5.heading5 &&
+                                                    ` (${heading5.heading5})`}
+                                                </a>
+                                              </li>
+                                            )
+                                          })}
+                                        </ul>
+                                      </li>
+                                    )
+                                  })}
+                                </ul>
+                              </li>
+                            )
+                          })}
+                        </ul>
                       </li>
                     )
                   })}
