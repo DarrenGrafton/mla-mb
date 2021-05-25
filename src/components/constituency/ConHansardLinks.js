@@ -117,15 +117,10 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
                                               <li
                                                 key={`heading5-span${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}${heading5.indexLink}`}
                                               >
-                                                {/* <span>
-                                            - {heading5.heading5} -
-                                            {heading5.indexLink}
-                                          </span> */}
                                                 <a
                                                   className={styles.hansardLink}
                                                   key={`heading5-a${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}${heading5.indexLink}`}
                                                   href={url}
-                                                  //         target="_blank"
                                                 >
                                                   {heading4.heading4
                                                     ? ` ${heading4.heading4}`

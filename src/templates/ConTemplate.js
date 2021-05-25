@@ -7,6 +7,7 @@ import * as styles from "../components/constituency/Constituency.module.css"
 import { ConDemoData } from "../components/constituency/ConDemoData"
 import { RepContactInfo } from "../components/constituency/RepContactInfo"
 import { ConHansardLinks } from "../components/constituency/ConHansardLinks"
+import { ConBills } from "../components/constituency/ConBills"
 export default function ConTemplate({ data }) {
   const {
     consJson: cons,
@@ -33,29 +34,20 @@ export default function ConTemplate({ data }) {
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
       <div className={styles.mainGrid}>
         <div className={styles.rep}>
-          <h2>{cons.CurrentRep}</h2>
-          <GatsbyImage
-            image={repImage?.image.asset.gatsbyImageData}
-            alt={cons.CurrentRep}
-          />
-          <h3>{cons.Party}</h3>
+          <div className={styles.repCard}>
+            <h2>{cons.CurrentRep}</h2>
+            <GatsbyImage
+              className={styles.repImage}
+              image={repImage?.image.asset.gatsbyImageData}
+              alt={cons.CurrentRep}
+            />
+            <h3>{cons.Party}</h3>
+          </div>
           <RepContactInfo styles={styles} rep={rep} />
           <ConDemoData styles={styles} cons={cons} />
         </div>
         <div>
-          <div className={styles.bills}>
-            <h3>Bills</h3>
-            <ul>
-              {bills.edges.map(edge => (
-                <li key={edge.node.billLink}>
-                  <a href={`/bills/${edge.node.billKey}`}>
-                    Bill {edge.node.number}
-                  </a>{" "}
-                  ({edge.node.session} Session) - {edge.node.billName}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ConBills styles={styles} bills={bills} />
           <ConHansardLinks
             styles={styles}
             sessions={sessions}
