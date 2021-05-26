@@ -33,7 +33,7 @@ export default function ConTemplate({ data }) {
     <Layout pageTitle={cons.Name} conNumber={cons.Number}>
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
       <div className={styles.mainGrid}>
-        <div className={styles.rep}>
+        <div>
           <div className={styles.repCard}>
             <h2>{cons.CurrentRep}</h2>
             <GatsbyImage
@@ -43,8 +43,10 @@ export default function ConTemplate({ data }) {
             />
             <h3>{cons.Party}</h3>
           </div>
-          <RepContactInfo styles={styles} rep={rep} />
-          <ConDemoData styles={styles} cons={cons} />
+          <div className={styles.hideMobile}>
+            <RepContactInfo styles={styles} rep={rep} />
+            <ConDemoData styles={styles} cons={cons} />
+          </div>
         </div>
         <div>
           <ConBills styles={styles} bills={bills} />
@@ -54,6 +56,10 @@ export default function ConTemplate({ data }) {
             hansardIndexes={hansardIndexes}
             rep={rep}
           />
+        </div>
+        <div className={styles.showMobile}>
+          <RepContactInfo styles={styles} rep={rep} />
+          <ConDemoData styles={styles} cons={cons} />
         </div>
       </div>
     </Layout>

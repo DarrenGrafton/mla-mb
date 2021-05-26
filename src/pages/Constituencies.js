@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { slugifyConName } from "../helpers/Utils"
 
 const Constituencies = () => {
@@ -9,7 +9,7 @@ const Constituencies = () => {
 
   return (
     <Layout pageTitle="Constituency List">
-      <SEO title="Manitoban Constituencies" />
+      <Seo title="Manitoban Constituencies" />
       <ol>
         {data.allConsJson.edges.map(edge => (
           <li>

@@ -4,25 +4,39 @@
   grid-gap: 10px;
 }
 
+.hideMobile {
+  display: block;
+}
+.showMobile {
+  display: none;
+}
+
 @media only screen and (max-width: 920px) {
   .mainGrid {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+
+  .hideMobile {
+    display: none;
+  }
+
+  .showMobile {
     display: block;
   }
 }
 
-.rep h2 {
-  margin: 0;
-}
 .repCard {
   display: block;
   border: 1px var(--secondary) dotted;
   border-radius: 10px;
   background: var(--backgroundHighlight);
   margin-bottom: 2vh;
-  padding: 0 1vw 1vh 1vw;
+  padding: 1vh 1vw 1vh 1vw;
 }
 .repCard h2 {
   font-size: var(--h3);
+  margin: 0;
 }
 .repCard h3 {
   font-size: var(--h4);

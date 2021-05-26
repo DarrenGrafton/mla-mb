@@ -8,8 +8,11 @@ const Navbar = ({ navbarOpen, setNavbarOpen, conNumber }) => {
   return (
     <nav className={styles.navBar}>
       <div
+        role="button"
         className={styles.navToggle}
         onClick={() => setNavbarOpen(!navbarOpen)}
+        onKeyDown={() => setNavbarOpen(!navbarOpen)}
+        tabIndex={0}
       >
         <div
           className={classNames(
