@@ -1,0 +1,23 @@
+.bills {
+}
+
+.sessionheader {
+  display: flex;
+  align-items: center;
+}
+
+.bills a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 2px var(--secondary) solid;
+  margin: auto;
+}
+.bills a:hover {
+  transition: ease 0.2;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.billName {
+  font-size: var(--h6);
+  font-weight: 500;
+}

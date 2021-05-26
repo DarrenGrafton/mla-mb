@@ -44,23 +44,12 @@
   padding: 0;
 }
 
-.repInfo {
-  display: block;
-  border: 1px var(--secondary) dotted;
-  border-radius: 10px;
-  background: var(--backgroundHighlight);
-  padding: 0 1vw 1vh 1vw;
-  margin-bottom: 2vh;
-}
-.repInfo ul li span {
-  font-weight: bold;
-}
-
 @media only screen and (max-width: 920px) {
   .repCard {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 3fr 2fr;
+    padding: 2vh 2vw 2vh 2vw;
   }
   .repImage {
     grid-row: 1 / span 2;
@@ -73,6 +62,33 @@
   .repCard h3 {
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
+  }
+}
+
+.repInfo {
+  display: block;
+  border: 1px var(--secondary) dotted;
+  border-radius: 10px;
+  background: var(--backgroundHighlight);
+  padding: 0 1vw 1vh 1vw;
+  margin-bottom: 2vh;
+}
+.repInfo ul li span {
+  font-weight: bold;
+}
+.repInfo a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 2px var(--secondary) solid;
+}
+.repInfo a:hover {
+  transition: ease 0.2;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 920px) {
+  .repInfo {
+    padding: 2vh 2vw 2vh 2vw;
   }
 }
 
@@ -97,6 +113,16 @@
 .billLink:hover {
   transition: ease 0.2;
   background: rgba(255, 0, 0, 0.1);
+}
+.billName {
+  font-size: var(--h6);
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 920px) {
+  .bills {
+    padding: 2vh 2vw 2vh 2vw;
+  }
 }
 
 .hansard {
@@ -133,6 +159,12 @@
   background: rgba(255, 0, 0, 0.1);
 }
 
+@media only screen and (max-width: 920px) {
+  .hansard {
+    padding: 2vh 2vw 2vh 2vw;
+  }
+}
+
 .conDemoData {
   display: block;
   border: 1px var(--secondary) dotted;
@@ -146,4 +178,23 @@
 }
 .conDemoData table tbody td {
   text-align: right;
+}
+
+.conDemoData h5 {
+  margin-top: 1vh;
+}
+
+.conDemoData a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 2px var(--secondary) solid;
+}
+.conDemoData a:hover {
+  transition: ease 0.2;
+  background: rgba(255, 0, 0, 0.1);
+}
+@media only screen and (max-width: 920px) {
+  .conDemoData {
+    padding: 2vh 2vw 2vh 2vw;
+  }
 }

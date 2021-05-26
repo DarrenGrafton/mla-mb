@@ -14,9 +14,11 @@ export const ConBills = ({ styles, bills }) => {
                   className={styles.billLink}
                   href={`/bills/${edge.node.billKey}`}
                 >
-                  Bill {edge.node.number} ({edge.node.session} Session) -{" "}
-                  {edge.node.billName}
-                </a>{" "}
+                  <span className={styles.billName}>
+                    Bill {edge.node.number} ({edge.node.session} Session)
+                  </span>{" "}
+                  - {edge.node.billName}
+                </a>
               </li>
             ))}
           </ul>

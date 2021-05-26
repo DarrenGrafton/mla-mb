@@ -2,24 +2,24 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function BillTemplate({ data }) {
   const {
     billsJson: bill,
     billNotesJson: note,
 
-    // allSanityRepImage,
+    allSanityRepImage,
   } = data
 
-  // const lastName = cons.CurrentRep.split(" ").slice(-1).join(" ")
-  // const fullName = cons.CurrentRep.replace(" ", "")
+  const lastName = bill.rep.split(" ").slice(-1).join(" ")
+  const fullName = bill.rep.replace(" ", "")
 
-  // const repImage = allSanityRepImage.nodes.find(
-  //   node =>
-  //     fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
-  //     lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
-  // )
-
+  const repImage = allSanityRepImage.nodes.find(
+    node =>
+      fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
+      lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
+  )
   //header with  con name, back link,menu items
   return (
     <Layout pageTitle={`Bill ${bill.number}  ${bill.session} Session`}>
@@ -27,6 +27,18 @@ export default function BillTemplate({ data }) {
       <Seo title={`Bill ${bill.number}  ${bill.session} Session`} />
 
       <h2>{bill.billName}</h2>
+      <div>
+        <h3>Sponsored by: {bill.rep}</h3>
+        <GatsbyImage
+          //  className={styles.repImage}
+          image={repImage?.image.asset.gatsbyImageData}
+          alt={bill.rep}
+        />
+      </div>
+      {bill.billLink && <a href={`${bill.billLink}`}>Bill on Gov MB website</a>}
+
+      {bill.lawLink && <a href={`${bill.lawLink}`}>Law on Gov MB website</a>}
+
       {note && (
         <div dangerouslySetInnerHTML={{ __html: note?.explanatoryNote }} />
       )}
@@ -51,6 +63,16 @@ export const pageQuery = graphql`
       billKey
       explanatoryNote
       number
+    }
+    allSanityRepImage {
+      nodes {
+        title
+        image {
+          asset {
+            gatsbyImageData(fit: FILLMAX, placeholder: NONE)
+          }
+        }
+      }
     }
   }
 `

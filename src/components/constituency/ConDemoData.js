@@ -29,6 +29,7 @@ export const ConDemoData = ({ cons, styles }) => {
   return (
     <aside className={styles.conDemoData}>
       <h4>Constituency Info</h4>
+      <h5>{cons.Name}</h5>
       <table>
         <tbody>
           {nameValues.map(nameValue => (
@@ -39,6 +40,11 @@ export const ConDemoData = ({ cons, styles }) => {
           ))}
         </tbody>
       </table>
+      <a
+        href={`https://www.electionsmanitoba.ca/en/Resources/ElectoralDivisionProfile/${cons.Number}`}
+      >
+        data from www.electionsmanitoba.ca
+      </a>
     </aside>
   )
 }

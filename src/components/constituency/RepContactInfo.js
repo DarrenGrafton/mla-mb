@@ -9,18 +9,22 @@ export const RepContactInfo = ({ styles, rep }) => {
         <li>{rep.ConstituencyOffice}</li>
         {rep.ConstituencyOfficeEmail && (
           <li>
-            <span>Email:</span> {rep.ConstituencyOfficeEmail}
+            <span>Email: </span>
+            <a href={`mailto:${rep.ConstituencyOfficeEmail}`}>
+              {rep.ConstituencyOfficeEmail}
+            </a>
           </li>
         )}
         {rep.ConstituencyOfficeFax && (
           <li>
-            <span>Fax:</span> {rep.ConstituencyOfficeFax}
+            <span>Fax: </span>
+            {rep.ConstituencyOfficeFax}
           </li>
         )}
 
         {rep.ConstituencyOfficePhone && (
           <li>
-            <span>Phone:</span>
+            <span>Phone: </span>
             {rep.ConstituencyOfficePhone}
             {/* <a href={`tel:+${rep.ConstituencyOfficePhone}`}>
               {rep.ConstituencyOfficePhone}
@@ -33,12 +37,14 @@ export const RepContactInfo = ({ styles, rep }) => {
         {rep.Office && <li>{rep.Office}</li>}
         {rep.Email && (
           <li>
-            <span>Email:</span> {rep.Email}
+            <span>Email: </span>
+            <a href={`mailto:${rep.Email}`}>{rep.Email}</a>
           </li>
         )}
         {rep.OfficeFax && (
           <li>
-            <span>Fax:</span> {rep.OfficeFax}
+            <span>Fax: </span>
+            {rep.OfficeFax}
           </li>
         )}
         {rep.OfficePhone && (
