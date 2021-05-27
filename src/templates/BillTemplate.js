@@ -39,9 +39,9 @@ export default function BillTemplate({ data }) {
 
       {bill.lawLink && <a href={`${bill.lawLink}`}>Law on Gov MB website</a>}
 
-      {note && (
+      {/* {note && (
         <div dangerouslySetInnerHTML={{ __html: note?.explanatoryNote }} />
-      )}
+      )} */}
     </Layout>
   )
 }

@@ -12,7 +12,7 @@ export const ConDemoData = ({ cons, styles }) => {
     { name: "Avg Family Size", value: cons.AvgFamilySize },
     { name: "Multiple Dwellings", value: cons.MultipleDwellings },
     { name: "Median Household Income", value: cons.MedianHouseholdIncome },
-    { name: "Percent Canadian Citizens", value: cons.PercentCanadianCitizens },
+    { name: "Percent Canadian Citizens*", value: cons.PercentCanadianCitizens },
     { name: "Schools", value: cons.Schools },
     { name: "Hospitals", value: cons.Hospitals },
     { name: "Personal Care Homes", value: cons.PersonalCareHomes },
@@ -30,6 +30,7 @@ export const ConDemoData = ({ cons, styles }) => {
     <aside className={styles.conDemoData}>
       <h4>Constituency Info</h4>
       <h5>{cons.Name}</h5>
+
       <table>
         <tbody>
           {nameValues.map(nameValue => (
@@ -40,10 +41,16 @@ export const ConDemoData = ({ cons, styles }) => {
           ))}
         </tbody>
       </table>
+      <p>*Based on 25% sample</p>
+      <p>
+        Highlights compiled by Elections Manitoba of information prepared by the
+        Manitoba Bureau of Statistics based on the 2016 Census information
+        collected in Manitoba and results from the 2019 general election.
+      </p>
       <a
         href={`https://www.electionsmanitoba.ca/en/Resources/ElectoralDivisionProfile/${cons.Number}`}
       >
-        data from www.electionsmanitoba.ca
+        profile on www.electionsmanitoba.ca
       </a>
     </aside>
   )
