@@ -22,13 +22,18 @@ export const FeatureNav = () => {
           initial="initial"
           animate="animate"
           exit="exit"
-          style={{ fontSize: "150%" }}
         >
-          <h2>UNDER CONTRUCTION!</h2>
-          <p>Find your MLA using the map or through the lists.</p>
+          <p>
+            Find your MLA. The representative for your constuituency at the
+            Manitoba Government.
+          </p>
+          <p>
+            See Bill's they've sponsored, links to transcripts of thier work in
+            the Legislative Assembly of Manitoba, and more!
+          </p>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className={mapbox}
           transition={{ duration: 1 }}
           variants={variants}
@@ -44,7 +49,11 @@ export const FeatureNav = () => {
           <Link to="/Map/">
             Browse <span>Map</span>
           </Link>
-        </motion.div>
+        </motion.div> */}
+
+        <div>
+          <Link to="/Map/">Find Based on Location</Link>
+        </div>
         <motion.ul
           className={linklist}
           transition={{ duration: 1 }}
@@ -53,16 +62,16 @@ export const FeatureNav = () => {
           exit={{ opacity: 0, y: 100 }}
         >
           <li>
-            <Link to="/Constituencies/">Constituency List</Link>
+            <Link to="/Constituencies/">List of Constituencies</Link>
           </li>
           <li>
-            <Link to="/MLAs/">MLA List</Link>
+            <Link to="/MLAs/">Members of the Legislative Assembly</Link>
           </li>
           <li>
-            <Link to="/Bills/">Party List</Link>
+            <Link to="/Bills/">Current Session's Bills</Link>
           </li>
           <li>
-            <Link to="/About/">Bills List</Link>
+            <Link to="/About/">About this website</Link>
           </li>
         </motion.ul>
       </div>

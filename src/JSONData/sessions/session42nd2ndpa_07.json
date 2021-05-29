@@ -1,1 +1,22 @@
-{"legislature":"42nd","session":"2nd","volume":"pa_07","type":"committee","link":"pa_07/pa_07.html","key":"42nd2ndpa_07","date":"2020-08-17T05:00:00.000Z","committee":"PUBLIC ACCOUNTS","speakers":["Jim Maloway","Scott Johnston","Matt Wiebe","Andrew Smith","Janice Morley-Lecomte","Lisa Naylor","Brad Michaleski","James Teitsma","Cindy Lamoureux","Mark Wasyliw"]}
+{
+  "legislature": "42nd",
+  "session": "2nd",
+  "volume": "pa_07",
+  "type": "committee",
+  "link": "pa_07/pa_07.html",
+  "key": "42nd2ndpa_07",
+  "date": "2020-08-17T05:00:00.000Z",
+  "committee": "PUBLIC ACCOUNTS",
+  "speakers": [
+    "Jim Maloway",
+    "Scott Johnston",
+    "Matt Wiebe",
+    "Andrew Smith",
+    "Janice Morley-Lecomte",
+    "Lisa Naylor",
+    "Brad Michaleski",
+    "James Teitsma",
+    "Cindy Lamoureux",
+    "Mark Wasyliw"
+  ]
+}

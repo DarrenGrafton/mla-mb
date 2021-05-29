@@ -30,7 +30,6 @@ export default function SessionTemplate({ data }) {
       <h2>{session.committee}</h2>
       <a
         href={`https://www.gov.mb.ca/legislature/hansard/${session.legislature}_${session.session}/${session.link}`}
-        target="_blank"
       >
         Official Hansard Transcript
       </a>

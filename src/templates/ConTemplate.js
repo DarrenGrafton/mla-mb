@@ -13,7 +13,7 @@ export default function ConTemplate({ data }) {
     consJson: cons,
     repsJson: rep,
     allBillsJson: bills,
-    allHansardBillsJson: hansardBills,
+    //allHansardBillsJson: hansardBills,
     allSessionsJson: sessions,
     allIndexesJson: hansardIndexes,
     allSanityRepImage,
@@ -171,15 +171,6 @@ export const pageQuery = graphql`
           text
           indexLink
           speaker
-        }
-      }
-    }
-    allHansardBillsJson(filter: { rep: { eq: $rep } }) {
-      edges {
-        node {
-          billNumber
-          paragraphIndex
-          sessionKey
         }
       }
     }

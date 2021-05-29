@@ -15,6 +15,7 @@
   padding: 0 6px;
   font-size: var(--h6);
   word-break: keep-all;
+  border-bottom: unset;
 }
 
 .navBar div a:after {
@@ -31,6 +32,7 @@
 }
 .navBar div a:hover {
   color: var(--secondary);
+  background: unset;
 }
 .navBar div a:hover::after {
   width: 100%;
@@ -99,12 +101,13 @@
   height: 3px;
   transition: all 0.3s linear;
   align-self: center;
-  position: relative;
+  position: fixed;
   transform: rotate(-45deg);
 }
 
 .hamburgerClosed {
   transform: inherit;
+  position: relative;
 }
 
 .hamburger::before,

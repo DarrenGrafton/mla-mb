@@ -8,6 +8,7 @@ import { BillSession } from "../components/bill/BillSession"
 const Bills = () => {
   const data = useStaticQuery(BILLS_LIST)
 
+  const session4Url = "https://web2.gov.mb.ca/bills/42-4/index.php"
   const session3Url = "https://web2.gov.mb.ca/bills/42-3/index.php"
   const session2Url = "https://web2.gov.mb.ca/bills/42-2/index.php"
   const session1Url = "https://web2.gov.mb.ca/bills/42-1/index.php"
@@ -30,22 +31,34 @@ const Bills = () => {
       <Seo title="Bills by Legislative Session" />
 
       <div className={styles.bills}>
-        <BillSession
-          sessionName="42nd Legislature, 3rd Session"
-          sessionUrl={session3Url}
-          sessionBills={thirdSessionBills}
-        />
-        <BillSession
-          sessionName="42nd Legislature, 2nd Session"
-          sessionUrl={session2Url}
-          sessionBills={secondSessionBills}
-        />
-
-        <BillSession
-          sessionName="42nd Legislature, 1st Session"
-          sessionUrl={session1Url}
-          sessionBills={firstSessionBills}
-        />
+        {fourthSessionBills.length > 0 && (
+          <BillSession
+            sessionName="42nd Legislature, 4th Session"
+            sessionUrl={session4Url}
+            sessionBills={fourthSessionBills}
+          />
+        )}
+        {thirdSessionBills.length > 0 && (
+          <BillSession
+            sessionName="42nd Legislature, 3rd Session"
+            sessionUrl={session3Url}
+            sessionBills={thirdSessionBills}
+          />
+        )}
+        {secondSessionBills.length > 0 && (
+          <BillSession
+            sessionName="42nd Legislature, 2nd Session"
+            sessionUrl={session2Url}
+            sessionBills={secondSessionBills}
+          />
+        )}
+        {firstSessionBills.length > 0 && (
+          <BillSession
+            sessionName="42nd Legislature, 1st Session"
+            sessionUrl={session1Url}
+            sessionBills={firstSessionBills}
+          />
+        )}
       </div>
     </Layout>
   )

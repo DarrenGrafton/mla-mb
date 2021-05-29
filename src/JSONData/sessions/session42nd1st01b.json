@@ -1,1 +1,31 @@
-{"legislature":"42nd","session":"1st","volume":"01b","type":"house","link":"vol_01b/h01b.html","key":"42nd1st01b","date":"2019-09-30T05:00:00.000Z","speakers":["Brian Pallister","Wab Kinew","Dougald Lamont","Kelvin Goertzen","Cliff Cullen","Heather Stefanson","Cameron Friesen","Scott Fielding","Rochelle Squires","Ralph Eichler","Catherine Cox","Blaine Pedersen","Eileen Clarke","Jeff Wharton","Ron Schuler","Ian Bushie","Danielle Adams","Tom Lindsey","Uzoma Asagwara","Bernadette Smith"]}
+{
+  "legislature": "42nd",
+  "session": "1st",
+  "volume": "01b",
+  "type": "house",
+  "link": "vol_01b/h01b.html",
+  "key": "42nd1st01b",
+  "date": "2019-09-30T05:00:00.000Z",
+  "speakers": [
+    "Brian Pallister",
+    "Wab Kinew",
+    "Dougald Lamont",
+    "Kelvin Goertzen",
+    "Cliff Cullen",
+    "Heather Stefanson",
+    "Cameron Friesen",
+    "Scott Fielding",
+    "Rochelle Squires",
+    "Ralph Eichler",
+    "Catherine Cox",
+    "Blaine Pedersen",
+    "Eileen Clarke",
+    "Jeff Wharton",
+    "Ron Schuler",
+    "Ian Bushie",
+    "Danielle Adams",
+    "Tom Lindsey",
+    "Uzoma Asagwara",
+    "Bernadette Smith"
+  ]
+}

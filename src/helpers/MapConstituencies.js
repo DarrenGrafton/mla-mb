@@ -6,7 +6,7 @@ export const createConObj = (conState, data) => {
 
   if (!mainCon) return
 
-  data.allConsJson.nodes.map(con => {
+  data.allConsJson.nodes.forEach(con => {
     if (mainCon.West === con.Number) mainCon.WestCon = con
     if (mainCon.NorthWest === con.Number) mainCon.NorthWestCon = con
     if (mainCon.North === con.Number) mainCon.NorthCon = con

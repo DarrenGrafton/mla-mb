@@ -7,7 +7,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 export default function BillTemplate({ data }) {
   const {
     billsJson: bill,
-    billNotesJson: note,
+    allHansardBillsJson: hansardBills,
 
     allSanityRepImage,
   } = data
@@ -38,7 +38,29 @@ export default function BillTemplate({ data }) {
       {bill.billLink && <a href={`${bill.billLink}`}>Bill on Gov MB website</a>}
 
       {bill.lawLink && <a href={`${bill.lawLink}`}>Law on Gov MB website</a>}
+      <ol>
+        {hansardBills.nodes.map(node => {
+          const url = node.indexLink
+            ? `https://www.gov.mb.ca/legislature/hansard/${node.legislature}_${node.session}/${node.sessionLink}${node.indexLink}`
+            : `https://www.gov.mb.ca/legislature/hansard/${node.legislature}_${node.session}/${node.sessionLink}`
 
+          const text = node.committee
+            ? `${node.sessionDate} - ${node.committee}`
+            : `${node.sessionDate} - ${node.heading2} - ${node.heading3}`
+
+          if (
+            node.number === bill.number &&
+            node.legislature === bill.legislature &&
+            node.session === bill.session
+          ) {
+            return (
+              <li key={text}>
+                <a href={url}>{text}</a>
+              </li>
+            )
+          }
+        })}
+      </ol>
       {/* {note && (
         <div dangerouslySetInnerHTML={{ __html: note?.explanatoryNote }} />
       )} */}
@@ -59,10 +81,21 @@ export const pageQuery = graphql`
       session
       sessionLink
     }
-    billNotesJson(billKey: { eq: $billKey }) {
-      billKey
-      explanatoryNote
-      number
+    allHansardBillsJson {
+      nodes {
+        number
+        sessionDate(formatString: "DD MMM, yyyy")
+        legislature
+        session
+        billKey
+        committee
+        heading2
+        heading3
+        heading4
+        sessionKey
+        sessionLink
+        indexLink
+      }
     }
     allSanityRepImage {
       nodes {

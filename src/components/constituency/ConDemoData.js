@@ -43,9 +43,14 @@ export const ConDemoData = ({ cons, styles }) => {
       </table>
       <p>*Based on 25% sample</p>
       <p>
-        Highlights compiled by Elections Manitoba of information prepared by the
-        Manitoba Bureau of Statistics based on the 2016 Census information
-        collected in Manitoba and results from the 2019 general election.
+        Information sourced from highlights compiled by Elections Manitoba of:
+        <ol style={{ listStyle: "initial", marginLeft: 20 }}>
+          <li>
+            information prepared by the Manitoba Bureau of Statistics based on
+            the 2016 Census information collected in Manitoba
+          </li>
+          <li> results from the 2019 general election.</li>
+        </ol>
       </p>
       <a
         href={`https://www.electionsmanitoba.ca/en/Resources/ElectoralDivisionProfile/${cons.Number}`}
