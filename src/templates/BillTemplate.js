@@ -22,7 +22,6 @@ export default function BillTemplate({ data }) {
       fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
       lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
   )
-  //header with  con name, back link,menu items
 
   const consLink = slugifyConName(
     cons.nodes.find(con => con.CurrentRep === bill.rep)?.Name

@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from "gatsby"
 export const ConBills = ({ styles, bills }) => {
   return (
     <div className={styles.bills}>
@@ -10,15 +10,15 @@ export const ConBills = ({ styles, bills }) => {
           <ul>
             {bills.edges.map(edge => (
               <li key={edge.node.billLink}>
-                <a
+                <Link
                   className={styles.billLink}
-                  href={`/bills/${edge.node.billKey}`}
+                  to={`/bills/${edge.node.billKey}`}
                 >
                   <span className={styles.billName}>
                     Bill {edge.node.number} ({edge.node.session} Session)
                   </span>{" "}
                   - {edge.node.billName}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

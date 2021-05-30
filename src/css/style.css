@@ -255,45 +255,6 @@ button[disabled] {
   padding: 1rem var(--containerPadding);
 }
 
-.grid {
-  --gridCols: 2;
-  display: block; /*override at 500px see @media query*/
-  grid-template-columns: repeat(var(--gridCols), 1fr);
-  justify-items: center;
-}
-
-.cols-3 {
-  --gridCols: 2;
-}
-
-.flex {
-  --justifyContent: space-between;
-  display: block; /*override at 500px see @media query*/
-  justify-content: var(--justifyContent);
-}
-
-.flex-around {
-  --justifyContent: space-around;
-}
-
-@media only screen and (min-width: 900px) {
-  .cols-3 {
-    --gridCols: 3;
-  }
-  .flex {
-    display: flex;
-  }
-}
-
-@media only screen and (min-width: 700px) {
-  .grid {
-    display: grid;
-  }
-  .flex {
-    display: flex;
-  }
-}
-
 ol,
 ul {
   list-style: none;

@@ -1,5 +1,5 @@
 import React from "react"
-import { mapbox, linklist } from "./FeatureNav.module.css"
+import * as styles from "./FeatureNav.module.css"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -55,7 +55,7 @@ export const FeatureNav = () => {
           <Link to="/Map/">Find Based on Location</Link>
         </div>
         <motion.ul
-          className={linklist}
+          className={styles.linklist}
           transition={{ duration: 1 }}
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}

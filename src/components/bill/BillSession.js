@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./Bill.module.css"
-
+import { Link } from "gatsby"
 export const BillSession = ({ sessionName, sessionUrl, sessionBills }) => {
   return (
     <div className={styles.bills}>
@@ -11,12 +11,12 @@ export const BillSession = ({ sessionName, sessionUrl, sessionBills }) => {
       <ol>
         {sessionBills.map(edge => (
           <li key={edge.node.billKey}>
-            <a href={`/bills/${edge.node.billKey}`}>
+            <Link to={`/bills/${edge.node.billKey}`}>
               <span className={styles.billName}>
                 Bill {edge.node.number} -{" "}
               </span>
               {edge.node.billName}
-            </a>
+            </Link>
           </li>
         ))}
       </ol>

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { slugifyConName } from "../helpers/Utils"
@@ -10,13 +10,19 @@ const MLAs = () => {
   return (
     <Layout pageTitle="MLA List">
       <Seo title="Manitoban MLAs" />
-      <ol>
+      <ol
+        style={{
+          display: "flex",
+          height: "80vh",
+          flexWrap: "wrap",
+          flexDirection: "column",
+        }}
+      >
         {data.allConsJson.edges.map(edge => (
-          <li>
-            {edge.node.CurrentRep}
-            <a href={`/${slugifyConName(edge.node.Name)}`}>
-              {edge.node.Number}
-            </a>
+          <li key={edge.node.Name}>
+            <Link to={`/${slugifyConName(edge.node.Name)}`}>
+              {edge.node.CurrentRep}
+            </Link>
           </li>
         ))}
       </ol>
