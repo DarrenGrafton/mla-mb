@@ -7,18 +7,7 @@ export default function SessionTemplate({ data }) {
   const {
     sessionsJson: session,
     // paragraphsJson: paragraphGroup,
-
-    // allSanityRepImage,
   } = data
-
-  // const lastName = cons.CurrentRep.split(" ").slice(-1).join(" ")
-  // const fullName = cons.CurrentRep.replace(" ", "")
-
-  // const repImage = allSanityRepImage.nodes.find(
-  //   node =>
-  //     fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
-  //     lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
-  // )
 
   //header with  con name, back link,menu items
   return (

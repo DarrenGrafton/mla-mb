@@ -50,7 +50,7 @@ export const MainCon = ({
           exit="exit"
         >
           <GatsbyImage
-            image={con.repImage?.image.asset.gatsbyImageData}
+            image={con.repImage?.gatsbyImageData}
             alt={con.CurrentRep}
           />
           <h3>{con.CurrentRep}</h3>

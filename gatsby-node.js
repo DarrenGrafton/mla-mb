@@ -25,6 +25,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allBillsJson {
         nodes {
           billKey
+          rep
         }
       }
       allSessionsJson {
@@ -47,6 +48,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         // additional data can be passed via context
         slug: node.Number,
         rep: node.CurrentRep,
+        repRegex: "/" + utils.slugifyConName(node.CurrentRep) + "/",
       },
     })
   })
@@ -58,6 +60,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         // additional data can be passed via context
         billKey: node.billKey,
+        rep: node.rep,
+        repRegex: "/" + utils.slugifyConName(node.rep) + "/",
       },
     })
   })

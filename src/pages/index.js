@@ -1,5 +1,4 @@
 import * as React from "react"
-import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -34,21 +33,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-const LANDING_PAGE = graphql`
-  query LandingPage {
-    allSanityBackgroundImage(
-      filter: { title: { eq: "Manitoba Legislature" } }
-    ) {
-      nodes {
-        image {
-          caption
-          asset {
-            title
-            gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
-          }
-        }
-      }
-    }
-  }
-`

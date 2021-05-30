@@ -1,3 +1,5 @@
+const utils = require("./Utils")
+
 export const createConObj = (conState, data) => {
   //If Number comes from a cookie if might be string, do only == compare
   const mainCon = data.allConsJson.nodes.find(
@@ -17,13 +19,19 @@ export const createConObj = (conState, data) => {
     if (mainCon.SouthWest === con.Number) mainCon.SouthWestCon = con
   })
 
-  const lastName = mainCon.CurrentRep.split(" ").slice(-1).join(" ")
-  const fullName = mainCon.CurrentRep.replace(" ", "")
+  // const lastName = mainCon.CurrentRep.split(" ").slice(-1).join(" ")
+  // const fullName = mainCon.CurrentRep.replace(" ", "")
 
-  mainCon.repImage = data.allSanityRepImage.nodes.find(
-    node =>
-      fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
-      lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
+  // mainCon.repImage = data.allSanityRepImage.nodes.find(
+  //   node =>
+  //     fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
+  //     lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
+  // )
+
+  const regex = new RegExp(utils.slugifyConName(mainCon.CurrentRep), "g")
+
+  mainCon.repImage = data.allImageSharp.nodes.find(node =>
+    node.original.src.match(regex)
   )
 
   return mainCon

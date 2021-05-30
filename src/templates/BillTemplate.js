@@ -11,17 +11,8 @@ export default function BillTemplate({ data }) {
     billsJson: bill,
     allHansardBillsJson: hansardBills,
     allConsJson: cons,
-    allSanityRepImage,
+    allImageSharp,
   } = data
-
-  const lastName = bill.rep.split(" ").slice(-1).join(" ")
-  const fullName = bill.rep.replace(" ", "")
-
-  const repImage = allSanityRepImage.nodes.find(
-    node =>
-      fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
-      lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
-  )
 
   const consLink = slugifyConName(
     cons.nodes.find(con => con.CurrentRep === bill.rep)?.Name
@@ -89,7 +80,7 @@ export default function BillTemplate({ data }) {
           </div>
           <GatsbyImage
             className={styles.billRepImage}
-            image={repImage?.image.asset.gatsbyImageData}
+            image={allImageSharp?.nodes[0]?.gatsbyImageData}
             alt={bill.rep}
           />
         </div>
@@ -103,7 +94,7 @@ export default function BillTemplate({ data }) {
 }
 
 export const pageQuery = graphql`
-  query BillDetail($billKey: String!) {
+  query BillDetail($billKey: String!, $rep: String!, $repRegex: String!) {
     billsJson(billKey: { eq: $billKey }) {
       billKey
       billLink
@@ -131,20 +122,22 @@ export const pageQuery = graphql`
         indexLink
       }
     }
-    allConsJson {
+    allConsJson(filter: { CurrentRep: { eq: $rep } }) {
       nodes {
         Name
         Number
         CurrentRep
       }
     }
-    allSanityRepImage {
+    allImageSharp(filter: { original: { src: { regex: $repRegex } } }) {
       nodes {
-        title
-        image {
-          asset {
-            gatsbyImageData(fit: FILLMAX, placeholder: NONE)
-          }
+        gatsbyImageData(
+          placeholder: NONE
+          width: 500
+          formats: [AUTO, WEBP, AVIF]
+        )
+        original {
+          src
         }
       }
     }

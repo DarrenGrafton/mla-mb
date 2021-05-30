@@ -102,7 +102,6 @@ const BrowseMap = ({ location }) => {
       <StaticImage
         width={1800}
         quality={15}
-        //fluid={data.allSanityBackgroundImage.nodes[0].image.asset.fluid}
         src="../images/pete-mcbride.jpg"
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Prairie Field"
@@ -156,13 +155,15 @@ const BROWSE_MAP = graphql`
         Party
       }
     }
-    allSanityRepImage {
+    allImageSharp {
       nodes {
-        title
-        image {
-          asset {
-            gatsbyImageData(fit: FILLMAX, placeholder: NONE)
-          }
+        gatsbyImageData(
+          placeholder: NONE
+          width: 500
+          formats: [AUTO, WEBP, AVIF]
+        )
+        original {
+          src
         }
       }
     }

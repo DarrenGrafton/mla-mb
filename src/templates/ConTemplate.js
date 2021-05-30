@@ -16,17 +16,10 @@ export default function ConTemplate({ data }) {
     //allHansardBillsJson: hansardBills,
     allSessionsJson: sessions,
     allIndexesJson: hansardIndexes,
-    allSanityRepImage,
+    allImageSharp,
   } = data
 
-  const lastName = cons.CurrentRep.split(" ").slice(-1).join(" ")
-  const fullName = cons.CurrentRep.replace(" ", "")
-
-  const repImage = allSanityRepImage.nodes.find(
-    node =>
-      fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
-      lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
-  )
+  // console.log(allImageSharp)
 
   //header with  con name, back link,menu items
   return (
@@ -38,7 +31,8 @@ export default function ConTemplate({ data }) {
             <h2>{cons.CurrentRep}</h2>
             <GatsbyImage
               className={styles.repImage}
-              image={repImage?.image.asset.gatsbyImageData}
+              //image={repImage?.image.asset.gatsbyImageData}
+              image={allImageSharp?.nodes[0]?.gatsbyImageData}
               alt={cons.CurrentRep}
             />
             <h3>{cons.Party}</h3>
@@ -66,8 +60,9 @@ export default function ConTemplate({ data }) {
   )
 }
 
+//(filter: {original: {src: {regex: "/danielle-adams/"}}})
 export const pageQuery = graphql`
-  query ConDetail($slug: Int!, $rep: String!) {
+  query ConDetail($slug: Int!, $rep: String!, $repRegex: String!) {
     consJson(Number: { eq: $slug }) {
       Name
       Number
@@ -113,17 +108,19 @@ export const pageQuery = graphql`
       OfficePhone
       Party
     }
-
-    allSanityRepImage {
+    allImageSharp(filter: { original: { src: { regex: $repRegex } } }) {
       nodes {
-        title
-        image {
-          asset {
-            gatsbyImageData(fit: FILLMAX, placeholder: NONE)
-          }
+        gatsbyImageData(
+          placeholder: NONE
+          width: 500
+          formats: [AUTO, WEBP, AVIF]
+        )
+        original {
+          src
         }
       }
     }
+
     allBillsJson(
       sort: { order: DESC, fields: session }
       filter: { rep: { eq: $rep } }
