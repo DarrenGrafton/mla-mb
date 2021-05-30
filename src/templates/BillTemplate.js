@@ -106,7 +106,10 @@ export const pageQuery = graphql`
       session
       sessionLink
     }
-    allHansardBillsJson(sort: { fields: sessionDate, order: ASC }) {
+    allHansardBillsJson(
+      sort: { fields: sessionDate, order: ASC }
+      filter: { billKey: { eq: $billKey } }
+    ) {
       nodes {
         number
         sessionDate(formatString: "DD MMM, yyyy")
