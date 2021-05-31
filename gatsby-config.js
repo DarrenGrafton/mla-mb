@@ -1,13 +1,7 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
-const isProd = process.env.NODE_ENV === "production"
-
 module.exports = {
   siteMetadata: {
     title: `My Rep MB`,
-    description: `Find your MLA.  The representative for your constuituency at the Manitoba Government.  Is your MLA doing a good job?`,
+    description: `Find your MLA.  The representative for your constituency at the Manitoba Government.  What is your MLA working on?`,
     author: `@dmg20000`,
   },
   plugins: [
