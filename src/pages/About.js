@@ -12,9 +12,9 @@ const About = () => {
 
       <section>
         <p>
-          The MyRepMB website is built and maintained as a hobby project. Thanks
-          to those who are collecting and publishing the information linked to
-          from this site
+          The MyRepMB website is built and maintained as a hobby project and is
+          not affiliated with the Government of Manitoba. Thanks to those who
+          are collecting and publishing the information linked to from this site
         </p>
       </section>
       <h2>Thanks and Attributions</h2>
@@ -23,11 +23,11 @@ const About = () => {
           The Legislative Assembly of Manitoba
         </a>
         <p>
-          This website has an abundance of information. The MyRepMB site links
-          directly to this site for the current session's Bills and Hansard
-          transcipts. The site also has useful information about how government
-          works including how provincial laws are made and how to present to
-          standing committees.
+          The MyRepMB site links directly to the Legislative Assembly of
+          Manitoba site for the current session's Bills and Hansard transcipts.
+          The site also has useful information about how government works
+          including how provincial laws are made and how to present to standing
+          committees.
         </p>
       </section>
 
@@ -36,8 +36,8 @@ const About = () => {
           Elections Manitoba website
         </a>
         <p>
-          Thier website was very helpful to learn about electoral divisions with
-          links to many useful resources.
+          Elections Manitoba has useful information about electoral divisions
+          and elections.
         </p>
       </section>
 
@@ -52,13 +52,46 @@ const About = () => {
         </p>
       </section>
 
-      <section>Images source: unsplash</section>
+      <section>
+        <h3>Images</h3>
+        <p>
+          Some of the background images on the MyRepMB website are sourced from
+          www.unsplash.com
+        </p>
+        <ul>
+          <li>
+            Front Page Background Image by{" "}
+            <a href="https://unsplash.com/@snapper542">Mahesh Gupta</a>
+          </li>
+
+          <li>
+            Map Background Image by{" "}
+            <a href="https://unsplash.com/@petemcbride">Pete McBride</a>
+          </li>
+        </ul>
+      </section>
 
       <section>
-        Technology: This site is hosted on Netlify. https://www.netlify.com/.
-        The code and data is stored on GitHub
-        <a href="https://github.com/DarrenGrafton/my-rep-mb">Link to Github</a>
-        The site is built with react / gatsby
+        <h3>Technology</h3>
+        <p>
+          The MyRepMB webiste is built using a modern website architecture
+          referred to as the JAMstack
+        </p>
+        <ul>
+          <li>
+            This site is hosted on{" "}
+            <a href="https://www.netlify.com/">Netlify</a>
+          </li>
+
+          <li>
+            The code and data are stored on{" "}
+            <a href="https://github.com/DarrenGrafton/my-rep-mb">GitHub</a>
+          </li>
+          <li>
+            The site is built with <a href="https://reactjs.org/">React</a> and{" "}
+            <a href="https://www.gatsbyjs.com/">Gatsby</a>
+          </li>
+        </ul>
       </section>
 
       <section>Contact us: myrepmb@gmail.ca</section>

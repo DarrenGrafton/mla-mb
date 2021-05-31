@@ -28,7 +28,7 @@ export const createConObj = (conState, data) => {
   //     lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
   // )
 
-  const regex = new RegExp(utils.slugifyConName(mainCon.CurrentRep), "g")
+  const regex = new RegExp(utils.slugifyName(mainCon.CurrentRep), "g")
 
   mainCon.repImage = data.allImageSharp.nodes.find(node =>
     node.original.src.match(regex)

@@ -1,15 +1,14 @@
-const slugifyConName = conName => {
+const slugifyName = name => {
   const space = /\s/gi
   const other = /\./gi
   //toLowerCase()
-  return conName.replace(space, "-").replace(other, "").toLowerCase()
+  return name.replace(space, "-").replace(other, "").toLowerCase()
 }
 
 const parseQuery = queryString => {
   var query = {}
-  var pairs = (queryString[0] === "?"
-    ? queryString.substr(1)
-    : queryString
+  var pairs = (
+    queryString[0] === "?" ? queryString.substr(1) : queryString
   ).split("&")
   for (var i = 0; i < pairs.length; i++) {
     var pair = pairs[i].split("=")
@@ -18,4 +17,4 @@ const parseQuery = queryString => {
   return query
 }
 
-module.exports = { slugifyConName, parseQuery }
+module.exports = { slugifyName, parseQuery }

@@ -273,3 +273,16 @@ a:hover {
   background: rgba(255, 0, 0, 0.1);
 }
 /*Custom Elements*/
+/*MLA List and Constituency List*/
+.linkLists {
+  display: flex;
+  height: 80vh;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 920px) {
+  .linkLists {
+    height: 140vh;
+  }
+}

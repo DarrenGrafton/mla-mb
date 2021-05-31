@@ -43,6 +43,9 @@
   margin: 0;
   padding: 0;
 }
+.repImage {
+  max-width: 220px;
+}
 
 @media only screen and (max-width: 920px) {
   .repCard {

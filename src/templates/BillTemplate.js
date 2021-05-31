@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "../components/bill/Bill.module.css"
-import { slugifyConName } from "../helpers/Utils"
+import { slugifyName } from "../helpers/Utils"
 
 export default function BillTemplate({ data }) {
   const {
@@ -14,7 +14,7 @@ export default function BillTemplate({ data }) {
     allImageSharp,
   } = data
 
-  const consLink = slugifyConName(
+  const consLink = slugifyName(
     cons.nodes.find(con => con.CurrentRep === bill.rep)?.Name
   )
 

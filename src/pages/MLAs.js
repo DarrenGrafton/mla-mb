@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { slugifyConName } from "../helpers/Utils"
+import { slugifyName } from "../helpers/Utils"
 
 const MLAs = () => {
   const data = useStaticQuery(CONSTITUENCY_LIST)
@@ -10,17 +10,10 @@ const MLAs = () => {
   return (
     <Layout pageTitle="MLA List">
       <Seo title="Manitoban MLAs" />
-      <ol
-        style={{
-          display: "flex",
-          height: "80vh",
-          flexWrap: "wrap",
-          flexDirection: "column",
-        }}
-      >
+      <ol className="linkLists">
         {data.allConsJson.edges.map(edge => (
           <li key={edge.node.Name}>
-            <Link to={`/${slugifyConName(edge.node.Name)}`}>
+            <Link to={`/${slugifyName(edge.node.Name)}`}>
               {edge.node.CurrentRep}
             </Link>
           </li>

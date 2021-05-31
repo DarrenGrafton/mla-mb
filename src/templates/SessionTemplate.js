@@ -24,16 +24,6 @@ export default function SessionTemplate({ data }) {
       </a>
       <p>{session.date}</p>
       <p>{session.speakers}</p>
-
-      {/* <ol>
-        {paragraphGroup.paragraphs.map(paragraph => (
-          <li>
-            {paragraph.html && (
-              <div dangerouslySetInnerHTML={{ __html: paragraph.html }} />
-            )}
-          </li>
-        ))}
-      </ol> */}
     </Layout>
   )
 }
@@ -50,14 +40,6 @@ export const pageQuery = graphql`
       speakers
       type
       volume
-    }
-    paragraphsJson(sessionKey: { eq: $key }) {
-      sessionKey
-      paragraphs {
-        index
-        html
-        speaker
-      }
     }
   }
 `

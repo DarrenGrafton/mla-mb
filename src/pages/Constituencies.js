@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { slugifyConName } from "../helpers/Utils"
+import { slugifyName } from "../helpers/Utils"
 
 const Constituencies = () => {
   const data = useStaticQuery(CONSTITUENCY_LIST)
@@ -10,19 +10,10 @@ const Constituencies = () => {
   return (
     <Layout pageTitle="Constituency List">
       <Seo title="Manitoban Constituencies" />
-      <ol
-        style={{
-          display: "flex",
-          height: "80vh",
-          flexWrap: "wrap",
-          flexDirection: "column",
-        }}
-      >
+      <ol className="linkLists">
         {data.allConsJson.edges.map(edge => (
           <li key={edge.node.Name}>
-            <Link to={`/${slugifyConName(edge.node.Name)}`}>
-              {edge.node.Name}
-            </Link>
+            <Link to={`/${slugifyName(edge.node.Name)}`}>{edge.node.Name}</Link>
           </li>
         ))}
       </ol>
@@ -41,7 +32,6 @@ const CONSTITUENCY_LIST = graphql`
           Name
           CurrentRep
           Party
-          NeighbouringElectoralDivisions
         }
       }
     }

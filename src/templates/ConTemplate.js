@@ -13,13 +13,10 @@ export default function ConTemplate({ data }) {
     consJson: cons,
     repsJson: rep,
     allBillsJson: bills,
-    //allHansardBillsJson: hansardBills,
     allSessionsJson: sessions,
     allIndexesJson: hansardIndexes,
     allImageSharp,
   } = data
-
-  // console.log(allImageSharp)
 
   //header with  con name, back link,menu items
   return (
@@ -31,7 +28,6 @@ export default function ConTemplate({ data }) {
             <h2>{cons.CurrentRep}</h2>
             <GatsbyImage
               className={styles.repImage}
-              //image={repImage?.image.asset.gatsbyImageData}
               image={allImageSharp?.nodes[0]?.gatsbyImageData}
               alt={cons.CurrentRep}
             />
@@ -112,7 +108,7 @@ export const pageQuery = graphql`
       nodes {
         gatsbyImageData(
           placeholder: NONE
-          width: 500
+          width: 220
           formats: [AUTO, WEBP, AVIF]
         )
         original {
