@@ -55,9 +55,6 @@ export const FeatureNav = () => {
           </Link>
         </motion.div> */}
 
-        <div>
-          <Link to="/Map/">Find Based on Location</Link>
-        </div>
         <motion.ul
           className={styles.linklist}
           transition={{ duration: 1 }}
@@ -65,6 +62,9 @@ export const FeatureNav = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, y: 100 }}
         >
+          <li>
+            <Link to="/Map/">Find Based on Location</Link>
+          </li>
           <li>
             <Link to="/Constituencies/">List of Constituencies</Link>
           </li>

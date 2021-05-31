@@ -124,7 +124,7 @@ footer {
   padding: 0.5rem var(--containerPadding);
   text-align: center;
   position: relative;
-  top: 95vh;
+  top: 35vh;
   left: 0;
   width: 100%;
 }
@@ -285,4 +285,16 @@ a:hover {
   .linkLists {
     height: 140vh;
   }
+}
+
+.about h3 {
+  font-size: var(--h5);
+}
+
+.about section {
+  border: 1px var(--secondary) dotted;
+  border-radius: 10px;
+  background: var(--backgroundHighlight);
+  margin-bottom: 2vh;
+  padding: 0 1vw 1vh 1vw;
 }
