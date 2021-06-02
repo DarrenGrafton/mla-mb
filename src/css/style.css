@@ -133,6 +133,14 @@ footer nav a {
   color: var(--footerTextColor);
   text-decoration: none;
 }
+footer ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer ul li a {
+  border-bottom: none;
+  font-size: var(--smallText);
+}
 
 p {
   margin-bottom: 1rem;

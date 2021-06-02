@@ -1,15 +1,64 @@
-//information provided as is
+import * as React from "react"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+import { Link } from "gatsby"
 
-//Use of this site constitutes acceptance of our Terms of Use and Privacy Policy. The material on this
-//site may not be reproduced, distributed, transmitted, cached or otherwise used,
-//except with prior written permission of.
+export default function TermsOfUse() {
+  return (
+    <Layout pageTitle="Terms of Use">
+      <Seo title="Terms of Use" />
+      <div>
+        <h2>Terms of Use My Rep MB</h2>
+        <p>Last updated: May 31, 2021</p>
 
-//Owned Content
-//The Site and its original content, features, and functionality are owned by [Owner of Website] and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+        <p>
+          Use of this site constitutes acceptance of our Terms of Use and
+          <Link to="/PrivacyPolicy/"> Privacy Policy</Link>.
+        </p>
 
-//We may terminate your access to the Site, without cause or notice, which may result in the forfeiture and
-//destruction of all information associated with your account. All provisions of this Agreement that, by their
-//nature, should survive termination shall survive termination, including, without limitation, ownership provisions,
-//warranty disclaimers, indemnity, and limitations of liability.
+        <p>
+          The Site and its original content may not be reproduced, distributed,
+          transmitted, cached or otherwise used, except with prior written
+          permission of myrepmb.ca
+        </p>
 
-//These terms and conditions are governed by the laws of the Canada and the laws of the province of Manitoba.
+        <p>
+          The Materials are provided "as is". MyRepMb makes no warranties,
+          expressed or implied, and hereby disclaims and negates all other
+          warranties, including without limitation, implied warranties or
+          conditions of merchantability, fitness for a particular purpose, or
+          non-infringement of intellectual property or other violation of
+          rights. Further, MyRepMb does not warrant or make any representations
+          concerning the accuracy, likely results, or reliability of the use of
+          the Materials or otherwise relating to such Materials or on any web
+          sites linked to this web site.
+        </p>
+
+        <p>
+          In no event shall MyRepMB be liable for any damages (including,
+          without limitation, damages for loss of data or profit, or due to
+          business interruption,) arising out of the use or inability to use the
+          Materials, even if MyRepMB has been notified in writing of the
+          possibility of such damage. Because some jurisdictions do not allow
+          limitations on implied warranties, or limitations of liability for
+          consequential or incidental damages, these limitations may not apply
+          to you.
+        </p>
+
+        <p>
+          These terms and conditions are governed by the laws of the Canada and
+          the laws of the province of Manitoba.
+        </p>
+
+        <h3>Contact Us</h3>
+
+        <p>
+          If you have any questions about the Terms of Use, You can contact us:
+        </p>
+        <p>
+          By email: <a href="mailto:myrepmb@gmail.com">myrepmb@gmail.com</a>
+        </p>
+      </div>
+    </Layout>
+  )
+}

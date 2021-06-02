@@ -8,6 +8,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 
+import { Link } from "gatsby"
 import Header from "./header"
 import "../css/normalize.css"
 import "../css/main.css"
@@ -32,8 +33,18 @@ const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
 
         {!hide && (
           <footer>
-            © {new Date().getFullYear()},{" "}
-            <a href="mailto:myrepmb@gmail.com">Email </a> any questions
+            <ul>
+              <li>
+                © {new Date().getFullYear()},{" "}
+                <a href="mailto:myrepmb@gmail.com">Email </a> any questions
+              </li>
+              <li>
+                <Link to="/PrivacyPolicy/">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/TermsOfUse/">Terms</Link>
+              </li>
+            </ul>
           </footer>
         )}
       </div>
