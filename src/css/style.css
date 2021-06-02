@@ -139,7 +139,6 @@ footer ul {
 }
 footer ul li a {
   border-bottom: none;
-  font-size: var(--smallText);
 }
 
 p {
@@ -284,14 +283,14 @@ a:hover {
 /*MLA List and Constituency List*/
 .linkLists {
   display: flex;
-  height: 80vh;
+  height: 600px;
   flex-wrap: wrap;
   flex-direction: column;
 }
 
 @media only screen and (max-width: 920px) {
   .linkLists {
-    height: 140vh;
+    height: 850px;
   }
 }
 
@@ -305,4 +304,8 @@ a:hover {
   background: var(--backgroundHighlight);
   margin-bottom: 2vh;
   padding: 0 1vw 1vh 1vw;
+}
+
+.smallText {
+  font-size: var(--smallText);
 }

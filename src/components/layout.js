@@ -28,26 +28,27 @@ const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
           conNumber={conNumber}
         />
       )}
-      <div className="layout">
-        {children}
-
-        {!hide && (
-          <footer>
-            <ul>
-              <li>
-                © {new Date().getFullYear()},{" "}
-                <a href="mailto:myrepmb@gmail.com">Email </a> any questions
-              </li>
-              <li>
-                <Link to="/PrivacyPolicy/">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="/TermsOfUse/">Terms</Link>
-              </li>
-            </ul>
-          </footer>
-        )}
-      </div>
+      <div className="layout">{children}</div>
+      {!hide && (
+        <footer>
+          <ul>
+            <li>
+              © {new Date().getFullYear()},{" "}
+              <a href="mailto:myrepmb@gmail.com">Email </a> any questions
+            </li>
+            <li>
+              <Link className="smallText" to="/PrivacyPolicy/">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link className="smallText" to="/TermsOfUse/">
+                Terms
+              </Link>
+            </li>
+          </ul>
+        </footer>
+      )}
     </>
   )
 }
