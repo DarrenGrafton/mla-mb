@@ -31,10 +31,6 @@ export const FeatureNav = () => {
             See Bill's they've sponsored, links to transcripts of thier work in
             the Legislative Assembly of Manitoba, and more!
           </p>
-          <p>
-            The MyRepMB website is built and maintained as a hobby project and
-            is not affiliated with the Government of Manitoba
-          </p>
         </motion.div>
 
         {/* <motion.div
