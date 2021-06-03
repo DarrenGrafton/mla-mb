@@ -3,20 +3,22 @@ import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { SideCon } from "./SideCon"
 import { MainCon } from "./MainCon"
-import {
-  map,
-  //main,
-  west,
-  northWest,
-  southWest,
-  north,
-  south,
-  east,
-  northEast,
-  southEast,
-  sideCon,
-  navInstructions,
-} from "./Map.module.css"
+// import {
+//   map,
+//   //main,
+//   west,
+//   northWest,
+//   southWest,
+//   north,
+//   south,
+//   east,
+//   northEast,
+//   southEast,
+//   sideCon,
+//   navInstructions,
+// } from "./Map.module.css"
+import * as styles from "./Map.module.css"
+import classNames from "classnames"
 
 //8 directional cons
 //main con
@@ -155,7 +157,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
           //   opacity: { duration: 0.2 },
           // }}
 
-          className={map}
+          className={styles.map}
           drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           dragElastic={0.5}
@@ -228,7 +230,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             exit="moveFromWest"
             key={conState.Number + "West"}
             custom={conState.direction}
-            className={`${west} ${sideCon}`}
+            className={classNames(styles.west, styles.sideCon)}
             con={mainCon.WestCon}
             onClick={() => {
               if (mainCon.West !== -1)
@@ -236,7 +238,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             }}
           />
           <SideCon
-            className={`${northWest} ${sideCon}`}
+            className={classNames(styles.northWest, styles.sideCon)}
             con={mainCon.NorthWestCon}
             variants={sideConVariants}
             initial="initialNorthWest"
@@ -253,7 +255,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             }}
           />
           <SideCon
-            className={`${north} ${sideCon}`}
+            className={classNames(styles.north, styles.sideCon)}
             con={mainCon.NorthCon}
             variants={sideConVariants}
             initial="initialNorth"
@@ -266,7 +268,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             }}
           />
           <SideCon
-            className={`${northEast} ${sideCon}`}
+            className={classNames(styles.northEast, styles.sideCon)}
             con={mainCon.NorthEastCon}
             variants={sideConVariants}
             initial="initialNorthEast"
@@ -288,7 +290,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             exit="moveFromEast"
             key={conState.Number + "East"}
             custom={conState.direction}
-            className={`${east} ${sideCon}`}
+            className={classNames(styles.east, styles.sideCon)}
             con={mainCon.EastCon}
             onClick={() => {
               if (mainCon.East !== -1)
@@ -296,7 +298,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             }}
           />
           <SideCon
-            className={`${southEast} ${sideCon}`}
+            className={classNames(styles.southEast, styles.sideCon)}
             con={mainCon.SouthEastCon}
             variants={sideConVariants}
             initial="initialSouthEast"
@@ -313,7 +315,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             }}
           />
           <SideCon
-            className={`${south} ${sideCon}`}
+            className={classNames(styles.south, styles.sideCon)}
             con={mainCon.SouthCon}
             variants={sideConVariants}
             initial="initialSouth"
@@ -327,7 +329,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             }}
           />
           <SideCon
-            className={`${southWest} ${sideCon}`}
+            className={classNames(styles.southWest, styles.sideCon)}
             con={mainCon.SouthWestCon}
             variants={sideConVariants}
             initial="initialSouthWest"
@@ -351,7 +353,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             mainConPVariants={mainConPVariants}
             mainConRepVariants={mainConRepVariants}
           />
-          <div className={navInstructions}>
+          <div className={styles.navInstructions}>
             <h2>Click or Drag Map to Browse</h2>
           </div>
         </motion.div>
