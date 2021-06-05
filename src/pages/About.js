@@ -2,6 +2,8 @@ import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import GatsbyLogo from "../images/Gatsby-Logo.svg"
+import ReactLogo from "../images/react.png"
 
 const About = () => {
   const data = useStaticQuery(ABOUT_INFO)
@@ -104,7 +106,9 @@ const About = () => {
           <ul>
             <li>
               This site is hosted on{" "}
-              <a href="https://www.netlify.com/">Netlify</a>
+              <a href="https://www.gatsbyjs.com/products/cloud/">
+                Gatsby Cloud
+              </a>
             </li>
 
             <li>
@@ -112,8 +116,14 @@ const About = () => {
               <a href="https://github.com/DarrenGrafton/my-rep-mb">GitHub</a>
             </li>
             <li>
-              The site is built with <a href="https://reactjs.org/">React</a>{" "}
-              and <a href="https://www.gatsbyjs.com/">Gatsby</a>
+              The site is built with{" "}
+              <a href="https://reactjs.org/">
+                <img className="gatsby" src={ReactLogo} />
+              </a>{" "}
+              and{" "}
+              <a href="https://www.gatsbyjs.com/">
+                <img className="gatsby" src={GatsbyLogo} />
+              </a>
             </li>
           </ul>
         </section>

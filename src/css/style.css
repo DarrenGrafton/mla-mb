@@ -309,3 +309,12 @@ a:hover {
 .smallText {
   font-size: var(--smallText);
 }
+
+.react {
+  height: 22px;
+  border-bottom: 1px solid black;
+}
+.gatsby {
+  height: 22px;
+  border-bottom: 1px solid rebeccapurple;
+}
