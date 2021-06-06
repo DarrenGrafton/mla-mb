@@ -1,15 +1,20 @@
-## 💫 Deploy
+# My Rep MB
 
-Deployed on Netlify for testing on mobile:
-
-https://vibrant-cray-33306c.netlify.app/
+Website to find your MLA and information about what they are working on
 
 ## Data Sources
 
-Constituency info (cons.json) from ElectionsManitoba.ca
-MLA Info (reps.json) from https://www.gov.mb.ca/legislature/members
+### Constituency info (cons.json)
 
-### Might deploy on gatsby cloud at some point
+from ElectionsManitoba.ca
+
+### MLA Info (reps.json)
+
+from https://www.gov.mb.ca/legislature/members
+
+### deployed on gatsby cloud
+
+[My Rep MB](https://www.myrepmb.ca/)
 
 [Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
 
