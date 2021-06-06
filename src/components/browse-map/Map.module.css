@@ -299,28 +299,28 @@
 
   .east svg {
     top: 25vh;
-    left: 80vw;
+    left: 75vw;
   }
   .east h4 {
     top: 35vh;
-    left: 80vw;
+    left: 75vw;
   }
   .northEast svg {
     top: -10vh;
-    left: 80vw;
+    left: 75vw;
   }
   .northEast h4 {
     top: 0vh;
-    left: 80vw;
+    left: 75vw;
   }
 
   .southEast svg {
     top: 60vh;
-    left: 80vw;
+    left: 75vw;
   }
   .southEast h4 {
     top: 70vh;
-    left: 80vw;
+    left: 75vw;
   }
 
   .InnerWest svg {
@@ -371,6 +371,8 @@
 @media only screen and (max-width: 900px) {
   .linkHome {
     font-size: 16px;
-    top: 15vh;
+    top: 18vh;
+    left: 62vw;
+    z-index: 5;
   }
 }

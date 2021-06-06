@@ -174,8 +174,8 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
       sideConVariants.moveFromEast = direction => {
         if (direction !== "East") return { opacity: 0 }
         return {
-          y: "-5vh",
-          x: "-120vw",
+          y: "-3vh",
+          x: "-110vw",
           scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
@@ -203,7 +203,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
         if (direction !== "NorthEast") return { opacity: 0 }
         return {
           y: "50vh",
-          x: "-120vw",
+          x: "-110vw",
           scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
@@ -214,7 +214,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
         if (direction !== "SouthEast") return { opacity: 0 }
         return {
           y: "-57vh",
-          x: "-120vw",
+          x: "-110vw",
           scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
