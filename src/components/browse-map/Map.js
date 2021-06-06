@@ -135,7 +135,7 @@ const navInstructionVariants = {
 }
 
 export const Map = ({ mainCon, data, conState, setConState }) => {
-  if (typeof window !== undefined) {
+  if (typeof window !== "undefined") {
     //If the window is less than 900px, our css goes to phone mode.  The animations for the
     //constituencies being selected need to be different for phone size because the starting
     //location of the side constituencies are differnt on a phone
