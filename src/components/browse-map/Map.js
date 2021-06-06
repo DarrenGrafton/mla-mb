@@ -6,7 +6,7 @@ import { MainCon } from "./MainCon"
 import * as styles from "./Map.module.css"
 import classNames from "classnames"
 import { Link } from "gatsby"
-import { RiArrowGoBackFill } from "react-icons/Ri"
+import { RiArrowGoBackFill } from "react-icons/ri"
 //8 directional cons (plus interior east/west to make it 10 )
 //main con
 // - scrolling facts - todo
