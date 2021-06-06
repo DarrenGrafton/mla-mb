@@ -135,6 +135,70 @@ const navInstructionVariants = {
 }
 
 export const Map = ({ mainCon, data, conState, setConState }) => {
+  if (typeof window !== undefined) {
+    //If the window is less than 900px, our css goes to phone mode.  The animations for the
+    //constituencies being selected need to be different for phone size because the starting
+    //location of the side constituencies are differnt on a phone
+    if (window.innerWidth < 900) {
+      //north doesn't go down quite as far
+      sideConVariants.moveFromNorthWest = direction => {
+        if (direction !== "NorthWest") return { opacity: 0 }
+        return {
+          y: "60vh",
+          x: "35vw",
+          scale: 1.8,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+      sideConVariants.moveFromNorth = direction => {
+        if (direction !== "North") return { opacity: 0 }
+        return {
+          y: "60vh",
+          x: "-50vw",
+          scale: 1.8,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+      sideConVariants.moveFromNorthEast = direction => {
+        if (direction !== "NorthEast") return { opacity: 0 }
+        return {
+          y: "60vh",
+          x: "-135vw",
+          scale: 1.8,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+      //south doesn't go up nearly as far
+
+      sideConVariants.moveFromSouthEast = direction => {
+        if (direction !== "SouthEast") return { opacity: 0 }
+        return {
+          y: "-75vh",
+          x: "-140vw",
+          scale: 1.8,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+      sideConVariants.moveFromSouth = direction => {
+        if (direction !== "South") return { opacity: 0 }
+        return {
+          y: "-75vh",
+          x: "-50vw",
+          scale: 1.8,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+      sideConVariants.moveFromSouthWest = direction => {
+        if (direction !== "SouthWest") return { opacity: 0 }
+        return {
+          y: "-75vh",
+          x: "35vw",
+          scale: 1.8,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+    }
+  }
   return (
     <AnimatePresence exitBeforeEnter custom={conState.direction}>
       {mainCon && (
