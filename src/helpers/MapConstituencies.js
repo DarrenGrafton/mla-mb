@@ -17,16 +17,9 @@ export const createConObj = (conState, data) => {
     if (mainCon.SouthEast === con.Number) mainCon.SouthEastCon = con
     if (mainCon.South === con.Number) mainCon.SouthCon = con
     if (mainCon.SouthWest === con.Number) mainCon.SouthWestCon = con
+    if (mainCon.InnerWest === con.Number) mainCon.InnerWestCon = con
+    if (mainCon.InnerEast === con.Number) mainCon.InnerEastCon = con
   })
-
-  // const lastName = mainCon.CurrentRep.split(" ").slice(-1).join(" ")
-  // const fullName = mainCon.CurrentRep.replace(" ", "")
-
-  // mainCon.repImage = data.allSanityRepImage.nodes.find(
-  //   node =>
-  //     fullName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0 ||
-  //     lastName.localeCompare(node.title, "en", { sensitivity: "base" }) === 0
-  // )
 
   const regex = new RegExp(utils.slugifyName(mainCon.CurrentRep), "g")
 

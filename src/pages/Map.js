@@ -146,6 +146,8 @@ const BROWSE_MAP = graphql`
         SouthEast
         South
         SouthWest
+        InnerWest
+        InnerEast
       }
     }
     allRepsJson {

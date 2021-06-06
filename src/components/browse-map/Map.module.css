@@ -122,6 +122,10 @@
   }
 }
 
+.sideCon {
+  z-index: 2;
+}
+
 .sideCon svg {
   z-index: 1;
   fill-opacity: 0.6;
@@ -227,6 +231,26 @@
 .southEast h4 {
   top: 80vh;
   left: 85vw;
+}
+
+.InnerWest svg {
+  position: absolute;
+  top: 50vh;
+  left: 5vw;
+}
+.InnerWest h4 {
+  top: 55vh;
+  left: 15vw;
+}
+
+.InnerEast svg {
+  position: absolute;
+  top: 50vh;
+  left: 60vw;
+}
+.InnerEast h4 {
+  top: 55vh;
+  left: 70vw;
 }
 
 @media only screen and (max-width: 900px) {

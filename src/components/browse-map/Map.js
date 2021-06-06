@@ -54,6 +54,8 @@ const sideConVariants = {
   initialSouthEast: { y: 0, x: "-15vw" },
   initialSouth: { y: 0, x: "-15vw" },
   initialSouthWest: { y: 0, x: "-15vw" },
+  initialInnerWest: { y: 0, x: "-15vw" },
+  initialInnerEast: { y: 0, x: "-15vw" },
 
   moveFromWest: direction => {
     if (direction !== "West") return { opacity: 0 }
@@ -127,6 +129,24 @@ const sideConVariants = {
       transition: { delay: 0, duration: 0.5 },
     }
   },
+  moveFromInnerWest: direction => {
+    if (direction !== "InnerWest") return { opacity: 0 }
+    return {
+      y: "-45vh",
+      x: "-5vw",
+      scale: 1.8,
+      transition: { delay: 0, duration: 0.5 },
+    }
+  },
+  moveFromInnerEast: direction => {
+    if (direction !== "InnerEast") return { opacity: 0 }
+    return {
+      y: "-42vh",
+      x: "-105vw",
+      scale: 1.8,
+      transition: { delay: 0, duration: 0.5 },
+    }
+  },
 }
 const navInstructionVariants = {
   initial: { opacity: 0.0, y: 0, x: 0 },
@@ -138,7 +158,8 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
   if (typeof window !== "undefined") {
     //If the window is less than 900px, our css goes to phone mode.  The animations for the
     //constituencies being selected need to be different for phone size because the starting
-    //location of the side constituencies are differnt on a phone
+    //location of the side constituencies are differnt on a phone and the main con in the middle
+    //is a bit smaller
     if (window.innerWidth < 900) {
       //north doesn't go down quite as far
       sideConVariants.moveFromNorthWest = direction => {
@@ -227,6 +248,11 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
                     Number: mainCon.SouthEast,
                     direction: "SouthEast",
                   })
+                if (mainCon.InnerEast !== -1)
+                  setConState({
+                    Number: mainCon.InnerEast,
+                    direction: "InnerEast",
+                  })
               } else if (yPower > 100) {
                 //North
                 if (mainCon.NorthEast !== -1)
@@ -247,6 +273,12 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
                   setConState({
                     Number: mainCon.SouthWest,
                     direction: "SouthWest",
+                  })
+                //If there is an Inner West move there
+                if (mainCon.InnerWest !== -1)
+                  setConState({
+                    Number: mainCon.InnerWest,
+                    direction: "InnerWest",
                   })
               } else if (yPower > 100) {
                 //North
@@ -394,6 +426,43 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
                 setConState({
                   Number: mainCon.SouthWest,
                   direction: "SouthWest",
+                })
+            }}
+          />
+
+          <SideCon
+            className={classNames(styles.InnerWest, styles.sideCon)}
+            con={mainCon.InnerWestCon}
+            variants={sideConVariants}
+            initial="initialInnerWest"
+            animate="none"
+            exit="moveFromInnerWest"
+            key={conState.Number + "InnerWest"}
+            custom={conState.direction}
+            onClick={() => {
+              console.log("click InnerWest")
+              if (mainCon.InnerWest !== -1)
+                setConState({
+                  Number: mainCon.InnerWest,
+                  direction: "InnerWest",
+                })
+            }}
+          />
+          <SideCon
+            className={classNames(styles.InnerEast, styles.sideCon)}
+            con={mainCon.InnerEastCon}
+            variants={sideConVariants}
+            initial="initialInnerEast"
+            animate="none"
+            exit="moveFromInnerEast"
+            key={conState.Number + "InnerEast"}
+            custom={conState.direction}
+            onClick={() => {
+              console.log("click InnerEast")
+              if (mainCon.InnerEast !== -1)
+                setConState({
+                  Number: mainCon.InnerEast,
+                  direction: "InnerEast",
                 })
             }}
           />
