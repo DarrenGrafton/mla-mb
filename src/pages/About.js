@@ -118,7 +118,7 @@ const About = () => {
             <li>
               The site is built with{" "}
               <a href="https://reactjs.org/">
-                <img className="gatsby" src={ReactLogo} />
+                <img className="react" src={ReactLogo} />
               </a>{" "}
               and{" "}
               <a href="https://www.gatsbyjs.com/">
