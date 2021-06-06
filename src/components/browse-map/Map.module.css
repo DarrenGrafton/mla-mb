@@ -10,6 +10,15 @@
   left: 0vh;
 }
 
+.mainCon svg {
+  z-index: -1;
+  fill-opacity: 0.6;
+  fill: var(--accent);
+  fill: white;
+  stroke: var(--primary);
+  width: 70vw;
+  height: 70vh;
+}
 @media only screen and (min-width: 480px) {
   .mainCon {
     /* top: 25vh;
@@ -40,53 +49,6 @@
     left: 20vh; */
   }
 }
-.conInfo {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  z-index: 1;
-}
-
-.conInfo h1,
-.conInfo h2,
-.conInfo h3 {
-  /* box-shadow: 0 4px 6px -1px var(--accent); */
-  text-shadow: 2px 2px var(--accent);
-}
-
-.conInfo h1 {
-  font-size: var(--h3);
-}
-@media only screen and (min-width: 900px) {
-  .conInfo h1 {
-    font-size: var(--h2);
-  }
-}
-
-.conInfo a {
-  text-decoration: none;
-  color: var(--primary);
-  border: 1px solid;
-  padding: 2px 10px 2px 10px;
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.conInfo a:hover {
-  transition: ease 0.2;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.mainCon svg {
-  z-index: -1;
-  fill-opacity: 0.6;
-  fill: var(--accent);
-  fill: white;
-  stroke: var(--primary);
-  width: 70vw;
-  height: 70vh;
-}
 @media only screen and (min-width: 600px) {
   .mainCon svg {
     /* width: 60vw;
@@ -111,22 +73,73 @@
     height: 80vh; */
   }
 }
-.conInfo p {
-  display: none;
+.conInfo {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 1fr 150px;
+  left: 20vw;
+  top: 5vh;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0);
+  /* border: 1px dotted var(--secondary); */
+  /* border: 1px solid green; */
 }
-.rep {
+.conName {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+  text-shadow: 2px 2px var(--accent);
+  margin: 0;
+  padding: 0;
+  font-size: var(--h3);
+}
+.repImg {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+.nameAndLink {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
+
+.repName {
+  font-size: var(--h4);
+  margin: 10px 10px 10px 10px;
+  text-shadow: 2px 2px var(--accent);
+
+  /* background: rgba(255, 255, 255, 0.6);*/
+}
+@media only screen and (min-width: 900px) {
+  .conName {
+    font-size: var(--h2);
+  }
+}
+
+.conLink {
+  text-decoration: none;
+  color: var(--primary);
+  border: 1px solid;
+  padding: 2px 10px 2px 10px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 10px 10px 10px 10px;
+  align-self: flex-start;
+}
+
+.conLink:hover {
+  transition: ease 0.2;
+  background: rgba(255, 255, 255, 0.8);
+}
+
 .repImg {
   width: 90px;
 }
 @media only screen and (min-width: 900px) {
   .repImg {
-    width: 120px;
+    width: 100px;
   }
-}
-.rep h3 {
-  /* width: 40px; */
 }
 
 .sideCon svg {
@@ -141,11 +154,27 @@
   transform: scale(1.1);
   transition-duration: 0.5s;
 }
+.sideConName {
+  position: absolute;
+  font-size: var(--h5);
+}
+.sideCon h4 {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  text-shadow: 1px 1px var(--accent);
+}
 
 .west svg {
   position: absolute;
   top: 30vh;
   left: -15vw;
+}
+.west h4 {
+  top: 40vh;
+  left: 2vw;
 }
 
 .northWest svg {
@@ -153,20 +182,37 @@
   top: -10vh;
   left: -15vw;
 }
+.northWest h4 {
+  top: 0vh;
+  left: 2vw;
+}
+
 .southWest svg {
   position: absolute;
   top: 80vh;
   left: -15vw;
+}
+.southWest h4 {
+  top: 80vh;
+  left: 2vw;
 }
 .north svg {
   position: absolute;
   top: -10vh;
   left: 30vw;
 }
+.north h4 {
+  top: 0vh;
+  left: 45vw;
+}
 .south svg {
   position: absolute;
   top: 80vh;
   left: 30vw;
+}
+.south h4 {
+  top: 80vh;
+  left: 45vw;
 }
 
 .east svg {
@@ -174,38 +220,52 @@
   top: 30vh;
   left: 80vw;
 }
+.east h4 {
+  top: 40vh;
+  left: 85vw;
+}
 .northEast svg {
   position: absolute;
   top: -10vh;
   left: 80vw;
 }
+.northEast h4 {
+  top: 0vh;
+  left: 85vw;
+}
+
 .southEast svg {
   position: absolute;
   top: 80vh;
   left: 80vw;
+}
+.southEast h4 {
+  top: 80vh;
+  left: 85vw;
 }
 
 .navInstructions {
   pointer-events: none;
   position: absolute;
   width: 100%;
-  top: 80vh;
-}
-
-@media only screen and (min-width: 720px) {
-  .navInstructions {
-    top: 92vh;
-  }
-}
-
-.navInstructions h2 {
+  top: 60vh;
+  font-weight: bold;
   font-size: var(--h6);
   text-align: center;
 }
 
-@media only screen and (min-width: 720px) {
-  .navInstructions h2 {
+@media only screen and (min-width: 900px) {
+  .navInstructions {
+    top: 75vh;
     font-size: var(--h4);
     text-align: center;
   }
+}
+
+.linkHome {
+  position: absolute;
+  left: 20vw;
+  top: 5vh;
+  font-size: 24px;
+  border-bottom: 1px solid var(--accent);
 }

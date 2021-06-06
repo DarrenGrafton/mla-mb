@@ -24,6 +24,7 @@ export const MainCon = ({
     >
       <div className={styles.conInfo}>
         <motion.h1
+          className={styles.conName}
           variants={mainConH1Variants}
           initial="initial"
           animate="animate"
@@ -31,30 +32,22 @@ export const MainCon = ({
         >
           {con.Name}
         </motion.h1>
-        <motion.p
-          variants={mainConPVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-        >
-          Total Population: {con.TotalPopulation}
-          <br />
-          Area In Square Km: {con.AreaInSquareKm}
-        </motion.p>
-        <Link to={"/" + slugifyName(con.Name)}>Read More</Link>
+        <GatsbyImage
+          image={con.repImage?.gatsbyImageData}
+          alt={con.CurrentRep}
+          className={styles.repImg}
+        />
         <motion.div
-          className={styles.rep}
+          className={styles.nameAndLink}
           variants={mainConRepVariants}
           initial="initial"
           animate="animate"
           exit="exit"
         >
-          <GatsbyImage
-            image={con.repImage?.gatsbyImageData}
-            alt={con.CurrentRep}
-            className={styles.repImg}
-          />
-          <h3>{con.CurrentRep}</h3>
+          <h3 className={styles.repName}>{con.CurrentRep}</h3>
+          <Link className={styles.conLink} to={"/" + slugifyName(con.Name)}>
+            Read More
+          </Link>
         </motion.div>
       </div>
 

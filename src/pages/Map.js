@@ -101,7 +101,7 @@ const BrowseMap = ({ location }) => {
 
       <StaticImage
         width={1800}
-        quality={15}
+        quality={80}
         src="../images/pete-mcbride.jpg"
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Prairie Field"

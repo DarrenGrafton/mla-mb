@@ -3,26 +3,13 @@ import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { SideCon } from "./SideCon"
 import { MainCon } from "./MainCon"
-// import {
-//   map,
-//   //main,
-//   west,
-//   northWest,
-//   southWest,
-//   north,
-//   south,
-//   east,
-//   northEast,
-//   southEast,
-//   sideCon,
-//   navInstructions,
-// } from "./Map.module.css"
 import * as styles from "./Map.module.css"
 import classNames from "classnames"
-
-//8 directional cons
+import { Link } from "gatsby"
+import { RiArrowGoBackFill } from "react-icons/Ri"
+//8 directional cons (plus interior east/west to make it 10 )
 //main con
-// - scrolling facts
+// - scrolling facts - todo
 // - view more link
 // - current rep
 //how to message
@@ -41,6 +28,7 @@ const mainConVariants = {
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, transition: { delay: 0, duration: 0.4 } },
 }
+
 const mainConH1Variants = {
   initial: { opacity: 0, y: 0, x: 0 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.2 } },
@@ -140,6 +128,11 @@ const sideConVariants = {
     }
   },
 }
+const navInstructionVariants = {
+  initial: { opacity: 0.0, y: 0, x: 0 },
+  animate: { opacity: 1, y: 0, transition: { delay: 5, duration: 0.4 } },
+  exit: { opacity: 0 },
+}
 
 export const Map = ({ mainCon, data, conState, setConState }) => {
   return (
@@ -152,11 +145,6 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
           initial="initial"
           animate="animate"
           exit="exit"
-          // transition={{
-          //   x: { type: "spring", stiffness: 300, damping: 30 },
-          //   opacity: { duration: 0.2 },
-          // }}
-
           className={styles.map}
           drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
@@ -353,11 +341,21 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
             mainConPVariants={mainConPVariants}
             mainConRepVariants={mainConRepVariants}
           />
-          <div className={styles.navInstructions}>
-            <h2>Click or Drag Map to Browse</h2>
-          </div>
+          {/* <motion.h2
+            className={styles.navInstructions}
+            variants={navInstructionVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            Click or Drag Map to Browse
+          </motion.h2> */}
         </motion.div>
       )}
+      <Link to="/" className={styles.linkHome}>
+        <RiArrowGoBackFill />
+        Home
+      </Link>
     </AnimatePresence>
   )
 }
