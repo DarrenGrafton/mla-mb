@@ -322,6 +322,24 @@
     top: 70vh;
     left: 80vw;
   }
+
+  .InnerWest svg {
+    top: 45vh;
+    left: 0vw;
+  }
+  .InnerWest h4 {
+    top: 50vh;
+    left: 10vw;
+  }
+
+  .InnerEast svg {
+    top: 45vh;
+    left: 60vw;
+  }
+  .InnerEast h4 {
+    top: 50vh;
+    left: 70vw;
+  }
 }
 
 .navInstructions {
@@ -353,5 +371,6 @@
 @media only screen and (max-width: 900px) {
   .linkHome {
     font-size: 16px;
+    top: 15vh;
   }
 }

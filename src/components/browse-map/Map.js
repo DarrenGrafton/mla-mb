@@ -60,8 +60,8 @@ const sideConVariants = {
   moveFromWest: direction => {
     if (direction !== "West") return { opacity: 0 }
     return {
-      y: "-10vh",
-      x: "35vw",
+      y: "-8vh",
+      x: "31vw",
       scale: 1.8,
       transition: { delay: 0, duration: 0.5 },
     }
@@ -70,7 +70,7 @@ const sideConVariants = {
     if (direction !== "NorthWest") return { opacity: 0 }
     return {
       y: "65vh",
-      x: "35vw",
+      x: "31vw",
       scale: 1.8,
       transition: { delay: 0, duration: 0.5 },
     }
@@ -88,7 +88,7 @@ const sideConVariants = {
     if (direction !== "NorthEast") return { opacity: 0 }
     return {
       y: "65vh",
-      x: "-135vw",
+      x: "-140vw",
       scale: 1.8,
       transition: { delay: 0, duration: 0.5 },
     }
@@ -96,8 +96,8 @@ const sideConVariants = {
   moveFromEast: direction => {
     if (direction !== "East") return { opacity: 0 }
     return {
-      y: "-10vh",
-      x: "-135vw",
+      y: "-8vh",
+      x: "-140vw",
       scale: 1.8,
       transition: { delay: 0, duration: 0.5 },
     }
@@ -124,7 +124,7 @@ const sideConVariants = {
     if (direction !== "SouthWest") return { opacity: 0 }
     return {
       y: "-95vh",
-      x: "35vw",
+      x: "31vw",
       scale: 1.8,
       transition: { delay: 0, duration: 0.5 },
     }
@@ -161,31 +161,50 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
     //location of the side constituencies are differnt on a phone and the main con in the middle
     //is a bit smaller
     if (window.innerWidth < 900) {
+      //change the scaling on the animation, note this greatly affects the distance require to move
+      sideConVariants.moveFromWest = direction => {
+        if (direction !== "West") return { opacity: 0 }
+        return {
+          y: "-3vh",
+          x: "28vw",
+          scale: 1.54,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+      sideConVariants.moveFromEast = direction => {
+        if (direction !== "East") return { opacity: 0 }
+        return {
+          y: "-5vh",
+          x: "-120vw",
+          scale: 1.54,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
       //north doesn't go down quite as far
       sideConVariants.moveFromNorthWest = direction => {
         if (direction !== "NorthWest") return { opacity: 0 }
         return {
-          y: "60vh",
-          x: "35vw",
-          scale: 1.8,
+          y: "50vh",
+          x: "28vw",
+          scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
       }
       sideConVariants.moveFromNorth = direction => {
         if (direction !== "North") return { opacity: 0 }
         return {
-          y: "60vh",
-          x: "-50vw",
-          scale: 1.8,
+          y: "50vh",
+          x: "-40vw",
+          scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
       }
       sideConVariants.moveFromNorthEast = direction => {
         if (direction !== "NorthEast") return { opacity: 0 }
         return {
-          y: "60vh",
-          x: "-135vw",
-          scale: 1.8,
+          y: "50vh",
+          x: "-120vw",
+          scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
       }
@@ -194,27 +213,46 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
       sideConVariants.moveFromSouthEast = direction => {
         if (direction !== "SouthEast") return { opacity: 0 }
         return {
-          y: "-75vh",
-          x: "-140vw",
-          scale: 1.8,
+          y: "-57vh",
+          x: "-120vw",
+          scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
       }
       sideConVariants.moveFromSouth = direction => {
         if (direction !== "South") return { opacity: 0 }
         return {
-          y: "-75vh",
-          x: "-50vw",
-          scale: 1.8,
+          y: "-57vh",
+          x: "-40vw",
+          scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
       }
       sideConVariants.moveFromSouthWest = direction => {
         if (direction !== "SouthWest") return { opacity: 0 }
         return {
-          y: "-75vh",
-          x: "35vw",
-          scale: 1.8,
+          y: "-57vh",
+          x: "28vw",
+          scale: 1.54,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+
+      sideConVariants.moveFromInnerWest = direction => {
+        if (direction !== "InnerWest") return { opacity: 0 }
+        return {
+          y: "-35vh",
+          x: "3vw",
+          scale: 1.54,
+          transition: { delay: 0, duration: 0.5 },
+        }
+      }
+      sideConVariants.moveFromInnerEast = direction => {
+        if (direction !== "InnerEast") return { opacity: 0 }
+        return {
+          y: "-35vh",
+          x: "-90vw",
+          scale: 1.54,
           transition: { delay: 0, duration: 0.5 },
         }
       }
