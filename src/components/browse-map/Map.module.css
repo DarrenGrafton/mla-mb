@@ -182,7 +182,7 @@
 
 .southWest svg {
   position: absolute;
-  top: 80vh;
+  top: 75vh;
   left: -15vw;
 }
 .southWest h4 {
@@ -200,7 +200,7 @@
 }
 .south svg {
   position: absolute;
-  top: 80vh;
+  top: 75vh;
   left: 30vw;
 }
 .south h4 {
@@ -229,7 +229,7 @@
 
 .southEast svg {
   position: absolute;
-  top: 80vh;
+  top: 75vh;
   left: 80vw;
 }
 .southEast h4 {

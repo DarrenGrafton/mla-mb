@@ -105,7 +105,7 @@ const sideConVariants = {
   moveFromSouthEast: direction => {
     if (direction !== "SouthEast") return { opacity: 0 }
     return {
-      y: "-95vh",
+      y: "-88vh",
       x: "-140vw",
       scale: 1.8,
       transition: { delay: 0, duration: 0.5 },
@@ -114,7 +114,7 @@ const sideConVariants = {
   moveFromSouth: direction => {
     if (direction !== "South") return { opacity: 0 }
     return {
-      y: "-95vh",
+      y: "-88vh",
       x: "-50vw",
       scale: 1.8,
       transition: { delay: 0, duration: 0.5 },
@@ -123,7 +123,7 @@ const sideConVariants = {
   moveFromSouthWest: direction => {
     if (direction !== "SouthWest") return { opacity: 0 }
     return {
-      y: "-95vh",
+      y: "-88vh",
       x: "31vw",
       scale: 1.8,
       transition: { delay: 0, duration: 0.5 },
