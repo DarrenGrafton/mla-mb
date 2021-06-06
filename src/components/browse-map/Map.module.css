@@ -152,6 +152,10 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .sideCon svg {
+    fill-opacity: 0.3;
+  }
+
   .sideConName {
     font-size: var(--smallText);
   }
