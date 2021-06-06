@@ -260,17 +260,17 @@
   }
   .west h4 {
     top: 35vh;
-    left: 0vw;
+    left: -2vw;
   }
-  /* 
+
   .northWest svg {
     top: -10vh;
     left: -15vw;
   }
   .northWest h4 {
     top: 0vh;
-    left: 2vw;
-  } */
+    left: -2vw;
+  }
 
   .southWest svg {
     top: 60vh;
@@ -278,7 +278,7 @@
   }
   .southWest h4 {
     top: 70vh;
-    left: 0vw;
+    left: -2vw;
   }
   .north svg {
     top: -10vh;
@@ -286,7 +286,7 @@
   }
   .north h4 {
     top: 0vh;
-    left: 40vw;
+    left: 35vw;
   }
   .south svg {
     top: 60vh;
@@ -294,7 +294,7 @@
   }
   .south h4 {
     top: 70vh;
-    left: 40vw;
+    left: 35vw;
   }
 
   .east svg {
