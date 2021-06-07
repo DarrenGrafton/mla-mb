@@ -318,7 +318,3 @@ a:hover {
   height: 22px;
   border-bottom: 1px solid rebeccapurple;
 }
-
-*:focus {
-  outline: none;
-}

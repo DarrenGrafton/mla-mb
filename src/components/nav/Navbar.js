@@ -8,6 +8,7 @@ const Navbar = ({ navbarOpen, setNavbarOpen, conNumber }) => {
   return (
     <nav className={styles.navBar}>
       <div
+        aria-label="Open Menu"
         role="button"
         className={styles.navToggle}
         onClick={() => setNavbarOpen(!navbarOpen)}

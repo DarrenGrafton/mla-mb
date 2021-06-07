@@ -3,6 +3,9 @@
   flex-grow: 1;
 }
 
+.navBar div {
+  outline: none; /*remove the focus outline on safari for the hamburger */
+}
 .navBar div a {
   display: inline-block;
   margin: 0 12px;
@@ -71,6 +74,7 @@
     flex-direction: column;
     position: fixed;
     width: 100%;
+    height: 150%;
     justify-content: flex-start;
     padding-top: 10vh;
     background: var(--background);
