@@ -3,6 +3,7 @@ module.exports = {
     title: `My Rep MB`,
     description: `Find your MLA.  The representative for your constituency at the Manitoba Government.  What is your MLA working on?`,
     author: `@dmg20000`,
+    siteUrl: `https://www.myrepmb.ca`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,6 +39,15 @@ module.exports = {
     },
 
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.myrepmb.ca",
+        sitemap: "https://www.myrepmb.ca/sitemap/sitemap-0.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
