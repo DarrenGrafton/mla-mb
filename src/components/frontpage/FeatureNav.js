@@ -33,24 +33,6 @@ export const FeatureNav = () => {
           </p>
         </motion.div>
 
-        {/* <motion.div
-          className={mapbox}
-          transition={{ duration: 1 }}
-          variants={variants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          whileHover={{
-            scale: 1.1,
-            rotate: 2,
-            transition: { duration: 0.1 },
-          }}
-        >
-          <Link to="/Map/">
-            Browse <span>Map</span>
-          </Link>
-        </motion.div> */}
-
         <motion.ul
           className={styles.linklist}
           transition={{ duration: 1 }}
@@ -59,7 +41,9 @@ export const FeatureNav = () => {
           exit={{ opacity: 0, y: 100 }}
         >
           <li>
-            <Link to="/Map/">Find Based on Location</Link>
+            <Link to="/Map/" state={{ forceLoc: true }}>
+              Find Based on Location
+            </Link>
           </li>
           <li>
             <Link to="/Constituencies/">List of Constituencies</Link>

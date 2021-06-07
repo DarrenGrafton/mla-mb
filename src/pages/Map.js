@@ -31,11 +31,15 @@ const BrowseMap = ({ location }) => {
 
   useEffect(() => {
     async function loadConstituency() {
+      //This function checks query params first to maintain the ability to link to a specific map number,
+      //but the site does not pass the query params anymore.  A location "State" is passed to this page
+      //using Gatsby Link to control the initial constituency
+
       //Parse ForceLoc or Number=NN from query string
       const query = parseQuery(location.search)
 
       const loadConNumber = query["Number"] //?Number=104
-      const forceLoadGeolocation = query["ForceLoc"] //?ForceLoc=true
+      const forceLoadGeolocation = query["ForceLoc"] || location.state?.forceLoc //?ForceLoc=true
 
       //If query string number provided
       if (loadConNumber) {
@@ -43,10 +47,20 @@ const BrowseMap = ({ location }) => {
         return
       }
 
-      //If not force, check if there is a last map saved in the browser
+      //If not force, check if there is a last con Number saved in the browser
       const cookieNum = cookies["last-constituency"]
       if (cookieNum && !forceLoadGeolocation) {
         setConState({ Number: cookieNum, direction: null })
+        return
+      }
+      //If not force, check if there is a con Number passed in the link state
+      const stateConNumber = location.state?.conNumber
+      if (
+        stateConNumber >= 101 &&
+        stateConNumber <= 157 &&
+        !forceLoadGeolocation
+      ) {
+        setConState({ Number: stateConNumber, direction: null })
         return
       }
 
