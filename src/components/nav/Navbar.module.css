@@ -38,9 +38,9 @@
   width: 100%;
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 900px) {
   .navBar div a {
-    padding: 20px 0;
+    padding: 14px 0;
     font-size: var(--h5);
     z-index: 6;
   }
