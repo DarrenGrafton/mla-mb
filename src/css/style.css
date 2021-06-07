@@ -2,7 +2,7 @@
 
 :root {
   /*Define colors*/
-  --black: #333333;
+  --black: #121212;
   --grey: #bfbfbf;
   --lightGrey: #ebebeb;
   --veryLightGrey: #f2f4f6;
@@ -130,15 +130,18 @@ footer {
 }
 
 footer nav a {
-  color: var(--footerTextColor);
+  color: var(--veryLightGrey);
   text-decoration: none;
+  border-bottom: 1px solid var(--primary);
 }
 footer ul {
   display: flex;
   justify-content: space-evenly;
 }
 footer ul li a {
-  border-bottom: none;
+  color: var(--veryLightGrey);
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
 }
 
 p {
