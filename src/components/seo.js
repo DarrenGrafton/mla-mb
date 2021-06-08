@@ -56,6 +56,10 @@ function SEO({ description, lang, meta, title, noOverflow }) {
           content: `website`,
         },
         {
+          name: `og:image`,
+          content: `https://myrepmb.ca/MLAInformation.png`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -70,6 +74,10 @@ function SEO({ description, lang, meta, title, noOverflow }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: `https://myrepmb.ca/MLAInformation.png`,
         },
       ].concat(meta)}
     />
