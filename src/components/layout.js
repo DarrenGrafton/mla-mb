@@ -34,7 +34,7 @@ const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
           <ul>
             <li>
               © {new Date().getFullYear()},{" "}
-              <a href="mailto:myrepmb@gmail.com">Email </a> any questions
+              <a href="mailto:mlambcontact@gmail.com">Email </a> any questions
             </li>
             <li>
               <Link className="smallText" to="/PrivacyPolicy/">

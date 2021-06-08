@@ -7,12 +7,10 @@ export default function PrivacyPolicy() {
     <Layout pageTitle="Privacy Policy">
       <Seo title="Privacy Policy" />
       <div>
-        <h2>Privacy Policy for My Rep MB</h2>
+        <h2>Privacy Policy for MLA MB</h2>
         <p>Privacy Policy Last updated: May 31, 2021</p>
 
-        <p>
-          My Reb MB does not track data personal or otherwise of site visitors
-        </p>
+        <p>MLA MB does not track data personal or otherwise of site visitors</p>
 
         <p>
           We use cookies on the site to track preferences and assist in site
@@ -33,7 +31,8 @@ export default function PrivacyPolicy() {
           us:
         </p>
         <p>
-          By email: <a href="mailto:myrepmb@gmail.com">myrepmb@gmail.com</a>
+          By email:{" "}
+          <a href="mailto:mlambcontact@gmail.com">mlambcontact@gmail.com</a>
         </p>
       </div>
     </Layout>

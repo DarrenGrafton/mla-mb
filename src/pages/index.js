@@ -6,7 +6,7 @@ import { FeatureNav } from "../components/frontpage/FeatureNav"
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle="My Rep MB">
+    <Layout pageTitle="MLA MB">
       <Seo title="Manitoban MLA information" />
 
       <StaticImage

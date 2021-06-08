@@ -1,4 +1,4 @@
-# My Rep MB
+# MLA MB
 
 Website to find your MLA and information about what they are working on
 
@@ -14,7 +14,7 @@ from https://www.gov.mb.ca/legislature/members
 
 ### deployed on gatsby cloud
 
-[My Rep MB](https://www.myrepmb.ca/)
+[MLA MB](https://www.mlamb.ca/)
 
 [Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
 

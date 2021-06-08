@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `My Rep MB`,
+    title: `MLA MB`,
     description: `Find your MLA.  The representative for your constituency at the Manitoba Government.  What is your MLA working on?`,
     author: `@dmg20000`,
-    siteUrl: `https://www.myrepmb.ca`,
+    siteUrl: `https://www.mlamb.ca`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -43,8 +43,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.myrepmb.ca",
-        sitemap: "https://www.myrepmb.ca/sitemap/sitemap-0.xml",
+        host: "https://www.mlamb.ca",
+        sitemap: "https://www.mlamb.ca/sitemap/sitemap-0.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },

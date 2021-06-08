@@ -57,7 +57,7 @@ function SEO({ description, lang, meta, title, noOverflow }) {
         },
         {
           name: `og:image`,
-          content: `https://myrepmb.ca/MLAInformation.png`,
+          content: `https://mlamb.ca/MLAInformation.png`,
         },
         {
           name: `twitter:card`,
@@ -77,7 +77,7 @@ function SEO({ description, lang, meta, title, noOverflow }) {
         },
         {
           name: `twitter:image`,
-          content: `https://myrepmb.ca/MLAInformation.png`,
+          content: `https://mlamb.ca/MLAInformation.png`,
         },
       ].concat(meta)}
     />
