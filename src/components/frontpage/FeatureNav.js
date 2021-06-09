@@ -23,11 +23,11 @@ export const FeatureNav = () => {
           animate="animate"
           exit="exit"
         >
-          <p>
+          <p className={styles.featureParagraph}>
             Find your MLA. The representative for your constuituency at the
             Manitoba Government.
           </p>
-          <p>
+          <p className={styles.featureParagraph}>
             See Bill's they've sponsored, links to transcripts of thier work in
             the Legislative Assembly of Manitoba, and more!
           </p>
