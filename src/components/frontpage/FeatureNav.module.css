@@ -32,7 +32,8 @@
   box-shadow: var(--level-1);
   width: 300px;
   display: block;
-  margin-bottom: 1px;
+  margin: 0 0 1px -2px;
+  padding: 0 2px;
 }
 
 .linklist a:hover {
