@@ -15,7 +15,7 @@ export const SideCon = ({ con, ...other }) => {
             height="35vh"
             fill="white"
             stroke="red"
-            strokeWidth="10"
+            strokeWidth="5"
           />
           <h4 className={styles.sideConName}>{con.Name}</h4>
         </>

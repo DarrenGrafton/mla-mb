@@ -51,7 +51,7 @@ export const MainCon = ({
         </motion.div>
       </div>
 
-      <ConSvg conId={con.Number} fill="white" stroke="red" strokeWidth="20" />
+      <ConSvg conId={con.Number} fill="white" stroke="red" strokeWidth="6" />
     </motion.div>
   )
 }
