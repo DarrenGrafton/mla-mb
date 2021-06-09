@@ -43,6 +43,7 @@ function SEO({ description, lang, meta, title, noOverflow }) {
           name: `description`,
           content: metaDescription,
         },
+
         {
           property: `og:title`,
           content: title,
@@ -60,8 +61,22 @@ function SEO({ description, lang, meta, title, noOverflow }) {
           content: `https://www.mlamb.ca/MLAInformation.png`,
         },
         {
+          name: `og:url`,
+          content: `https://www.mlamb.ca`,
+        },
+
+        {
           name: `twitter:card`,
           content: `summary_large_image`,
+        },
+        {
+          name: `twitter:domain`,
+          content: `mlamb.ca`,
+        },
+        ,
+        {
+          name: `twitter:url`,
+          content: `https://www.mlamb.ca`,
         },
         {
           name: `twitter:creator`,
