@@ -32,7 +32,7 @@
 
 .linklist a {
   border: solid var(--secondary) 2px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--veryLightGrey);
   box-shadow: var(--level-1);
   width: 300px;
   display: block;
@@ -42,7 +42,7 @@
 
 .linklist a:hover {
   transition: ease 0.2;
-  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.01);
   box-shadow: var(--level-3);
 }
 /* 
