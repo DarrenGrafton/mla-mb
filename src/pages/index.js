@@ -1,10 +1,17 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { FeatureNav } from "../components/frontpage/FeatureNav"
+import { useCookies } from "react-cookie"
 
 const IndexPage = () => {
+  const [, , removeCookie] = useCookies([])
+
+  useEffect(() => {
+    //clear the last constituency cookie, so that from the main page we always search by location
+    removeCookie("last-constituency", { path: "/" })
+  }, [removeCookie])
   return (
     <Layout pageTitle="Manitoban MLAs">
       <Seo title="Manitoban MLA information" />

@@ -41,9 +41,7 @@ export const FeatureNav = () => {
           exit={{ opacity: 0, y: 100 }}
         >
           <li>
-            <Link to="/Map/" state={{ forceLoc: true }}>
-              Find Based on Location
-            </Link>
+            <Link to="/Map/">Find Based on Location</Link>
           </li>
           <li>
             <Link to="/Constituencies/">List of Constituencies</Link>

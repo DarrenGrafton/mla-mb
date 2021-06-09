@@ -8,6 +8,8 @@ import { ConDemoData } from "../components/constituency/ConDemoData"
 import { RepContactInfo } from "../components/constituency/RepContactInfo"
 import { ConHansardLinks } from "../components/constituency/ConHansardLinks"
 import { ConBills } from "../components/constituency/ConBills"
+import { useCookies } from "react-cookie"
+
 export default function ConTemplate({ data }) {
   const {
     consJson: cons,
@@ -18,6 +20,10 @@ export default function ConTemplate({ data }) {
     allImageSharp,
   } = data
 
+  const [cookies, setCookie] = useCookies([])
+
+  //Set the con number page we are on, in case user pops to the map
+  setCookie("last-constituency", cons.Number, { path: "/" })
   //header with  con name, back link,menu items
   return (
     <Layout pageTitle={cons.Name} conNumber={cons.Number}>

@@ -23,7 +23,7 @@ function getPosition(options) {
 const BrowseMap = ({ location }) => {
   const data = useStaticQuery(BROWSE_MAP)
 
-  const [cookies, setCookie, removeCookie] = useCookies([])
+  const [cookies, setCookie] = useCookies([])
   const [conState, setConState] = useState({
     Number: null,
     direction: null,
@@ -39,7 +39,7 @@ const BrowseMap = ({ location }) => {
       const query = parseQuery(location.search)
 
       const loadConNumber = query["Number"] //?Number=104
-      const forceLoadGeolocation = query["ForceLoc"] || location.state?.forceLoc //?ForceLoc=true
+      const forceLoadGeolocation = query["ForceLoc"] //?ForceLoc=true
 
       //If query string number provided
       if (loadConNumber) {
@@ -51,16 +51,6 @@ const BrowseMap = ({ location }) => {
       const cookieNum = cookies["last-constituency"]
       if (cookieNum && !forceLoadGeolocation) {
         setConState({ Number: cookieNum, direction: null })
-        return
-      }
-      //If not force, check if there is a con Number passed in the link state
-      const stateConNumber = location.state?.conNumber
-      if (
-        stateConNumber >= 101 &&
-        stateConNumber <= 157 &&
-        !forceLoadGeolocation
-      ) {
-        setConState({ Number: stateConNumber, direction: null })
         return
       }
 
