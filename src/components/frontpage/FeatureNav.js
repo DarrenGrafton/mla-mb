@@ -24,8 +24,7 @@ export const FeatureNav = () => {
           exit="exit"
         >
           <p className={styles.featureParagraph}>
-            Find your MLA. The representative for your constuituency at the
-            Manitoba Government.
+            Find your representative at the Government of Manitoba.
           </p>
           <p className={styles.featureParagraph}>
             See Bill's they've sponsored, links to transcripts of thier work in
