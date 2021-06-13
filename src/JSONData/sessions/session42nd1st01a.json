@@ -1,10 +1,1 @@
-{
-  "legislature": "42nd",
-  "session": "1st",
-  "volume": "01a",
-  "type": "house",
-  "link": "vol_01a/h01a.html",
-  "key": "42nd1st01a",
-  "date": "2019-09-30T05:00:00.000Z",
-  "speakers": []
-}
+{"legislature":"42nd","session":"1st","volume":"01a","type":"house","link":"vol_01a/h01a.html","key":"42nd1st01a","date":"2019-09-30T05:00:00.000Z","speakers":[]}
