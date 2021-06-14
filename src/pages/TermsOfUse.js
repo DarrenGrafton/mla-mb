@@ -23,26 +23,26 @@ export default function TermsOfUse() {
         </p>
 
         <p>
-          The Materials are provided "as is". mlamb makes no warranties,
-          expressed or implied, and hereby disclaims and negates all other
-          warranties, including without limitation, implied warranties or
+          The Materials are provided "as is". Manitoban MLAs (mlamb.ca) makes no
+          warranties, expressed or implied, and hereby disclaims and negates all
+          other warranties, including without limitation, implied warranties or
           conditions of merchantability, fitness for a particular purpose, or
           non-infringement of intellectual property or other violation of
-          rights. Further, mlamb does not warrant or make any representations
-          concerning the accuracy, likely results, or reliability of the use of
-          the Materials or otherwise relating to such Materials or on any web
-          sites linked to this web site.
+          rights. Further, Manitoban MLAs (mlamb.ca) does not warrant or make
+          any representations concerning the accuracy, likely results, or
+          reliability of the use of the Materials or otherwise relating to such
+          Materials or on any web sites linked to this web site.
         </p>
 
         <p>
-          In no event shall mlamb be liable for any damages (including, without
-          limitation, damages for loss of data or profit, or due to business
-          interruption,) arising out of the use or inability to use the
-          Materials, even if mlamb has been notified in writing of the
-          possibility of such damage. Because some jurisdictions do not allow
-          limitations on implied warranties, or limitations of liability for
-          consequential or incidental damages, these limitations may not apply
-          to you.
+          In no event shall Manitoban MLAs (mlamb.ca) be liable for any damages
+          (including, without limitation, damages for loss of data or profit, or
+          due to business interruption,) arising out of the use or inability to
+          use the Materials, even if Manitoban MLAs (mlamb.ca) has been notified
+          in writing of the possibility of such damage. Because some
+          jurisdictions do not allow limitations on implied warranties, or
+          limitations of liability for consequential or incidental damages,
+          these limitations may not apply to you.
         </p>
 
         <p>

@@ -10,7 +10,10 @@ export default function PrivacyPolicy() {
         <h2>Privacy Policy for MLA MB</h2>
         <p>Privacy Policy Last updated: May 31, 2021</p>
 
-        <p>MLA MB does not track data personal or otherwise of site visitors</p>
+        <p>
+          Manitoban MLAs (mlamb.ca) does not track data personal or otherwise of
+          site visitors
+        </p>
 
         <p>
           We use cookies on the site to track preferences and assist in site

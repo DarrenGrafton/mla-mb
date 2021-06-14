@@ -13,8 +13,8 @@ const About = () => {
       <Seo title="About MLA MB" />
       <div className="about">
         <p>
-          The mlamb website is built and maintained as a hobby project and is
-          not affiliated with the Government of Manitoba.
+          The Manitoban MLAs (mlamb.ca) website is built and maintained as a
+          hobby project and is not affiliated with the Government of Manitoba.
         </p>
 
         <h2>Thanks and Attributions</h2>
@@ -26,9 +26,9 @@ const About = () => {
           </h3>
 
           <p>
-            The mlamb site links directly to the Legislative Assembly of
-            Manitoba site for the current session's Bills and Hansard
-            transcipts. The site also has useful information about how
+            The Manitoban MLAs (mlamb.ca) site links directly to the Legislative
+            Assembly of Manitoba site for the current session's Bills and
+            Hansard transcipts. The site also has useful information about how
             government works including how provincial laws are made and how to
             present to standing committees. Thanks to those who are collecting
             and publishing the information.
@@ -51,19 +51,20 @@ const About = () => {
             <a href="http://represent.opennorth.ca/">Open North</a>
           </h3>
           <p>
-            mlamb uses the open north API to find a provincial electoral
-            district based on your location. If you share your location with the
-            website when you load the Map feature, it will send your current
-            location to the open north website, which will return the name of
-            the electoral division that contains that location.
+            Manitoban MLAs (mlamb.ca) uses the open north API to find a
+            provincial electoral district based on your location. If you share
+            your location with the website when you load the Map feature, it
+            will send your current location to the open north website, which
+            will return the name of the electoral division that contains that
+            location.
           </p>
         </section>
 
         <section>
           <h3>Images</h3>
           <p>
-            Some of the background images on the mlamb website are sourced from
-            www.unsplash.com
+            Some of the background images on the Manitoban MLAs (mlamb.ca)
+            website are sourced from www.unsplash.com
           </p>
           <ul>
             <li>
@@ -93,15 +94,15 @@ const About = () => {
             addition to the site, please let us know.
           </p>
 
-          <a href="mailto:mlamb@gmail.ca">
-            Contact us by email at mlamb@gmail.ca
+          <a href="mailto:mlambcontact@gmail.ca">
+            Contact us by email at mlambcontact@gmail.ca
           </a>
         </section>
         <section>
           <h3>Technology</h3>
           <p>
-            The mlamb website is built using a modern website architecture
-            referred to as the JAMstack
+            The Manitoban MLAs (mlamb.ca) website is built using a modern
+            website architecture referred to as the JAMstack
           </p>
           <ul>
             <li>
