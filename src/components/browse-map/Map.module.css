@@ -126,7 +126,7 @@
 }
 
 .sideCon {
-  z-index: 2;
+  z-index: 0;
 }
 
 .sideCon svg {
@@ -144,6 +144,7 @@
 .sideConName {
   position: absolute;
   font-size: var(--h5);
+  z-index: 3;
 }
 .sideCon h4 {
   position: absolute;
