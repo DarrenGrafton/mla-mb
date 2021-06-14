@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `MLA MB`,
-    description: `Find your MLA.  The representative for your constituency at the Manitoba Government.  What is your MLA working on?`,
+    title: `Manitoban MLA`,
+    description: `Find your representative at the Manitoba Government.  What is your MLA working on?`,
     author: `@dmg20000`,
     siteUrl: `https://www.mlamb.ca`,
   },
