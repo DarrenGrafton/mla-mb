@@ -90,9 +90,29 @@ const About = () => {
             site easier, please let us know.
           </p>
           <p>
-            If you know of other public information that would make a useful
-            addition to the site, please let us know.
+            We would love to include more information on the site but it must
+            meet the following criteria:
           </p>
+          <ul
+            style={{
+              listStyle: "circle",
+              padding: "0 10px",
+              margin: "0 0 10px 10px",
+            }}
+          >
+            <li>
+              Relevant to the Member's work in the Legislature or information
+              about the constituency
+            </li>
+            <li>
+              Reliable Source - Information publicly available or obtained
+              through a transparent process
+            </li>
+            <li>
+              Appropriate to be on the same site as links to the Hansard
+              transcripts, no "undignified associations"
+            </li>
+          </ul>
 
           <a href="mailto:mlambcontact@gmail.ca">
             Contact us by email at mlambcontact@gmail.ca
