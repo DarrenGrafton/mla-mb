@@ -11,6 +11,14 @@ import { Map } from "../components/browse-map/Map"
 import { createConObj } from "../helpers/MapConstituencies"
 import { parseQuery } from "../helpers/Utils"
 
+import { motion } from "framer-motion"
+
+import * as styles from "../components/browse-map/Map.module.css"
+
+import { Link } from "gatsby"
+import { RiArrowGoBackFill } from "react-icons/ri"
+import { AiOutlineReload } from "react-icons/ai"
+
 const REPRESENT_URL =
   "https://represent.opennorth.ca/boundaries/manitoba-electoral-districts/?contains=" //49.802,-97.114
 
@@ -126,6 +134,28 @@ const BrowseMap = ({ location }) => {
         conState={conState}
         setConState={setConState}
       />
+      <Link to="/" className={styles.linkHome}>
+        <RiArrowGoBackFill />
+        Home
+      </Link>
+
+      {!mainCon && (
+        <motion.button
+          className={styles.reload}
+          initial={{ opacity: 0 }}
+          exit={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: 4, duration: 0.4 } }}
+          onClick={() =>
+            setConState({
+              Number: 101,
+              direction: null,
+            })
+          }
+        >
+          <AiOutlineReload />
+          Reload
+        </motion.button>
+      )}
     </Layout>
   )
 }

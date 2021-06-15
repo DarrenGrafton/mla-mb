@@ -7,6 +7,8 @@ import * as styles from "./Map.module.css"
 import classNames from "classnames"
 import { Link } from "gatsby"
 import { RiArrowGoBackFill } from "react-icons/ri"
+import { AiOutlineReload } from "react-icons/ai"
+
 //8 directional cons (plus interior east/west to make it 10 )
 //main con
 // - scrolling facts - todo
@@ -523,10 +525,6 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
           </motion.h2> */}
         </motion.div>
       )}
-      <Link to="/" className={styles.linkHome}>
-        <RiArrowGoBackFill />
-        Home
-      </Link>
     </AnimatePresence>
   )
 }
