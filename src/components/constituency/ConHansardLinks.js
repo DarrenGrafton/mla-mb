@@ -1,6 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 
 export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
+  const [visibleSessions, setVisibleSessions] = useState(
+    sessions.edges.slice(0, 10)
+  )
   return (
     <div className={styles.hansard}>
       <h3>Hansard</h3>
@@ -9,7 +12,7 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
         Manitoba and its committees.
       </p>
       <ul>
-        {sessions.edges.map(edge => {
+        {visibleSessions.map(edge => {
           //If this is a committee meeting, just link the entire meeting
           if (edge.node.committee && edge.node.committee !== "house") {
             const url = `https://www.gov.mb.ca/legislature/hansard/${edge.node.legislature}_${edge.node.session}/${edge.node.link}`
@@ -177,6 +180,9 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
           }
         })}
       </ul>
+      {/* <button>Last 10</button>
+      <button>Next 10</button>
+      <button>Show All</button> */}
     </div>
   )
 }
