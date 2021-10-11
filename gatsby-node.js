@@ -14,14 +14,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const billTemplate = require.resolve(`./src/templates/BillTemplate.js`)
   const result = await graphql(`
     {
-      allConsJson {
+      allConsJson(limit: 1) {
         nodes {
           Name
           Number
           CurrentRep
         }
       }
-      allBillsJson {
+      allBillsJson(limit: 1) {
         nodes {
           billKey
           rep

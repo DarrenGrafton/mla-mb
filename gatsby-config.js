@@ -50,13 +50,13 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        /**
-         * One convention is to place your Netlify CMS customization code in a
-         * `src/cms` directory.
-         */
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
+      // options: {
+      //   /**
+      //    * One convention is to place your Netlify CMS customization code in a
+      //    * `src/cms` directory.
+      //    */
+      //   modulePath: `${__dirname}/src/cms/cms.js`,
+      // },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
