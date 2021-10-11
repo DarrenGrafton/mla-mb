@@ -2,7 +2,8 @@ import React, { useState } from "react"
 
 export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
   const [visibleSessions, setVisibleSessions] = useState(
-    sessions.edges.slice(0, 10)
+    sessions.edges
+    // sessions.edges.slice(0, 10)
   )
   return (
     <div className={styles.hansard}>
