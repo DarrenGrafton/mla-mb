@@ -20,7 +20,6 @@ const IndexPage = () => {
         width={1800}
         quality={50}
         src="../images/mahesh-gupta.jpg"
-        //   src="../images/under-construction.jpg"
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Manitoba Legislature"
         placeholder="tracedSVG"
