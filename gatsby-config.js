@@ -34,9 +34,10 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/JSONData/`,
+        path: `${__dirname}/src/`,
       },
     },
+    `gatsby-transformer-remark`,
 
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sitemap`,
