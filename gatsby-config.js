@@ -15,8 +15,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
+    
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -29,15 +39,6 @@ module.exports = {
         icon: `src/images/icon/android-chrome-192x192.png`, // This path is relative to the root of the site.
       },
     },
-
-    `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/JSONData/`,
-      },
-    },
-
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sitemap`,
     {

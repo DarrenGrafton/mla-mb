@@ -28,8 +28,8 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
+      - file: "src/pages/sample.md"
+        label: "Sample Landing Page"
         name: "index"
         fields:
           - {

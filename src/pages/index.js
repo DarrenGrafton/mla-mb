@@ -3,9 +3,11 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { FeatureNav } from "../components/frontpage/FeatureNav"
+import { FeatureNavWind } from "../components/frontpage/FeatureNavWind"
 import { useCookies } from "react-cookie"
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
   const [, , removeCookie] = useCookies([])
 
   useEffect(() => {
@@ -13,17 +15,18 @@ const IndexPage = () => {
     removeCookie("last-constituency", { path: "/" })
   }, [removeCookie])
   return (
-    <Layout pageTitle="Manitoban MLAs">
-      <Seo title="Manitoban MLA information" />
-
+    <Layout pageTitle={data.markdownRemark.frontmatter.pageTitle}>
+      <Seo title={data.markdownRemark.frontmatter.seoTitle}/>
+  
       <StaticImage
         width={1800}
         quality={50}
         src="../images/mahesh-gupta.jpg"
-        //   src="../images/under-construction.jpg"
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Manitoba Legislature"
         placeholder="tracedSVG"
+        class="object-cover w-full h-full"
+        imgClassName="object-cover w-full h-full"
         style={{
           width: "100vw",
           height: "100vh",
@@ -35,8 +38,19 @@ const IndexPage = () => {
         }}
       />
       <FeatureNav />
+  
     </Layout>
   )
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query IndexPageQuery {
+    markdownRemark(fileAbsolutePath: {regex: "/src/pages/index/"}) {
+      frontmatter {
+        pageTitle
+        seoTitle
+      }
+    }
+  }`
