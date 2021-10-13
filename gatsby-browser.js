@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 import React from "react"
 import { CookiesProvider } from "react-cookie"
+import "./src/css/index.css"
 
 export const wrapRootElement = ({ element }) => (
   <CookiesProvider>{element}</CookiesProvider>
