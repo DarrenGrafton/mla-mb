@@ -10,7 +10,7 @@ const variants = {
 
 export const FeatureNavWind = () => {
   return (
-    <AnimatePresence>
+    <AnimatePresence class="bg-gray-50 z-10" style ={{zIndex:10}}>
       <div class="bg-gray-50 z-10">
         <motion.div
           // transition={{ duration: 1 }}

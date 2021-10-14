@@ -25,7 +25,8 @@ const IndexPage = ({data}) => {
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Manitoba Legislature"
         placeholder="tracedSVG"
-        // class="object-cover w-full h-full"
+        class="w-full h-full bg-cover bg-no-repeat bg-center" //bg-fixed for "parralax scroll"
+        //class="object-cover w-full h-full"
         // imgClassName="object-cover w-full h-full"
         style={{
           width: "100vw",
@@ -33,7 +34,7 @@ const IndexPage = ({data}) => {
           position: "fixed",
           left: 0,
           top: 0,
-          zIndex: -1,
+          zIndex: 1,
           opacity: 1,
         }}
       />
