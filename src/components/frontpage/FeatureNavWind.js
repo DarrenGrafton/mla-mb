@@ -11,7 +11,7 @@ const variants = {
 export const FeatureNavWind = () => {
   return (
     <AnimatePresence>
-      <div class="bg-gray-50">
+      <div class="bg-gray-50 z-10">
         <motion.div
           // transition={{ duration: 1 }}
           // initial={{ opacity: 0 }}

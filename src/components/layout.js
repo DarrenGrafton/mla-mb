@@ -10,9 +10,6 @@ import PropTypes from "prop-types"
 
 import { Link } from "gatsby"
 import Header from "./header"
-import "../css/normalize.css"
-import "../css/main.css"
-import "../css/style.css"
 
 const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
