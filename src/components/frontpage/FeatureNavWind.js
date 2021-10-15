@@ -10,8 +10,8 @@ const variants = {
 
 export const FeatureNavWind = () => {
   return (
-    <AnimatePresence class="bg-gray-50 z-10" style ={{zIndex:10}}>
-      <div class="bg-gray-50 z-10">
+    <AnimatePresence className="bg-transparent">
+      <div>
         <motion.div
           // transition={{ duration: 1 }}
           // initial={{ opacity: 0 }}
@@ -22,17 +22,14 @@ export const FeatureNavWind = () => {
           animate="animate"
           exit="exit"
         >
-          <p >
-            Find your representative at the Government of Manitoba.
-          </p>
-          <p >
+          <p>Find your representative at the Government of Manitoba.</p>
+          <p>
             See Bill's they've sponsored, links to transcripts of thier work in
             the Legislative Assembly of Manitoba, and more!
           </p>
         </motion.div>
 
         <motion.ul
-          
           transition={{ duration: 0.9 }}
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}

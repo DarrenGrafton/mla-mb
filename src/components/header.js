@@ -8,8 +8,10 @@ const Header = ({
   setNavbarOpen,
   conNumber,
 }) => (
-  <header>
-    <h1>{pageTitle}</h1>
+  <header className="flex w-full pt-4 pb-2 pl-2 border-yellow-700 border-b-2">
+    <h1 className="text-red-700 text-5xl font-medium font-serif">
+      {pageTitle}
+    </h1>
     <Navbar
       navbarOpen={navbarOpen}
       setNavbarOpen={setNavbarOpen}

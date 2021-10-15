@@ -5,9 +5,9 @@ import Seo from "../components/seo"
 import { FeatureNav } from "../components/frontpage/FeatureNav"
 import { FeatureNavWind } from "../components/frontpage/FeatureNavWind"
 import { useCookies } from "react-cookie"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
 
-const IndexPage = ({data}) => {
+const IndexPage = ({ data }) => {
   const [, , removeCookie] = useCookies([])
 
   useEffect(() => {
@@ -16,8 +16,8 @@ const IndexPage = ({data}) => {
   }, [removeCookie])
   return (
     <Layout pageTitle={data.markdownRemark.frontmatter.pageTitle}>
-      <Seo title={data.markdownRemark.frontmatter.seoTitle}/>
-  
+      <Seo title={data.markdownRemark.frontmatter.seoTitle} />
+
       <StaticImage
         width={1800}
         quality={50}
@@ -25,21 +25,12 @@ const IndexPage = ({data}) => {
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Manitoba Legislature"
         placeholder="tracedSVG"
-        class="w-full h-full bg-cover bg-no-repeat bg-center" //bg-fixed for "parralax scroll"
-        //class="object-cover w-full h-full"
-        // imgClassName="object-cover w-full h-full"
+        className="w-full h-full bg-cover bg-no-repeat bg-right fixed inset-0"
         style={{
-          width: "100vw",
-          height: "100vh",
-          position: "fixed",
-          left: 0,
-          top: 0,
-          zIndex: 1,
-          opacity: 1,
+          zIndex: -1,
         }}
       />
       <FeatureNavWind />
-  
     </Layout>
   )
 }
@@ -48,10 +39,11 @@ export default IndexPage
 
 export const query = graphql`
   query IndexPageQuery {
-    markdownRemark(fileAbsolutePath: {regex: "/src/pages/index/"}) {
+    markdownRemark(fileAbsolutePath: { regex: "/src/pages/index/" }) {
       frontmatter {
         pageTitle
         seoTitle
       }
     }
-  }`
+  }
+`
