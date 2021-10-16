@@ -6,6 +6,8 @@
 .navBar div {
   outline: none; /*remove the focus outline on safari for the hamburger */
 }
+
+
 .navBar div a {
   display: inline-block;
   margin: 0 12px;

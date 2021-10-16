@@ -6,3 +6,10 @@
 /* 
 @import 'main.css';
 @import 'normalize.css'; */
+
+@layer base {
+    /*When the body has no Overflow attribute applied, set this CSS rule*/
+    body[noOverflow="true"] {
+        overflow: hidden;
+      }
+}

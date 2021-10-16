@@ -27,8 +27,9 @@ const NavbarLinks = ({ onClick, conNumber }) => {
           onClick={onClick}
           key={link.link}
           to={`/${link.link}`}
-          activeClassName={styles.activeLink}
+         // activeClassName={styles.activeLink}
           state={{ conNumber }}
+          className="text-red-700 text-xl lg:text-2xl font-noral mr-5 last:mr-2 mt-2"
         >
           {link.name}
         </Link>

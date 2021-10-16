@@ -10,7 +10,7 @@ const variants = {
 
 export const FeatureNavWind = () => {
   return (
-    <AnimatePresence className="bg-transparent">
+    <AnimatePresence>
       <div>
         <motion.div
           // transition={{ duration: 1 }}
