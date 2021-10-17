@@ -1,3 +1,17 @@
+:root {
+  --midnight-blue: #001b69ff;
+  --brown: #71441fff;
+  --dark-goldenrod: #b59040ff;
+  --fire-engine-red: #c9072aff;
+  --lincoln-green: #0e4f0eff;
+
+  --color-primary: #c9072aff;
+  --color-secondary: #b59040ff;
+  --accent: var(--midnight-blue);
+  /* ... */
+  --p: var(--color-primary);
+}
+
 /* @import "style.css"; */
 
 @tailwind base;
@@ -8,8 +22,8 @@
 @import 'normalize.css'; */
 
 @layer base {
-    /*When the body has no Overflow attribute applied, set this CSS rule*/
-    body[noOverflow="true"] {
-        overflow: hidden;
-      }
+  /*When the body has no Overflow attribute applied, set this CSS rule*/
+  body[noOverflow="true"] {
+    overflow: hidden;
+  }
 }

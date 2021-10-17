@@ -1,42 +1,28 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
+const defaultFontFamily = defaultTheme.fontFamily
+
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // Build your palette here
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+      },
+    },
     fontFamily: {
       //sans is body, serif is heading
-      sans: [
-        "Source Sans Pro",
-        "ui-sans-serif",
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "Noto Sans",
-        "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "Noto Color Emoji",
-      ],
-      serif: [
-        '"Libre Baskerville"',
-        "ui-serif",
-        "Georgia",
-        "Cambria",
-        "Times New Roman",
-        "Times",
-        "serif",
-      ],
+      sans: ["Source Sans Pro", ...defaultFontFamily["sans"]],
+      serif: ["Libre Baskerville", ...defaultFontFamily["serif"]],
     },
   },
   variants: {
     extend: {
-      margin: ['last'],
-    }
+      margin: ["last"],
+    },
   },
   plugins: [require("daisyui")],
 }
