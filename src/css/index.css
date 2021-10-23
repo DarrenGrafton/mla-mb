@@ -5,7 +5,7 @@
   --fire-engine-red: #c9072a;
   --lincoln-green: #0e4f0e;
 
-  --color-primary: #B91C1C;
+  --color-primary: #b91c1c;
   --color-secondary: #b59040;
   --color-accent: var(--midnight-blue);
   /* ... */
@@ -25,5 +25,17 @@
   /*When the body has no Overflow attribute applied, set this CSS rule*/
   body[noOverflow="true"] {
     overflow: hidden;
+  }
+  h1 {
+    @apply text-4xl;
+    @apply mb-1;
+  }
+  h2 {
+    @apply text-3xl;
+    @apply mb-1;
+  }
+  h3 {
+    @apply text-2xl;
+    @apply mb-1;
   }
 }

@@ -368,7 +368,7 @@
     text-align: center;
   }
 }
-
+/* 
 .linkHome {
   position: absolute;
   left: 20vw;
@@ -384,7 +384,7 @@
     left: 62vw;
     z-index: 5;
   }
-}
+} */
 
 .reload {
   position: absolute;

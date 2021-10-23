@@ -3,18 +3,14 @@ import { useEffect, useState } from "react"
 import { useCookies } from "react-cookie"
 import { graphql, useStaticQuery } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Map } from "../components/browse-map/Map"
 
 import { createConObj } from "../helpers/MapConstituencies"
 import { parseQuery } from "../helpers/Utils"
-
 import { motion } from "framer-motion"
-
 import * as styles from "../components/browse-map/Map.module.css"
-
 import { Link } from "gatsby"
 import { RiArrowGoBackFill } from "react-icons/ri"
 import { AiOutlineReload } from "react-icons/ai"
@@ -118,15 +114,7 @@ const BrowseMap = ({ location }) => {
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Prairie Field"
         placeholder="tracedSVG"
-        style={{
-          width: "100vw",
-          height: "100vh",
-          position: "fixed",
-          left: 0,
-          top: 0,
-          zIndex: -2,
-          opacity: 1,
-        }}
+        className="w-full h-full bg-cover bg-no-repeat bg-right fixed inset-0"
       />
       <Map
         mainCon={mainCon}
@@ -134,7 +122,10 @@ const BrowseMap = ({ location }) => {
         conState={conState}
         setConState={setConState}
       />
-      <Link to="/" className={styles.linkHome}>
+      <Link
+        to="/"
+        className="absolute top-20 lg:top-16 left-3/4 lg:left-1/4 text-xl lg:text-3xl z-10 text-primary border-b-2 border-accent"
+      >
         <RiArrowGoBackFill />
         Home
       </Link>
