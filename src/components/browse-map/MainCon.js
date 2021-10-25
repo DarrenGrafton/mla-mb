@@ -5,7 +5,7 @@ import { ConSvg } from "./ConSvg"
 import * as styles from "./Map.module.css" //import { mainCon, conInfo, rep } from "./Map.module.css"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { slugifyName } from "../../helpers/Utils"
+import { slugifyName, classNames } from "../../helpers/Utils"
 
 export const MainCon = ({
   con,
@@ -16,13 +16,13 @@ export const MainCon = ({
 }) => {
   return (
     <motion.div
-      className={styles.mainCon}
+      className={classNames("relative", styles.mainCon)}
       variants={mainConVariants}
       initial="initial"
       animate="animate"
       exit="exit"
     >
-      <div className={styles.conInfo}>
+      <div className={classNames("z-10", styles.conInfo)}>
         <motion.h1
           className={styles.conName}
           variants={mainConH1Variants}
@@ -51,7 +51,7 @@ export const MainCon = ({
         </motion.div>
       </div>
 
-      <ConSvg conId={con.Number} fill="white" stroke="red" strokeWidth="6" />
+      <ConSvg conId={con.Number} strokeWidth="6" />
     </motion.div>
   )
 }

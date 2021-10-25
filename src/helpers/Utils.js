@@ -5,6 +5,11 @@ const slugifyName = name => {
   return name.replace(space, "-").replace(other, "").toLowerCase()
 }
 
+const classNames = (...classes) => {
+  //Join Truthy items to a string
+  return classes.filter(item => Boolean(item)).join(" ")
+}
+
 const parseQuery = queryString => {
   var query = {}
   var pairs = (
@@ -17,4 +22,4 @@ const parseQuery = queryString => {
   return query
 }
 
-module.exports = { slugifyName, parseQuery }
+module.exports = { slugifyName, parseQuery, classNames }
