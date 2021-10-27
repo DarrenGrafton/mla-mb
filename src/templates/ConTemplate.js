@@ -1,13 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/constituency/Constituency.module.css"
 import { ConDemoData } from "../components/constituency/ConDemoData"
 import { RepContactInfo } from "../components/constituency/RepContactInfo"
 import { ConHansardLinks } from "../components/constituency/ConHansardLinks"
-import { ConBills } from "../components/constituency/ConBills"
 import { useCookies } from "react-cookie"
 
 export default function ConTemplate({ data }) {
@@ -20,7 +18,7 @@ export default function ConTemplate({ data }) {
     allImageSharp,
   } = data
 
-  const [cookies, setCookie] = useCookies([])
+  const [, setCookie] = useCookies([])
 
   //Set the con number page we are on, in case user pops to the map
   setCookie("last-constituency", cons.Number, { path: "/" })
@@ -28,34 +26,67 @@ export default function ConTemplate({ data }) {
   return (
     <Layout pageTitle={cons.Name} conNumber={cons.Number}>
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
-      <div className={styles.mainGrid}>
+      <div className="grid lg:grid-cols-4 gap-3">
         <div>
-          <div className={styles.repCard}>
-            <h2>{cons.CurrentRep}</h2>
-            <GatsbyImage
-              className={styles.repImage}
-              image={allImageSharp?.nodes[0]?.gatsbyImageData}
-              alt={cons.CurrentRep}
-            />
-            <h3>{cons.Party}</h3>
+          <div className="card">
+            <h2 className="font-serif text-primary text-xl md:text-3xl">
+              {cons.CurrentRep}
+            </h2>
+            <div className="flex flex-row items-center space-x-2">
+              <GatsbyImage
+                className="mask mask-circle w-12 h-18 md:w-20 md:h-30 lg:w-24 lg:h-36"
+                image={allImageSharp?.nodes[0]?.gatsbyImageData}
+                alt={cons.CurrentRep}
+              />
+              <h3 className="text-primary text-base md:text-xl">
+                {cons.Party}
+              </h3>
+            </div>
           </div>
-          <div className={styles.hideMobile}>
-            <RepContactInfo styles={styles} rep={rep} />
-            <ConDemoData styles={styles} cons={cons} />
+          <div className="hidden lg:block">
+            <RepContactInfo rep={rep} />
+            <ConDemoData cons={cons} />
           </div>
         </div>
-        <div>
-          <ConBills styles={styles} bills={bills} />
+        <div id="right-column" className="lg:col-start-2 lg:col-end-5">
+          <div id="bills" className="">
+            <h3 className="font-serif text-primary text-3xl">Bills</h3>
+            {bills.edges.length > 0 ? (
+              <>
+                <p className="text-primary">
+                  Bills sponsored in the current legislature:
+                </p>
+                <ul>
+                  {bills.edges.map(edge => (
+                    <li key={edge.node.billLink}>
+                      <Link
+                        className="text-primary text-base border-b-2 border-secondary"
+                        to={`/bills/${edge.node.billKey}`}
+                      >
+                        <span className="font-medium">
+                          Bill {edge.node.number} ({edge.node.session} Session)
+                        </span>{" "}
+                        - {edge.node.billName}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <p className="text-primary">
+                None sponsored in the current legislature
+              </p>
+            )}
+          </div>
           <ConHansardLinks
-            styles={styles}
             sessions={sessions}
             hansardIndexes={hansardIndexes}
             rep={rep}
           />
         </div>
-        <div className={styles.showMobile}>
-          <RepContactInfo styles={styles} rep={rep} />
-          <ConDemoData styles={styles} cons={cons} />
+        <div className="block lg:hidden">
+          <RepContactInfo rep={rep} />
+          <ConDemoData cons={cons} />
         </div>
       </div>
     </Layout>

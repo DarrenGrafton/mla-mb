@@ -6,7 +6,7 @@ import GatsbyLogo from "../images/Gatsby-Logo.svg"
 import ReactLogo from "../images/react.png"
 
 const About = () => {
-  const data = useStaticQuery(ABOUT_INFO)
+  //const data = useStaticQuery(ABOUT_INFO)
 
   return (
     <Layout pageTitle="About">
@@ -139,11 +139,11 @@ const About = () => {
             <li>
               The site is built with{" "}
               <a href="https://reactjs.org/">
-                <img className="react" src={ReactLogo} />
+                <img className="react" src={ReactLogo} alt="react Logo" />
               </a>{" "}
               and{" "}
               <a href="https://www.gatsbyjs.com/">
-                <img className="gatsby" src={GatsbyLogo} />
+                <img className="gatsby" src={GatsbyLogo} alt="gatsby Logo" />
               </a>
             </li>
           </ul>

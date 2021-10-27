@@ -66,7 +66,6 @@ function SEO({ description, lang, meta, title, noOverflow }) {
           name: `twitter:domain`,
           content: `mlamb.ca`,
         },
-        ,
         {
           name: `twitter:url`,
           content: `https://www.mlamb.ca`,

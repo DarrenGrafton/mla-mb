@@ -2,7 +2,6 @@ import React from "react"
 
 import { motion } from "framer-motion"
 import { ConSvg } from "./ConSvg"
-import * as styles from "./Map.module.css"
 
 export const SideCon = ({ con, ...other }) => {
   return (
@@ -17,7 +16,9 @@ export const SideCon = ({ con, ...other }) => {
             stroke="red"
             strokeWidth="5"
           />
-          <h4 className={styles.sideConName}>{con.Name}</h4>
+          <h4 className="absolute pointer-events-none z-20 text-primary text-xs lg:text-xl text-shadow">
+            {con.Name}
+          </h4>
         </>
       )}
     </motion.div>

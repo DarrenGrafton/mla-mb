@@ -2,13 +2,13 @@ import React, { useState } from "react"
 
 export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
   const [visibleSessions, setVisibleSessions] = useState(
-    sessions.edges
-    // sessions.edges.slice(0, 10)
+    //sessions.edges
+    sessions.edges.slice(0, 5)
   )
   return (
-    <div className={styles.hansard}>
-      <h3>Hansard</h3>
-      <p>
+    <div>
+      <h3 className="font-serif text-primary text-3xl">Hansard</h3>
+      <p className="text-primary mb-2">
         Links to transcripts of the debates of the Legislative Assembly of
         Manitoba and its committees.
       </p>
@@ -20,15 +20,16 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
 
             return (
               <div>
-                <span className={styles.hansardSession}>
-                  {edge.node.date} - Volume {edge.node.volume}
+                <span className="text-primary">
+                  <span className="font-semibold">{edge.node.date} </span> -
+                  Volume {edge.node.volume}
                 </span>
                 <div>
-                  <span className={styles.hansardH2}>
+                  <span className="text-primary ml-2">
                     THE STANDING COMMITTEE ON {edge.node.committee}
                   </span>
                   <div>
-                    <span className={styles.hansardH3}>
+                    <span className="text-primary ml-4 border-b-2 border-secondary">
                       <a href={url}>Link</a>
                     </span>
                   </div>
@@ -103,8 +104,9 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
             //Each LI is a volume/session
             return (
               <li key={`session${edge.node.key}`}>
-                <span className={styles.hansardSession}>
-                  {edge.node.date} - Volume {edge.node.volume}
+                <span className="text-primary">
+                  <span className="font-semibold">{edge.node.date}</span> -
+                  Volume {edge.node.volume}
                 </span>
 
                 {referencedIndexes && (
@@ -115,7 +117,7 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
                         <li
                           key={`heading2-li${edge.node.key}${heading2.heading2}${i}`}
                         >
-                          <span className={styles.hansardH2}>
+                          <span className="text-primary ml-2">
                             {heading2.heading2}
                           </span>
                           <ul>
@@ -125,7 +127,7 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
                                 <li
                                   key={`heading3-${edge.node.key}${heading2.heading2}${heading3.heading3}`}
                                 >
-                                  <span className={styles.hansardH3}>
+                                  <span className="text-primary ml-4">
                                     {heading3.heading3}
                                   </span>
                                   <ul>
@@ -147,9 +149,7 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
                                                   key={`heading5-span${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}${heading5.indexLink}`}
                                                 >
                                                   <a
-                                                    className={
-                                                      styles.hansardLink
-                                                    }
+                                                    className="text-primary ml-6 border-b-2 border-secondary"
                                                     key={`heading5-a${edge.node.key}${heading2.heading2}${heading3.heading3}${heading4.heading4}${heading5.indexLink}`}
                                                     href={url}
                                                   >
@@ -181,9 +181,14 @@ export const ConHansardLinks = ({ styles, sessions, hansardIndexes, rep }) => {
           }
         })}
       </ul>
-      {/* <button>Last 10</button>
-      <button>Next 10</button>
-      <button>Show All</button> */}
+      <div class="btn-group mt-2">
+        <button class="btn btn-md btn-primary">1</button>
+        <button class="btn btn-md btn-primary">2</button>
+        <button class="btn btn-md btn-primary">3</button>
+        <button class="btn btn-md btn-disabled">...</button>
+        <button class="btn btn-md btn-primary">99</button>
+        <button class="btn btn-md btn-primary">100</button>
+      </div>
     </div>
   )
 }

@@ -38,4 +38,14 @@
     @apply text-2xl;
     @apply mb-1;
   }
+
+  .text-shadow {
+    text-shadow: 1px 1px var(--color-accent);
+  }
+
+  /* todo make links highlight 
+a:hover {
+  transition: ease 0.2;
+  background: rgba(255, 0, 0, 0.1);
+}*/
 }

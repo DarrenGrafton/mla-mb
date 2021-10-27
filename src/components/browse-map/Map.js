@@ -146,11 +146,11 @@ const sideConVariants = {
     }
   },
 }
-const navInstructionVariants = {
-  initial: { opacity: 0.0, y: 0, x: 0 },
-  animate: { opacity: 1, y: 0, transition: { delay: 5, duration: 0.4 } },
-  exit: { opacity: 0 },
-}
+// const navInstructionVariants = {
+//   initial: { opacity: 0.0, y: 0, x: 0 },
+//   animate: { opacity: 1, y: 0, transition: { delay: 5, duration: 0.4 } },
+//   exit: { opacity: 0 },
+// }
 
 export const Map = ({ mainCon, data, conState, setConState }) => {
   if (typeof window !== "undefined") {
