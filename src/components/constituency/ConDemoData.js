@@ -41,26 +41,21 @@ export const ConDemoData = ({ cons, styles }) => {
           ))}
         </tbody>
       </table>
-      <div class="w-full shadow stats">
+      <div class="shadow stats grid-flow-row">
         <div class="stat">
           <div class="stat-figure text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="inline-block w-8 h-8 stroke-current"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              ></path>
+              <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
             </svg>
           </div>
-          <div class="stat-title">Total Likes</div>
-          <div class="stat-value text-primary">25.6K</div>
-          <div class="stat-desc">21% more than last month</div>
+          <div class="stat-title">Total Population</div>
+          <div class="stat-value text-primary">{cons.TotalPopulation}</div>
+          <div class="stat-desc">{cons.RegisteredVoters} Registered Voters</div>
         </div>
         <div class="stat">
           <div class="stat-figure text-info">
