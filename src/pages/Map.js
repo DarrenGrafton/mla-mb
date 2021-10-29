@@ -114,7 +114,10 @@ const BrowseMap = ({ location }) => {
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="Prairie Field"
         placeholder="tracedSVG"
-        className="w-full h-full bg-cover bg-no-repeat bg-right fixed inset-0"
+        className="w-full h-full bg-cover bg-no-repeat bg-right absolute inset-0"
+        style={{
+          zIndex: -1,
+        }}
       />
       <Map
         mainCon={mainCon}
