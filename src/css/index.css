@@ -1,7 +1,64 @@
-/* @tailwind base;
+:root {
+  --midnight-blue: #001b69;
+  --brown: #71441f;
+  --dark-goldenrod: #b59040;
+  --fire-engine-red: #c9072a;
+  --lincoln-green: #0e4f0e;
+
+  --color-primary: #b91c1c;
+  --color-secondary: #b59040;
+  --color-accent: var(--midnight-blue);
+  /* ... */
+  --p: var(--color-primary);
+}
+
+/* @import "style.css"; */
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 @import 'main.css';
-@import 'normalize.css';
-@import 'style.css'; */
+@import 'normalize.css'; */
+
+@layer base {
+  /*When the body has no Overflow attribute applied, set this CSS rule*/
+  body[noOverflow="true"] {
+    overflow: hidden;
+  }
+  h1 {
+    @apply text-4xl;
+    @apply mb-1;
+    @apply text-primary;
+  }
+  h2 {
+    @apply text-3xl;
+    @apply mb-1;
+    @apply text-primary;
+  }
+  h3 {
+    @apply text-2xl;
+    @apply mb-1;
+    @apply text-primary;
+  }
+
+  p {
+    @apply text-primary;
+  }
+
+  a {
+    @apply text-primary;
+    @apply border-b;
+    @apply border-secondary;
+  }
+
+  .text-shadow {
+    text-shadow: 1px 1px var(--color-accent);
+  }
+
+  /* todo make links highlight 
+a:hover {
+  transition: ease 0.2;
+  background: rgba(255, 0, 0, 0.1);
+}*/
+}

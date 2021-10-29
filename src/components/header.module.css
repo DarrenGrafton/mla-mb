@@ -1,0 +1,76 @@
+.navBox {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  .navBox {
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 150vh;
+    justify-content: flex-start;
+    padding-top: 5vh;
+    background: var(--background);
+    background: white;
+    transition: all 0.3s ease-in;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .navBoxClosed {
+    left: -100%;
+  }
+}
+
+.hamburger {
+  z-index: 10;
+  background-color: var(--color-primary);
+  width: 30px;
+  height: 3px;
+  transition: all 0.3s linear;
+  align-self: center;
+  position: fixed;
+  transform: rotate(-45deg);
+}
+
+.hamburgerClosed {
+  transform: inherit;
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  width: 30px;
+  height: 3px;
+  background-color: var(--color-primary);
+  content: "";
+  position: absolute;
+  transition: all 0.3s linear;
+}
+
+.hamburger::before {
+  transform: rotate(-90deg) translate(-10px, 0px);
+  top: -10px;
+}
+
+.hamburgerClosed::before {
+  transform: rotate(0deg);
+}
+.hamburger::after {
+  opacity: 0;
+  transform: rotate(90deg);
+  top: 10px;
+}
+
+.hamburgerClosed::after {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+/* style for the active link, not currently being used
+  .activeLink {
+    color: var(--accent);
+  } */

@@ -1,13 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/constituency/Constituency.module.css"
 import { ConDemoData } from "../components/constituency/ConDemoData"
 import { RepContactInfo } from "../components/constituency/RepContactInfo"
 import { ConHansardLinks } from "../components/constituency/ConHansardLinks"
-import { ConBills } from "../components/constituency/ConBills"
 import { useCookies } from "react-cookie"
 
 export default function ConTemplate({ data }) {
@@ -20,7 +18,7 @@ export default function ConTemplate({ data }) {
     allImageSharp,
   } = data
 
-  const [cookies, setCookie] = useCookies([])
+  const [, setCookie] = useCookies([])
 
   //Set the con number page we are on, in case user pops to the map
   setCookie("last-constituency", cons.Number, { path: "/" })
@@ -28,34 +26,79 @@ export default function ConTemplate({ data }) {
   return (
     <Layout pageTitle={cons.Name} conNumber={cons.Number}>
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
-      <div className={styles.mainGrid}>
-        <div>
-          <div className={styles.repCard}>
-            <h2>{cons.CurrentRep}</h2>
-            <GatsbyImage
-              className={styles.repImage}
-              image={allImageSharp?.nodes[0]?.gatsbyImageData}
-              alt={cons.CurrentRep}
-            />
-            <h3>{cons.Party}</h3>
+      <div id="layout" className="grid lg:grid-cols-4 gap-3">
+        <div id="left-column">
+          <div class="collapse border rounded-box border-secondary collapse-arrow m-2">
+            <input type="checkbox" defaultChecked />
+            <h2 className="collapse-title font-serif text-primary text-xl md:text-3xl mb-0">
+              <span className="text-sm block">Current Rep:</span>
+              {cons.CurrentRep}
+            </h2>
+            <div className="collapse-content flex flex-row items-center space-x-2">
+              <GatsbyImage
+                className="w-12 h-18 md:w-20 md:h-30 lg:w-24 lg:h-36 rounded-t-2xl"
+                image={allImageSharp?.nodes[0]?.gatsbyImageData}
+                alt={cons.CurrentRep}
+              />
+              <h3 className="text-primary text-base md:text-xl">
+                {cons.Party}
+              </h3>
+            </div>
           </div>
-          <div className={styles.hideMobile}>
-            <RepContactInfo styles={styles} rep={rep} />
-            <ConDemoData styles={styles} cons={cons} />
+
+          <div className="hidden lg:block">
+            <RepContactInfo rep={rep} />
           </div>
         </div>
-        <div>
-          <ConBills styles={styles} bills={bills} />
+        <div id="right-column" className="lg:col-start-2 lg:col-end-5">
+          <ConDemoData cons={cons} />
+
+          <div
+            id="bills"
+            class="collapse border rounded-box border-secondary collapse-arrow m-2"
+          >
+            <input type="checkbox" />
+            <h3 className="collapse-title font-serif text-primary text-3xl mb-0">
+              Bills
+            </h3>
+            <div className="collapse-content">
+              {bills.edges.length > 0 ? (
+                <>
+                  <p className="text-primary">
+                    Bills sponsored in the current legislature:
+                  </p>
+                  <ul>
+                    {bills.edges.map(edge => (
+                      <li key={edge.node.billLink}>
+                        <Link
+                          className="text-primary text-base border-b-2 border-secondary"
+                          to={`/bills/${edge.node.billKey}`}
+                        >
+                          <span className="font-medium">
+                            Bill {edge.node.number} ({edge.node.session}{" "}
+                            Session)
+                          </span>{" "}
+                          - {edge.node.billName}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <p className="text-primary">
+                  None sponsored in the current legislature
+                </p>
+              )}
+            </div>
+          </div>
           <ConHansardLinks
-            styles={styles}
             sessions={sessions}
             hansardIndexes={hansardIndexes}
             rep={rep}
           />
         </div>
-        <div className={styles.showMobile}>
-          <RepContactInfo styles={styles} rep={rep} />
-          <ConDemoData styles={styles} cons={cons} />
+        <div className="block lg:hidden">
+          <RepContactInfo rep={rep} />
         </div>
       </div>
     </Layout>

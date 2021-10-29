@@ -1,13 +1,9 @@
 import React from "react"
-
 import { motion, AnimatePresence } from "framer-motion"
 import { SideCon } from "./SideCon"
 import { MainCon } from "./MainCon"
 import * as styles from "./Map.module.css"
 import classNames from "classnames"
-import { Link } from "gatsby"
-import { RiArrowGoBackFill } from "react-icons/ri"
-import { AiOutlineReload } from "react-icons/ai"
 
 //8 directional cons (plus interior east/west to make it 10 )
 //main con
@@ -150,11 +146,11 @@ const sideConVariants = {
     }
   },
 }
-const navInstructionVariants = {
-  initial: { opacity: 0.0, y: 0, x: 0 },
-  animate: { opacity: 1, y: 0, transition: { delay: 5, duration: 0.4 } },
-  exit: { opacity: 0 },
-}
+// const navInstructionVariants = {
+//   initial: { opacity: 0.0, y: 0, x: 0 },
+//   animate: { opacity: 1, y: 0, transition: { delay: 5, duration: 0.4 } },
+//   exit: { opacity: 0 },
+// }
 
 export const Map = ({ mainCon, data, conState, setConState }) => {
   if (typeof window !== "undefined") {
@@ -270,7 +266,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
           initial="initial"
           animate="animate"
           exit="exit"
-          className={styles.map}
+          className="flex justify-center"
           drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           dragElastic={0.5}

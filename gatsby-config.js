@@ -19,6 +19,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/`,
+        ignore: [`**/*.{css,scss,js,jsx,tsx}`], // ignore code and style files 
       },
     },
     `gatsby-transformer-json`,

@@ -2,7 +2,6 @@ import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/bill/Bill.module.css"
 import { BillSession } from "../components/bill/BillSession"
 
 const Bills = () => {
@@ -30,7 +29,7 @@ const Bills = () => {
     <Layout pageTitle="Bills by Session">
       <Seo title="Bills by Legislative Session" />
 
-      <div className={styles.bills}>
+      <div>
         {fourthSessionBills.length > 0 && (
           <BillSession
             sessionName="42nd Legislature, 4th Session"

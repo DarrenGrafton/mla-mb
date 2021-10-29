@@ -1,18 +1,8 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 
 import { Link } from "gatsby"
 import Header from "./header"
-import "../css/normalize.css"
-import "../css/main.css"
-import "../css/style.css"
 
 const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -30,19 +20,31 @@ const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
       )}
       <div className="layout">{children}</div>
       {!hide && (
-        <footer>
-          <ul>
-            <li>
+        <footer className="relative top-80 bg-gray-800 h-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <ul className="flex justify-between px-4">
+            <li className="text-white ">
               © {new Date().getFullYear()},{" "}
-              <a href="mailto:mlambcontact@gmail.com">Email </a> any questions
+              <a
+                href="mailto:mlambcontact@gmail.com"
+                className="text-white border-b-2 border-primary"
+              >
+                Email
+              </a>{" "}
+              any questions
             </li>
             <li>
-              <Link className="smallText" to="/PrivacyPolicy/">
+              <Link
+                className="text-white border-b-2 border-primary"
+                to="/PrivacyPolicy/"
+              >
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link className="smallText" to="/TermsOfUse/">
+              <Link
+                className="text-white border-b-2 border-primary"
+                to="/TermsOfUse/"
+              >
                 Terms
               </Link>
             </li>
