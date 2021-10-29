@@ -16,7 +16,7 @@ import { RiArrowGoBackFill } from "react-icons/ri"
 import { AiOutlineReload } from "react-icons/ai"
 
 const REPRESENT_URL =
-  "https://represent.opennorth.ca/boundaries/manitoba-electoral-districts/?contains=" //49.802,-97.114
+  "https://represent.opennorth.ca/boundaries/manitoba-electoral-districts-2018/?contains=" //49.802,-97.114
 
 function getPosition(options) {
   return new Promise((resolve, reject) =>

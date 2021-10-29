@@ -26,15 +26,17 @@ export default function ConTemplate({ data }) {
   return (
     <Layout pageTitle={cons.Name} conNumber={cons.Number}>
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
-      <div className="grid lg:grid-cols-4 gap-3">
-        <div>
-          <div className="card">
-            <h2 className="font-serif text-primary text-xl md:text-3xl">
+      <div id="layout" className="grid lg:grid-cols-4 gap-3">
+        <div id="left-column">
+          <div class="collapse border rounded-box border-secondary collapse-arrow m-2">
+            <input type="checkbox" defaultChecked />
+            <h2 className="collapse-title font-serif text-primary text-xl md:text-3xl mb-0">
+              <span className="text-sm block">Current Rep:</span>
               {cons.CurrentRep}
             </h2>
-            <div className="flex flex-row items-center space-x-2">
+            <div className="collapse-content flex flex-row items-center space-x-2">
               <GatsbyImage
-                className="mask mask-circle w-12 h-18 md:w-20 md:h-30 lg:w-24 lg:h-36"
+                className="w-12 h-18 md:w-20 md:h-30 lg:w-24 lg:h-36 rounded-t-2xl"
                 image={allImageSharp?.nodes[0]?.gatsbyImageData}
                 alt={cons.CurrentRep}
               />
@@ -43,40 +45,51 @@ export default function ConTemplate({ data }) {
               </h3>
             </div>
           </div>
+
           <div className="hidden lg:block">
             <RepContactInfo rep={rep} />
-            <ConDemoData cons={cons} />
           </div>
         </div>
         <div id="right-column" className="lg:col-start-2 lg:col-end-5">
-          <div id="bills" className="">
-            <h3 className="font-serif text-primary text-3xl">Bills</h3>
-            {bills.edges.length > 0 ? (
-              <>
+          <ConDemoData cons={cons} />
+
+          <div
+            id="bills"
+            class="collapse border rounded-box border-secondary collapse-arrow m-2"
+          >
+            <input type="checkbox" />
+            <h3 className="collapse-title font-serif text-primary text-3xl mb-0">
+              Bills
+            </h3>
+            <div className="collapse-content">
+              {bills.edges.length > 0 ? (
+                <>
+                  <p className="text-primary">
+                    Bills sponsored in the current legislature:
+                  </p>
+                  <ul>
+                    {bills.edges.map(edge => (
+                      <li key={edge.node.billLink}>
+                        <Link
+                          className="text-primary text-base border-b-2 border-secondary"
+                          to={`/bills/${edge.node.billKey}`}
+                        >
+                          <span className="font-medium">
+                            Bill {edge.node.number} ({edge.node.session}{" "}
+                            Session)
+                          </span>{" "}
+                          - {edge.node.billName}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
                 <p className="text-primary">
-                  Bills sponsored in the current legislature:
+                  None sponsored in the current legislature
                 </p>
-                <ul>
-                  {bills.edges.map(edge => (
-                    <li key={edge.node.billLink}>
-                      <Link
-                        className="text-primary text-base border-b-2 border-secondary"
-                        to={`/bills/${edge.node.billKey}`}
-                      >
-                        <span className="font-medium">
-                          Bill {edge.node.number} ({edge.node.session} Session)
-                        </span>{" "}
-                        - {edge.node.billName}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <p className="text-primary">
-                None sponsored in the current legislature
-              </p>
-            )}
+              )}
+            </div>
           </div>
           <ConHansardLinks
             sessions={sessions}
@@ -86,7 +99,6 @@ export default function ConTemplate({ data }) {
         </div>
         <div className="block lg:hidden">
           <RepContactInfo rep={rep} />
-          <ConDemoData cons={cons} />
         </div>
       </div>
     </Layout>

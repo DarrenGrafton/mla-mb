@@ -10,10 +10,15 @@ const Constituencies = () => {
   return (
     <Layout pageTitle="Constituency List">
       <Seo title="Manitoban Constituencies" />
-      <ol className="linkLists">
+      <ol className="flex flex-wrap flex-col h-850 lg:h-600">
         {data.allConsJson.edges.map(edge => (
           <li key={edge.node.Name}>
-            <Link to={`/${slugifyName(edge.node.Name)}`}>{edge.node.Name}</Link>
+            <Link
+              className="text-primary text-lg border-b-2 border-secondary"
+              to={`/${slugifyName(edge.node.Name)}`}
+            >
+              {edge.node.Name}
+            </Link>
           </li>
         ))}
       </ol>

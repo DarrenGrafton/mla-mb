@@ -6,21 +6,23 @@ export default function PrivacyPolicy() {
   return (
     <Layout pageTitle="Privacy Policy">
       <Seo title="Privacy Policy" />
-      <div>
+      <div className="p-2 lg:p-6">
         <h2>Privacy Policy for MLA MB</h2>
-        <p>Privacy Policy Last updated: May 31, 2021</p>
-
-        <p>
-          Manitoban MLAs (mlamb.ca) does not track data personal or otherwise of
-          site visitors
+        <p className="lg:w-8/12 mb-2">
+          Privacy Policy Last updated: Oct 29, 2021
         </p>
 
-        <p>
+        <p className="lg:w-8/12 mb-2">
+          Manitoban MLAs (mlamb.ca) does not track personal data. We use Google
+          Analytics to track how visitors interact with the site.
+        </p>
+
+        <p className="lg:w-8/12 mb-2">
           We use cookies on the site to track preferences and assist in site
           navigation
         </p>
 
-        <p>
+        <p className="lg:w-8/12 mb-2">
           We may update Our Privacy Policy from time to time. We will notify You
           of any changes by posting the new Privacy Policy on this page. Changes
           to this Privacy Policy are effective when they are posted on this
@@ -29,7 +31,7 @@ export default function PrivacyPolicy() {
 
         <h3>Contact Us</h3>
 
-        <p>
+        <p className="lg:w-8/12 mb-2">
           If you have any questions about this Privacy Policy, You can contact
           us:
         </p>

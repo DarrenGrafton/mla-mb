@@ -55,7 +55,7 @@ const Header = ({
               to={`/${link.link}`}
               // activeClassName={styles.activeLink}
               state={{ conNumber }}
-              className="text-red-700 text-3xl font-normal mt-8"
+              className="text-red-700 text-3xl border-0 mt-8"
             >
               {link.name}
             </Link>
@@ -75,7 +75,7 @@ const Header = ({
               to={`/${link.link}`}
               // activeClassName={styles.activeLink}
               state={{ conNumber }}
-              className="text-red-700 text-xl xl:text-2xl font-normal mr-7 last:mr-2 mt-2"
+              className="text-red-700 text-xl xl:text-2xl border-0 mr-7 last:mr-2 mt-2"
             >
               {link.name}
             </Link>

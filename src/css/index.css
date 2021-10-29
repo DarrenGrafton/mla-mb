@@ -29,14 +29,27 @@
   h1 {
     @apply text-4xl;
     @apply mb-1;
+    @apply text-primary;
   }
   h2 {
     @apply text-3xl;
     @apply mb-1;
+    @apply text-primary;
   }
   h3 {
     @apply text-2xl;
     @apply mb-1;
+    @apply text-primary;
+  }
+
+  p {
+    @apply text-primary;
+  }
+
+  a {
+    @apply text-primary;
+    @apply border-b;
+    @apply border-secondary;
   }
 
   .text-shadow {
