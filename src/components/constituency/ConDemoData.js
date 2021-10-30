@@ -27,13 +27,13 @@ export const ConDemoData = ({ cons, styles }) => {
     // },
   ]
   return (
-    <aside className="collapse border rounded-box border-secondary collapse-arrow m-2">
+    <aside className="collapse border rounded-box border-secondary collapse-arrow m-2 ">
       <input type="checkbox" defaultChecked />
-      <h4 className="collapse-title text-primary font-serif text-2xl">
+      <h4 className="collapse-title text-primary font-serif text-2xl ">
         {cons.Name} Info
       </h4>
-      <div className="collapse-content">
-        <div class="shadow stats grid-flow-row lg:grid-flow-col">
+      <div className="collapse-content bg-white ">
+        <div class="shadow stats grid-flow-row lg:grid-flow-col ">
           <div id="population" class="stat">
             <div class="stat-figure text-primary">
               <svg
