@@ -52,24 +52,29 @@
     @apply border-secondary;
   }
 
-  /*REMOVE FOCUS STYLING FOR COLLAPSE CONTROL*/
+  /*CUSTOMIZE DAISY COLLAPSE CONTROL*/
   .collapse-open .collapse-title,
   .collapse:focus:not(.collapse-close) .collapse-title,
   .collapse:not(.collapse-close)
     input[type="checkbox"]:checked
     ~ .collapse-title {
-    --tw-bg-opacity: 0 !important;
+    --tw-bg-opacity: 0 !important; /*REMOVE FOCUS STYLING FOR COLLAPSE CONTROL*/
+    border-bottom: 1px solid var(--color-secondary); /*SET BORDER COLOR*/
   }
   .collapse-open .collapse-content,
   .collapse:focus:not(.collapse-close) .collapse-content,
   .collapse:not(.collapse-close)
     input[type="checkbox"]:checked
     ~ .collapse-content {
-    --tw-bg-opacity: 0 !important;
+    --tw-bg-opacity: 0 !important; /*REMOVE FOCUS STYLING FOR COLLAPSE CONTROL*/
   }
 
   .text-shadow {
     text-shadow: 1px 1px var(--color-accent);
+  }
+
+  .mt--1 {
+    margin-top: -0.25rem;
   }
 
   /* todo make links highlight 

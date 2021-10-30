@@ -26,17 +26,17 @@ export default function ConTemplate({ data }) {
   return (
     <Layout pageTitle={cons.Name} conNumber={cons.Number}>
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
-      <div id="layout" className="grid lg:grid-cols-4 gap-3">
+      <div id="layout" className="grid lg:grid-cols-4">
         <div id="left-column">
           <div class="collapse border rounded-box border-secondary collapse-arrow m-2">
-            <input type="checkbox" defaultChecked />
-            <h2 className="collapse-title font-serif text-primary text-xl md:text-3xl mb-0">
-              <span className="text-sm block">Current Rep:</span>
+            <input className="p-1" type="checkbox" defaultChecked />
+            <h2 className="collapse-title font-serif text-primary text-lg md:text-xl mb-0 p-2">
+              <span className="text-xs block">Current Rep:</span>
               {cons.CurrentRep}
             </h2>
             <div className="collapse-content flex flex-row items-center space-x-2">
               <GatsbyImage
-                className="w-12 h-18 md:w-20 md:h-30 lg:w-24 lg:h-36 rounded-t-2xl"
+                className="w-12 h-18 md:w-20 md:h-30 lg:w-24 lg:h-36 rounded-t-2xl mt-2"
                 image={allImageSharp?.nodes[0]?.gatsbyImageData}
                 alt={cons.CurrentRep}
               />
@@ -58,15 +58,13 @@ export default function ConTemplate({ data }) {
             class="collapse border rounded-box border-secondary collapse-arrow m-2"
           >
             <input type="checkbox" />
-            <h3 className="collapse-title font-serif text-primary text-3xl mb-0">
-              Bills
+            <h3 className="collapse-title font-serif text-primary text-base mb-0">
+              <span className="text-xl">Bills</span> sponsored by {rep.Name} in
+              current legislature
             </h3>
             <div className="collapse-content">
               {bills.edges.length > 0 ? (
                 <>
-                  <p className="text-primary">
-                    Bills sponsored in the current legislature:
-                  </p>
                   <ul>
                     {bills.edges.map(edge => (
                       <li key={edge.node.billLink}>
