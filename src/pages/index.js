@@ -56,11 +56,14 @@ const IndexPage = ({ data }) => {
                 Map
               </Link>
             </div>
-            <div class="flex justify-between mt-5">
+            <div class="flex flex-col sm:flex-row justify-between mt-5">
               <p class="text-xl text-primary">
                 List of Constituencies (Ridings)
               </p>
-              <Link to="/Constituencies/" className="btn btn-primary w-max">
+              <Link
+                to="/Constituencies/"
+                className="btn btn-primary w-max self-end"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 mr-2"

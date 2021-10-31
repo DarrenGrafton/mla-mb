@@ -20,7 +20,7 @@ const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
       )}
       <div className="layout">{children}</div>
       {!hide && (
-        <footer className="relative top-80 bg-gray-800 h-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <footer className="relative top-80 bg-gray-800 h-20 sm:h-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <ul className="flex justify-between px-4">
             <li className="text-white ">
               © {new Date().getFullYear()},{" "}

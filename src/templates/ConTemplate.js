@@ -65,7 +65,7 @@ export default function ConTemplate({ data }) {
             <div className="collapse-content">
               {bills.edges.length > 0 ? (
                 <>
-                  <ul>
+                  <ul className="mt-4">
                     {bills.edges.map(edge => (
                       <li key={edge.node.billLink}>
                         <Link
@@ -83,7 +83,7 @@ export default function ConTemplate({ data }) {
                   </ul>
                 </>
               ) : (
-                <p className="text-primary">
+                <p className="text-primary mt-4">
                   None sponsored in the current legislature
                 </p>
               )}
