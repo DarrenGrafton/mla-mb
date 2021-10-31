@@ -8,6 +8,7 @@
   --color-primary: #b91c1c;
   --color-secondary: #b59040;
   --color-accent: var(--midnight-blue);
+  --color-background: #43baff;
   /* ... */
   --p: var(--color-primary);
 }
@@ -26,6 +27,7 @@
   body[noOverflow="true"] {
     overflow: hidden;
   }
+
   h1 {
     @apply text-4xl;
     @apply mb-1;
@@ -59,7 +61,7 @@
     input[type="checkbox"]:checked
     ~ .collapse-title {
     --tw-bg-opacity: 0 !important; /*REMOVE FOCUS STYLING FOR COLLAPSE CONTROL*/
-    border-bottom: 1px solid var(--color-secondary); /*SET BORDER COLOR*/
+    border-bottom: 1px solid var(--color-secondary); /*SET between collapse header and content*/
   }
   .collapse-open .collapse-content,
   .collapse:focus:not(.collapse-close) .collapse-content,

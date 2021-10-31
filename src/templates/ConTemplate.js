@@ -20,18 +20,23 @@ export default function ConTemplate({ data }) {
 
   const [, setCookie] = useCookies([])
 
+  const smallWindow = typeof window !== `undefined` && window.innerWidth < 640
   //Set the con number page we are on, in case user pops to the map
   setCookie("last-constituency", cons.Number, { path: "/" })
   //header with  con name, back link,menu items
   return (
-    <Layout pageTitle={cons.Name} conNumber={cons.Number}>
+    <Layout pageTitle={cons.Name} conNumber={cons.Number} hClass="bg-gray-100">
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
-      <div id="layout" className="grid lg:grid-cols-4">
+      <div id="layout" className="grid lg:grid-cols-4 bg-gray-100">
         <div id="left-column">
-          <div class="collapse border rounded-box border-secondary collapse-arrow m-2">
-            <input className="p-1" type="checkbox" defaultChecked />
-            <h2 className="collapse-title font-serif text-primary text-lg md:text-xl mb-0 p-2">
-              <span className="text-xs block">Current Rep:</span>
+          <div class="collapse-small-header collapse border rounded-box border-secondary collapse-arrow m-2">
+            <input
+              className="p-0 sm:p-1 min-h-0"
+              type="checkbox"
+              defaultChecked={!smallWindow}
+            />
+            <h2 className="collapse-title font-serif text-primary text-sm sm:text-lg md:text-xl mb-0 sm:p-2">
+              <span className="text-xs sm:block">Current Rep: </span>
               {cons.CurrentRep}
             </h2>
             <div className="collapse-content flex flex-row items-center space-x-2">
@@ -58,7 +63,7 @@ export default function ConTemplate({ data }) {
             class="collapse border rounded-box border-secondary collapse-arrow m-2"
           >
             <input type="checkbox" />
-            <h3 className="collapse-title font-serif text-primary text-base mb-0">
+            <h3 className="collapse-title font-serif text-primary text-base mb-0 mr-2 pr-8">
               <span className="text-xl">Bills</span> sponsored by {rep.Name} in
               current legislature
             </h3>
@@ -95,7 +100,7 @@ export default function ConTemplate({ data }) {
             rep={rep}
           />
         </div>
-        <div className="block lg:hidden">
+        <div className="block lg:hidden mt-0">
           <RepContactInfo rep={rep} />
         </div>
       </div>

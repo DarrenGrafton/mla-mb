@@ -9,7 +9,7 @@ export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
     <div className="collapse border rounded-box border-secondary collapse-arrow m-2">
       <input type="checkbox" />
 
-      <h3 className=" collapse-title font-serif text-primary text-xl mb-0">
+      <h3 className=" collapse-title font-serif text-primary text-xl mb-0 pr-7">
         Hansard{" "}
         <span className="text-primary text-base">
           transcript links of {rep.Name} in the Legislative Assembly
