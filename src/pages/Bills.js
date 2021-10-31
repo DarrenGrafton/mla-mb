@@ -26,10 +26,10 @@ const Bills = () => {
   )
 
   return (
-    <Layout pageTitle="Bills by Session">
+    <Layout pageTitle="Bills by Session" hClass="bg-gray-100">
       <Seo title="Bills by Legislative Session" />
 
-      <div>
+      <div className="bg-gray-100">
         {fourthSessionBills.length > 0 && (
           <BillSession
             sessionName="42nd Legislature, 4th Session"

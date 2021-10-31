@@ -5,9 +5,9 @@ import { Link } from "gatsby"
 
 export default function TermsOfUse() {
   return (
-    <Layout pageTitle="Terms of Use">
+    <Layout pageTitle="Terms of Use" hClass="bg-gray-100">
       <Seo title="Terms of Use" />
-      <div className="p-2 lg:p-6">
+      <div className="p-2 lg:p-6 bg-gray-100" style={{ minHeight: "85vh" }}>
         <h2>Terms of Use MLA MB</h2>
         <p>Last updated: May 31, 2021</p>
 

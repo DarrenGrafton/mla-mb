@@ -2,10 +2,10 @@ import React from "react"
 
 export const RepContactInfo = ({ rep }) => {
   return (
-    <aside className="collapse border rounded-box border-secondary collapse-arrow m-2">
+    <aside className="collapse border rounded-box border-secondary collapse-arrow m-2 mt-0 lg:mt-2">
       <input type="checkbox" id="contact-info" className="collapse-toggle" />
-      <h4 className="collapse-title font-serif text-primary text-2xl">
-        Contact
+      <h4 className="collapse-title font-serif text-primary text-xl">
+        Contact <span className="text-base">info for {rep.Name}</span>
       </h4>
       <div className="collapse-content">
         <h5 className="text-primary text-lg">Constituency Office</h5>

@@ -9,14 +9,14 @@ export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
     <div className="collapse border rounded-box border-secondary collapse-arrow m-2">
       <input type="checkbox" />
 
-      <h3 className=" collapse-title font-serif text-primary text-3xl mb-0">
-        Hansard
+      <h3 className=" collapse-title font-serif text-primary text-xl mb-0 pr-7">
+        Hansard{" "}
+        <span className="text-primary text-base">
+          transcript links of {rep.Name} in the Legislative Assembly
+        </span>
       </h3>
       <div className="collapse-content">
-        <p className="text-primary mb-2">
-          Links to transcripts of the debates of the Legislative Assembly of
-          Manitoba and its committees.
-        </p>
+        <p className="text-primary mb-2"></p>
         <ul>
           {visibleSessions.map(edge => {
             //If this is a committee meeting, just link the entire meeting

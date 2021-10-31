@@ -1,7 +1,6 @@
 import React from "react"
-import classNames from "classnames"
 import { Link } from "gatsby"
-
+import { classNames } from "../helpers/Utils"
 import * as styles from "./header.module.css"
 
 const links = [
@@ -19,8 +18,14 @@ const Header = ({
   navbarOpen,
   setNavbarOpen,
   conNumber,
+  hClass,
 }) => (
-  <header className="flex w-full pt-4 pb-2 pl-2 border-yellow-700 border-b-2">
+  <header
+    className={classNames(
+      "flex w-full pt-4 pb-2 pl-2 border-yellow-700 border-b-2",
+      hClass
+    )}
+  >
     <h1 className="text-red-700 pl-2 text-3xl sm:text-5xl font-medium font-serif flex-grow-0">
       {pageTitle}
     </h1>

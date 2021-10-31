@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Header from "./header"
 
-const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
+const Layout = ({ children, hide, pageTitle, location, conNumber, hClass }) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
@@ -16,11 +16,12 @@ const Layout = ({ children, hide, pageTitle, location, conNumber }) => {
           navbarOpen={navbarOpen}
           setNavbarOpen={setNavbarOpen}
           conNumber={conNumber}
+          hClass={hClass}
         />
       )}
       <div className="layout">{children}</div>
       {!hide && (
-        <footer className="relative top-80 bg-gray-800 h-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <footer className="bg-gray-800 h-20 sm:h-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <ul className="flex justify-between px-4">
             <li className="text-white ">
               © {new Date().getFullYear()},{" "}

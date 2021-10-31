@@ -4,9 +4,9 @@ import Seo from "../components/seo"
 
 export default function PrivacyPolicy() {
   return (
-    <Layout pageTitle="Privacy Policy">
+    <Layout pageTitle="Privacy Policy" hClass="bg-gray-100">
       <Seo title="Privacy Policy" />
-      <div className="p-2 lg:p-6">
+      <div className="p-2 lg:p-6 bg-gray-100" style={{ minHeight: "85vh" }}>
         <h2>Privacy Policy for MLA MB</h2>
         <p className="lg:w-8/12 mb-2">
           Privacy Policy Last updated: Oct 29, 2021
