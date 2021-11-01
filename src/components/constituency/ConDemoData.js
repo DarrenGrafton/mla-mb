@@ -55,7 +55,7 @@ export const ConDemoData = ({ cons, styles }) => {
               {cons.RegisteredVoters} Registered Voters
             </div>
           </div>
-          <div id="area" class="stat bg-transparent">
+          <div id="area" className="stat bg-transparent">
             <div className="stat-figure text-info">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
