@@ -36,8 +36,8 @@ const BrowseMap = ({ location }) => {
   useEffect(() => {
     async function loadConstituency() {
       //This function checks query params first to maintain the ability to link to a specific map number,
-      //but the site does not pass the query params anymore.  A location "State" is passed to this page
-      //using Gatsby Link to control the initial constituency
+      //but the site does not pass the query params anymore.  The constituency number is stored in cookies.
+      //If the query params are not present, the constituency number is retrieved from cookies.
 
       //Parse ForceLoc or Number=NN from query string
       const query = parseQuery(location.search)
@@ -65,23 +65,29 @@ const BrowseMap = ({ location }) => {
           const position = await getPosition()
           //use the opennorth api to get the "boundry" (constituency) that contains our current position
           //http://represent.opennorth.ca/boundaries/manitoba-electoral-districts/?contains=49.802,-97.114
-          const res = await fetch(
-            REPRESENT_URL +
-              position.coords.latitude +
-              "," +
-              position.coords.longitude
-          )
-          //get an object from the opennorth response
-          const representBoundry = await res.json()
-          if (representBoundry.objects.length > 0) {
-            //if there are boundries returned that contain our position, get the name, then lookup the number based on our graphql data
-            const InitialConName = representBoundry.objects[0].name
-            const initialCon = data.allConsJson.nodes.find(
-              con => con.Name == InitialConName
+
+          setConState({ Number: 102, direction: null })
+          return
+
+          if (position.coords.latitude && position.coords.longitude) {
+            const res = await fetch(
+              REPRESENT_URL +
+                position.coords.latitude +
+                "," +
+                position.coords.longitude
             )
-            //load up the number and leave this init function
-            setConState({ Number: initialCon.Number, direction: null })
-            return
+            //get an object from the opennorth response
+            const representBoundry = await res.json()
+            if (representBoundry.objects.length > 0) {
+              //if there are boundries returned that contain our position, get the name, then lookup the number based on our graphql data
+              const InitialConName = representBoundry.objects[0].name
+              const initialCon = data.allConsJson.nodes.find(
+                con => con.Name == InitialConName
+              )
+              //load up the number and leave this init function
+              setConState({ Number: initialCon.Number, direction: null })
+              return
+            }
           }
         } catch (err) {
           console.error(err.message)
