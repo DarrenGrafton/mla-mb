@@ -29,7 +29,7 @@ export default function ConTemplate({ data }) {
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
       <div id="layout" className="grid lg:grid-cols-4 bg-gray-100">
         <div id="left-column">
-          <div class="collapse-small-header collapse border rounded-box border-secondary collapse-arrow m-2">
+          <div className="collapse-small-header collapse border rounded-box border-secondary collapse-arrow m-2">
             <input
               className="p-0 sm:p-1 min-h-0"
               type="checkbox"
@@ -60,7 +60,7 @@ export default function ConTemplate({ data }) {
 
           <div
             id="bills"
-            class="collapse border rounded-box border-secondary collapse-arrow m-2"
+            className="collapse border rounded-box border-secondary collapse-arrow m-2"
           >
             <input type="checkbox" />
             <h3 className="collapse-title font-serif text-primary text-base mb-0 mr-2 pr-8">

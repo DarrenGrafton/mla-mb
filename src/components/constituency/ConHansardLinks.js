@@ -1,10 +1,22 @@
 import React, { useState } from "react"
 
 export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
-  const [visibleSessions, setVisibleSessions] = useState(
-    //sessions.edges
-    sessions.edges.slice(0, 5)
+  const [index, setIndex] = useState(0)
+  //Split the sessions into an array of pages with a max of 3 sessions per page
+  const sessionPages = sessions.edges.reduce(
+    function (arr, item) {
+      if (arr[arr.length - 1].length === 3) {
+        arr.push([item])
+      } else {
+        arr[arr.length - 1].push(item)
+      }
+      return arr
+    },
+    [[]]
   )
+
+  console.log(sessionPages)
+
   return (
     <div className="collapse border rounded-box border-secondary collapse-arrow m-2">
       <input type="checkbox" />
@@ -16,9 +28,52 @@ export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
         </span>
       </h3>
       <div className="collapse-content">
-        <p className="text-primary mb-2"></p>
+        <div className="flex flex-wrap justify-between max-w-xl">
+          <button
+            className="btn btn-primary pl-2"
+            disabled={index <= 0}
+            onClick={() => setIndex(index - 1)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M11 17l-5-5m0 0l5-5m-5 5h12"
+              />
+            </svg>{" "}
+            Prev
+          </button>
+          <button
+            className="btn btn-primary pr-2"
+            disabled={index >= sessionPages.length - 1}
+            onClick={() => setIndex(index + 1)}
+          >
+            Next
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </button>
+        </div>
         <ul>
-          {visibleSessions.map(edge => {
+          {sessionPages[index].map(edge => {
             //If this is a committee meeting, just link the entire meeting
             if (edge.node.committee && edge.node.committee !== "house") {
               const url = `https://www.gov.mb.ca/legislature/hansard/${edge.node.legislature}_${edge.node.session}/${edge.node.link}`
@@ -188,13 +243,45 @@ export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
             }
           })}
         </ul>
-        <div class="btn-group mt-2">
-          <button class="btn btn-md btn-primary">1</button>
-          <button class="btn btn-md btn-primary">2</button>
-          <button class="btn btn-md btn-primary">3</button>
-          <button class="btn btn-md btn-disabled">...</button>
-          <button class="btn btn-md btn-primary">99</button>
-          <button class="btn btn-md btn-primary">100</button>
+        <div className="mt-4 flex justify-around max-w-xl">
+          <div className="btn-group mt-2">
+            <button
+              className="btn btn-md btn-primary"
+              onClick={() => setIndex(0)}
+              disabled={index === 0}
+            >
+              1
+            </button>
+            {sessionPages.length > 1 && (
+              <button className="btn btn-md btn-primary" disabled={index === 1}>
+                {index > 2 ? index - 1 : 2}
+              </button>
+            )}
+            {sessionPages.length > 2 && (
+              <button className="btn btn-md btn-primary" disabled={index === 2}>
+                {index > 3 ? index - 1 : 3}
+              </button>
+            )}
+            {sessionPages.length > 3 && (
+              <button className="btn btn-md btn-disabled">
+                {index > 4 ? index - 1 : 4}
+              </button>
+            )}
+            {sessionPages.length > 4 && (
+              <button className="btn btn-md btn-primary">
+                {index > 5 ? index - 1 : 5}
+              </button>
+            )}
+            {sessionPages.length > 5 && (
+              <button
+                className="btn btn-md btn-primary"
+                onClick={() => setIndex(sessionPages.length - 1)}
+                disabled={index === sessionPages.length - 1}
+              >
+                {sessionPages.length}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
