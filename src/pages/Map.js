@@ -62,7 +62,10 @@ const BrowseMap = ({ location }) => {
       if (window.navigator.geolocation) {
         try {
           //ask phone to get current position
-          const position = await getPosition()
+          const position = await getPosition({
+            timeout: 2000,
+            maximumAge: 10000,
+          })
           //use the opennorth api to get the "boundry" (constituency) that contains our current position
           //http://represent.opennorth.ca/boundaries/manitoba-electoral-districts/?contains=49.802,-97.114
 
