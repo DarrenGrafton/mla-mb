@@ -253,23 +253,91 @@ export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
               1
             </button>
             {sessionPages.length > 1 && (
-              <button className="btn btn-md btn-primary" disabled={index === 1}>
-                {index > 2 ? index - 1 : 2}
+              <button
+                className="btn btn-md btn-primary"
+                disabled={index === 1}
+                onClick={() =>
+                  setIndex(
+                    index > 2
+                      ? index >= sessionPages.length - 2
+                        ? sessionPages.length - 5
+                        : index - 2
+                      : 1
+                  )
+                }
+              >
+                {index > 2
+                  ? index >= sessionPages.length - 2
+                    ? sessionPages.length - 4
+                    : index - 1
+                  : 2}
               </button>
             )}
             {sessionPages.length > 2 && (
-              <button className="btn btn-md btn-primary" disabled={index === 2}>
-                {index > 3 ? index - 1 : 3}
+              <button
+                className="btn btn-md btn-primary"
+                disabled={index === 2}
+                onClick={() =>
+                  setIndex(
+                    index > 3
+                      ? index >= sessionPages.length - 2
+                        ? sessionPages.length - 4
+                        : index - 1
+                      : 2
+                  )
+                }
+              >
+                {index > 3
+                  ? index >= sessionPages.length - 2
+                    ? sessionPages.length - 3
+                    : index
+                  : 3}
               </button>
             )}
             {sessionPages.length > 3 && (
-              <button className="btn btn-md btn-disabled">
-                {index > 4 ? index - 1 : 4}
+              <button
+                className="btn btn-md btn-primary"
+                disabled={index >= 3 && index <= sessionPages.length - 3}
+                onClick={() =>
+                  setIndex(
+                    index > 3
+                      ? index >= sessionPages.length - 2
+                        ? sessionPages.length - 3
+                        : index
+                      : 3
+                  )
+                }
+              >
+                {index > 3
+                  ? index >= sessionPages.length - 2
+                    ? sessionPages.length - 2
+                    : index + 1
+                  : 4}
               </button>
             )}
             {sessionPages.length > 4 && (
-              <button className="btn btn-md btn-primary">
-                {index > 5 ? index - 1 : 5}
+              <button
+                className="btn btn-md btn-primary"
+                disabled={index === sessionPages.length - 2}
+                onClick={() =>
+                  setIndex(
+                    index > 3
+                      ? index >= sessionPages.length - 1
+                        ? index - 1
+                        : index == sessionPages.length - 2
+                        ? sessionPages.length - 2
+                        : 1 + index
+                      : 4
+                  )
+                }
+              >
+                {index > 3
+                  ? index >= sessionPages.length - 1
+                    ? index
+                    : index == sessionPages.length - 2
+                    ? sessionPages.length - 1
+                    : 2 + index
+                  : 5}
               </button>
             )}
             {sessionPages.length > 5 && (
