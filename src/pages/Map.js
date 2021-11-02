@@ -24,6 +24,39 @@ function getPosition(options) {
   )
 }
 
+//Not all browsers respect the timeout option, so we add our
+//own timeout to a promise array and race against the geolocation call
+function getUserPosition() {
+  const promiseArray = []
+
+  if (navigator.standalone) {
+    promiseArray.push(
+      new Promise((resolve, reject) => {
+        const wait = setTimeout(() => {
+          clearTimeout(wait)
+          reject("Location has timed out")
+        }, 4000)
+      })
+    )
+  }
+
+  const getCurrentPositionPromise = new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(resolve, reject, {
+        timeout: 5000,
+        maximumAge: 2000,
+        //enableHighAccuracy: true, Do not use high accuracy
+      })
+    } else {
+      reject(new Error("Browser does not support geolocation!"))
+    }
+  })
+
+  promiseArray.push(getCurrentPositionPromise)
+
+  return Promise.race(promiseArray)
+}
+
 const BrowseMap = ({ location }) => {
   const data = useStaticQuery(BROWSE_MAP)
 
@@ -59,13 +92,12 @@ const BrowseMap = ({ location }) => {
       }
 
       //else if will ask for the geolocation to load one
+      //This will block until the user has given permission to use their location
       if (window.navigator.geolocation) {
         try {
-          //ask phone to get current position
-          const position = await getPosition({
-            timeout: 2000,
-            maximumAge: 10000,
-          })
+          //ask phone/browser to get current position
+          const position = await getUserPosition()
+
           //use the opennorth api to get the "boundry" (constituency) that contains our current position
           //http://represent.opennorth.ca/boundaries/manitoba-electoral-districts/?contains=49.802,-97.114
 
