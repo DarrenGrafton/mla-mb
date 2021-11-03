@@ -35,7 +35,7 @@ function getUserPosition() {
         const wait = setTimeout(() => {
           clearTimeout(wait)
           reject("Location has timed out")
-        }, 4000)
+        }, 2000)
       })
     )
   }
