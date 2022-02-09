@@ -24,7 +24,7 @@ export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
       <h3 className=" collapse-title font-serif text-primary text-xl mb-0 pr-7">
         Hansard{" "}
         <span className="text-primary text-base">
-          transcript links of {rep.Name} in the Legislative Assembly
+          - links to transcripts of {rep.Name} in the Legislative Assembly
         </span>
       </h3>
       <div className="collapse-content">

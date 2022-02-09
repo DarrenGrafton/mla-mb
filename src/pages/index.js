@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   const [, , removeCookie] = useCookies([])
 
   useEffect(() => {
@@ -14,8 +14,8 @@ const IndexPage = ({ data }) => {
     removeCookie("last-constituency", { path: "/" })
   }, [removeCookie])
   return (
-    <Layout pageTitle={data.markdownRemark.frontmatter.pageTitle}>
-      <Seo title={data.markdownRemark.frontmatter.seoTitle} />
+    <Layout pageTitle="Manitoban MLAs">
+      <Seo title="Manitoban MLA information" />
 
       <StaticImage
         width={1800}
@@ -90,14 +90,3 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query IndexPageQuery {
-    markdownRemark(fileAbsolutePath: { regex: "/src/pages/index/" }) {
-      frontmatter {
-        pageTitle
-        seoTitle
-      }
-    }
-  }
-`
