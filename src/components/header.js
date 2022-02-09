@@ -22,7 +22,7 @@ const Header = ({
 }) => (
   <header
     className={classNames(
-      "flex w-full pt-4 pb-2 pl-2 border-secondary border-b-2",
+      "flex w-full pt-4 pb-2 pl-2 border-secondary border-b-2 shadow-md",
       hClass
     )}
   >

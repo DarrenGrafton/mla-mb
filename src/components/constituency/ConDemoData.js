@@ -1,6 +1,6 @@
 import React from "react"
 
-export const ConDemoData = ({ cons, styles }) => {
+export const ConDemoData = ({ cons, styles, className, defaultChecked }) => {
   const nameValues = [
     // { name: "Total Population", value: cons.TotalPopulation },
     // { name: "Area In Square Km", value: cons.AreaInSquareKm },
@@ -27,8 +27,8 @@ export const ConDemoData = ({ cons, styles }) => {
     // },
   ]
   return (
-    <aside className="collapse border rounded-box border-secondary collapse-arrow  m-2 mt-0 lg:mt-2 ">
-      <input type="checkbox" defaultChecked />
+    <aside className={className}>
+      <input type="checkbox" defaultChecked={defaultChecked} />
       <h4 className="collapse-title text-primary font-serif text-xl">
         {cons.Name} Constituency Info
       </h4>
@@ -93,7 +93,9 @@ export const ConDemoData = ({ cons, styles }) => {
                 key={nameValue.name}
                 className={
                   "px-1 py-0 grid grid-cols-3 sm:gap-4 " +
-                  (i % 2 == 0 ? "bg-gray-100" : "bg-gray-200 lg:bg-gray-100")
+                  (i % 2 == 0
+                    ? "bg-background"
+                    : "bg-background-200 lg:bg-background")
                 }
               >
                 <dt className="text-left text-primary text-sm font-semibold col-start-1 col-end-3">

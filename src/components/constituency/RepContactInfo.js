@@ -1,9 +1,14 @@
 import React from "react"
 
-export const RepContactInfo = ({ rep }) => {
+export const RepContactInfo = ({ rep, className, defaultChecked }) => {
   return (
-    <aside className="collapse border rounded-box border-secondary collapse-arrow m-2 mt-0 lg:mt-2">
-      <input type="checkbox" id="contact-info" className="collapse-toggle" />
+    <aside className={className}>
+      <input
+        type="checkbox"
+        id="contact-info"
+        className="collapse-toggle"
+        defaultChecked={defaultChecked}
+      />
       <h4 className="collapse-title font-serif text-primary text-xl">
         Contact <span className="text-base">info for {rep.Name}</span>
       </h4>

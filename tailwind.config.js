@@ -4,13 +4,16 @@ const defaultFontFamily = defaultTheme.fontFamily
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
         // Build your palette here
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
+        accent: "var(--color-accent)",
+        background: "var(--color-background)",
+        "background-200": "var(--color-background-200)",
       },
       height: {
         "5v": "5vh",

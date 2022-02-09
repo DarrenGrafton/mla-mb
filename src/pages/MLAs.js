@@ -8,9 +8,9 @@ const MLAs = () => {
   const data = useStaticQuery(CONSTITUENCY_LIST)
 
   return (
-    <Layout pageTitle="MLA List" hClass="bg-gray-100">
+    <Layout pageTitle="MLA List" hClass="bg-background">
       <Seo title="Manitoban MLAs" />
-      <div className="bg-gray-100" style={{ minHeight: "85vh" }}>
+      <div className="p-4 lg:p-10" style={{ minHeight: "85vh" }}>
         <ol className="flex flex-wrap flex-col h-850 lg:h-600">
           {data.allConsJson.edges.map(edge => (
             <li key={edge.node.Name}>

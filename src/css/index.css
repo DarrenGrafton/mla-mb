@@ -8,9 +8,16 @@
   --color-primary: #b91c1c;
   --color-secondary: #b59040;
   --color-accent: var(--midnight-blue);
-  --color-background: #43baff;
+  --color-background: #e4f1fa;
+  --color-background-200: #dbe7f0;
   /* ... */
-  --p: var(--color-primary);
+  --color-PC: #0000cd;
+  --color-NDP: #f58220;
+  --color-Lib: #d91920;
+
+  background-color: var(
+    --color-background
+  ) !important; /* !important is required to override "common.css" not sure who that is */
 }
 
 /* @import "style.css"; */

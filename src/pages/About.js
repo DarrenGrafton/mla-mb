@@ -9,9 +9,9 @@ const About = () => {
   //const data = useStaticQuery(ABOUT_INFO)
 
   return (
-    <Layout pageTitle="About" hClass="bg-gray-100">
+    <Layout pageTitle="About" hClass="bg-background">
       <Seo title="About MLA MB" />
-      <div className="p-2 lg:p-6 bg-gray-100">
+      <div className="p-2 lg:p-6 bg-background">
         <p className="lg:w-1/2 mb-4">
           The Manitoban MLAs (mlamb.ca) website is built and maintained as a
           hobby project and is not affiliated with the Government of Manitoba.

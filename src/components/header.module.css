@@ -13,8 +13,7 @@
     height: 150vh;
     justify-content: flex-start;
     padding-top: 5vh;
-    background: var(--background);
-    background: white;
+    background: var(--color-background);
     transition: all 0.3s ease-in;
     top: 0;
     left: 0;

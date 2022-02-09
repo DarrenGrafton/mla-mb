@@ -1,6 +1,12 @@
 import React, { useState } from "react"
 
-export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
+export const ConHansardLinks = ({
+  sessions,
+  hansardIndexes,
+  rep,
+  className,
+  defaultChecked,
+}) => {
   const [index, setIndex] = useState(0)
   //Split the sessions into an array of pages with a max of 3 sessions per page
   const sessionPages = sessions.edges.reduce(
@@ -15,11 +21,9 @@ export const ConHansardLinks = ({ sessions, hansardIndexes, rep }) => {
     [[]]
   )
 
-  console.log(sessionPages)
-
   return (
-    <div className="collapse border rounded-box border-secondary collapse-arrow m-2">
-      <input type="checkbox" />
+    <div className={className}>
+      <input type="checkbox" defaultChecked={defaultChecked} />
 
       <h3 className=" collapse-title font-serif text-primary text-xl mb-0 pr-7">
         Hansard{" "}

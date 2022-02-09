@@ -20,11 +20,11 @@ export default function BillTemplate({ data }) {
   return (
     <Layout
       pageTitle={`Bill ${bill.number}  ${bill.session} Session`}
-      hClass="bg-gray-100"
+      hClass="bg-background"
     >
       <Seo title={`Bill ${bill.number}  ${bill.session} Session`} />
       <div
-        className="grid lg:grid-cols-4 bg-gray-100"
+        className="grid lg:grid-cols-4 bg-background"
         style={{ minHeight: "85vh" }}
       >
         <div className="lg:col-start-1 lg:col-end-4">
