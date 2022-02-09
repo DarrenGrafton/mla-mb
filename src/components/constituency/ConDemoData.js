@@ -30,7 +30,7 @@ export const ConDemoData = ({ cons, styles }) => {
     <aside className="collapse border rounded-box border-secondary collapse-arrow  m-2 mt-0 lg:mt-2 ">
       <input type="checkbox" defaultChecked />
       <h4 className="collapse-title text-primary font-serif text-xl">
-        {cons.Name} Info
+        {cons.Name} Constituency Info
       </h4>
       <div className="collapse-content ">
         <div className="shadow stats grid-flow-row sm:grid-flow-col">

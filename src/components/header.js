@@ -22,11 +22,11 @@ const Header = ({
 }) => (
   <header
     className={classNames(
-      "flex w-full pt-4 pb-2 pl-2 border-yellow-700 border-b-2",
+      "flex w-full pt-4 pb-2 pl-2 border-secondary border-b-2",
       hClass
     )}
   >
-    <h1 className="text-red-700 pl-2 text-3xl sm:text-5xl font-medium font-serif flex-grow-0">
+    <h1 className="text-primary pl-2 text-3xl sm:text-5xl font-medium font-serif flex-grow-0">
       {pageTitle}
     </h1>
     <nav className="flex-grow">
@@ -60,7 +60,7 @@ const Header = ({
               to={`/${link.link}`}
               // activeClassName={styles.activeLink}
               state={{ conNumber }}
-              className="text-red-700 text-3xl border-0 mt-8"
+              className="text-primary text-3xl border-0 mt-8"
             >
               {link.name}
             </Link>
@@ -80,7 +80,7 @@ const Header = ({
               to={`/${link.link}`}
               // activeClassName={styles.activeLink}
               state={{ conNumber }}
-              className="text-red-700 text-xl xl:text-2xl border-0 mr-7 last:mr-2 mt-2"
+              className="text-primary text-xl xl:text-2xl border-0 mr-7 mt-2"
             >
               {link.name}
             </Link>
