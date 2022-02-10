@@ -25,9 +25,9 @@ export const ConHansardLinks = ({
     <div className={className}>
       <input type="checkbox" defaultChecked={defaultChecked} />
 
-      <h3 className=" collapse-title font-serif text-primary text-xl mb-0 pr-7">
+      <h3 className=" collapse-title font-serif text-primary text-2xl mb-0 mr-2 pr-8">
         Hansard{" "}
-        <span className="text-primary text-base">
+        <span className="text-primary text-lg">
           - links to transcripts of {rep.Name} in the Legislative Assembly
         </span>
       </h3>

@@ -43,12 +43,11 @@ export default function ConTemplate({ data }) {
       <Seo title={`${cons.Name} - ${cons.CurrentRep}`} />
       <div id="layout" className="grid lg:grid-cols-4">
         <div id="left-column">
-          <div className="collapse-small-header collapse border rounded-box border-secondary collapse-arrow m-2 lg:m-6 shadow-xl">
-            <input
-              className="min-h-0"
-              type="checkbox"
-              defaultChecked={!smallWindow}
-            />
+          <div
+            id="representative"
+            className="collapse-small-header collapse border rounded-box border-secondary collapse-arrow m-2 lg:m-6 shadow lg:shadow-xl"
+          >
+            <input className="min-h-0" type="checkbox" defaultChecked={true} />
             <h2 className="collapse-title font-serif text-primary text-xl lg:text-2xl mb-0">
               Representative
             </h2>
@@ -75,10 +74,10 @@ export default function ConTemplate({ data }) {
             </div>
           </div>
 
-          <div className="hidden lg:block">
+          <div id="rep-contact-lg" className="hidden lg:block">
             <RepContactInfo
               rep={rep}
-              className="collapse border rounded-box border-secondary collapse-arrow m-2 mt-0 lg:m-6 shadow-xl"
+              className="collapse border rounded-box border-secondary collapse-arrow m-2 mt-0 lg:m-6 shadow lg:shadow-xl"
               defaultChecked={!smallWindow}
             />
           </div>
@@ -86,17 +85,17 @@ export default function ConTemplate({ data }) {
         <div id="right-column" className="lg:col-start-2 lg:col-end-5">
           <ConDemoData
             cons={cons}
-            className="collapse border rounded-box border-secondary collapse-arrow  m-2 mt-0 lg:m-6 lg:ml-0 shadow-xl"
+            className="collapse border rounded-box border-secondary collapse-arrow  m-2 mt-0 lg:m-6 lg:ml-0 shadow lg:shadow-xl"
             defaultChecked={!smallWindow}
           />
 
           <div
             id="bills"
-            className="collapse border rounded-box border-secondary collapse-arrow m-2 lg:m-6 lg:ml-0 shadow-xl"
+            className="collapse border rounded-box border-secondary collapse-arrow m-2 lg:m-6 lg:ml-0 shadow lg:shadow-xl"
           >
             <input type="checkbox" defaultChecked={!smallWindow} />
-            <h3 className="collapse-title font-serif text-primary text-base mb-0 mr-2 pr-8">
-              <span className="text-xl">Bills</span> sponsored by {rep.Name} in
+            <h3 className="collapse-title font-serif text-lg mb-0 mr-2 pr-8">
+              <span className="text-2xl">Bills</span> sponsored by {rep.Name} in
               current legislature
             </h3>
             <div className="collapse-content">
@@ -130,14 +129,14 @@ export default function ConTemplate({ data }) {
             sessions={sessions}
             hansardIndexes={hansardIndexes}
             rep={rep}
-            className="collapse border rounded-box border-secondary collapse-arrow m-2 lg:m-6 lg:ml-0 shadow-xl"
+            className="collapse border rounded-box border-secondary collapse-arrow m-2 lg:m-6 lg:ml-0 shadow lg:shadow-xl"
             defaultChecked={!smallWindow}
           />
         </div>
         <div className="block lg:hidden mt-0">
           <RepContactInfo
             rep={rep}
-            className="collapse border rounded-box border-secondary collapse-arrow m-2 mt-0 lg:mt-2 shadow-xl"
+            className="collapse border rounded-box border-secondary collapse-arrow m-2 mt-0 lg:mt-2 shadow lg:shadow-xl"
             defaultChecked={!smallWindow}
           />
         </div>

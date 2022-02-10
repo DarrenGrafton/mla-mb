@@ -9,8 +9,8 @@ export const RepContactInfo = ({ rep, className, defaultChecked }) => {
         className="collapse-toggle"
         defaultChecked={defaultChecked}
       />
-      <h4 className="collapse-title font-serif text-primary text-xl">
-        Contact <span className="text-base">info for {rep.Name}</span>
+      <h4 className="collapse-title font-serif text-primary text-2xl">
+        Contact <span className="text-lg">info for {rep.Name}</span>
       </h4>
       <div className="collapse-content">
         <h5 className="text-primary text-lg">Constituency Office</h5>

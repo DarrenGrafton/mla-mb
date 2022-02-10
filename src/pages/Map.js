@@ -94,17 +94,14 @@ const BrowseMap = ({ location }) => {
       //else if will ask for the geolocation to load one
       //This will block until the user has given permission to use their location
       if (window.navigator.geolocation) {
-        setConState({ Number: 102, direction: null })
-        return
+        //setConState({ Number: 102, direction: null })
+        //return
         try {
           //ask phone/browser to get current position
           const position = await getUserPosition()
 
           //use the opennorth api to get the "boundry" (constituency) that contains our current position
-          //http://represent.opennorth.ca/boundaries/manitoba-electoral-districts/?contains=49.802,-97.114
-
-          setConState({ Number: 102, direction: null })
-          return
+          //https://represent.opennorth.ca/boundaries/manitoba-electoral-districts-2018/?contains=49.802,-97.114
 
           if (position.coords.latitude && position.coords.longitude) {
             const res = await fetch(

@@ -28,18 +28,18 @@ const IndexPage = () => {
         style={{ position: "absolute", zIndex: -1 }}
       />
       <div style={{ minHeight: "85vh" }}>
-        <div class="p-4 lg:p-6 bg-transparent grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <div class="card shadow-lg bg-base-300 bg-opacity-70">
+        <div className="p-4 lg:p-6 bg-transparent grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="card shadow-lg bg-base-300 bg-opacity-70">
             <div className="card-body">
-              <h3 class="text-3xl xl:text-4xl text-primary font-serif">
+              <h2 className="text-3xl xl:text-4xl text-primary font-serif">
                 Find your Rep
-              </h3>
-              <p class="text-primary text-sm sm:text-base xl:text-xl my-3 xl:my-6">
+              </h2>
+              <p className="text-primary text-sm sm:text-base xl:text-xl my-3 xl:my-6">
                 See Bill's they've sponsored, links to transcripts of thier work
                 in the Legislative Assembly of Manitoba, and more!
               </p>
-              <div class="flex justify-between">
-                <p class="text-xl text-primary ">Find based on location</p>
+              <div className="flex justify-between">
+                <p className="text-xl text-primary ">Find based on location</p>
                 <Link to="/Map/" className="btn btn-primary w-max">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -56,8 +56,8 @@ const IndexPage = () => {
                   Map
                 </Link>
               </div>
-              <div class="flex flex-col sm:flex-row justify-between mt-5">
-                <p class="text-xl text-primary">
+              <div className="flex flex-col sm:flex-row justify-between mt-5">
+                <p className="text-xl text-primary">
                   List of Constituencies (Ridings)
                 </p>
                 <Link

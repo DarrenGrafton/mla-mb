@@ -5,9 +5,9 @@ export const ConDemoData = ({ cons, styles, className, defaultChecked }) => {
     // { name: "Total Population", value: cons.TotalPopulation },
     // { name: "Area In Square Km", value: cons.AreaInSquareKm },
     // { name: "Registered Voters", value: cons.RegisteredVoters },
-    { name: "Voter Turnout 2019", value: cons.VoterTurnout2019 },
-    { name: "Plurality", value: cons.Plurality },
-    { name: "Number Of Voting Areas", value: cons.NumberOfvotingAreas },
+    // { name: "Voter Turnout 2019", value: cons.VoterTurnout2019 },
+    // { name: "Plurality", value: cons.Plurality },
+    // { name: "Number Of Voting Areas", value: cons.NumberOfvotingAreas },
     { name: "Median Age", value: cons.MedianAge },
     { name: "Avg Family Size", value: cons.AvgFamilySize },
     { name: "Multiple Dwellings", value: cons.MultipleDwellings },
@@ -29,12 +29,15 @@ export const ConDemoData = ({ cons, styles, className, defaultChecked }) => {
   return (
     <aside className={className}>
       <input type="checkbox" defaultChecked={defaultChecked} />
-      <h4 className="collapse-title text-primary font-serif text-xl">
+      <h4 className="collapse-title text-primary font-serif text-2xl">
         {cons.Name} Constituency Info
       </h4>
       <div className="collapse-content ">
-        <div className="shadow stats grid-flow-row sm:grid-flow-col">
-          <div id="population" className="stat bg-transparent">
+        <div className="border stats border-secondary shadow-lg stats grid-flow-row sm:grid-flow-col mt-2">
+          <div
+            id="population"
+            className="stat bg-transparent border-b lg:border-b-0 lg:border-r"
+          >
             <div className="stat-figure text-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,8 +58,11 @@ export const ConDemoData = ({ cons, styles, className, defaultChecked }) => {
               {cons.RegisteredVoters} Registered Voters
             </div>
           </div>
-          <div id="area" className="stat bg-transparent">
-            <div className="stat-figure text-info">
+          <div
+            id="area"
+            className="stat bg-background border-b lg:border-b-0 lg:border-r"
+          >
+            <div className="stat-figure text-accent">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -73,15 +79,55 @@ export const ConDemoData = ({ cons, styles, className, defaultChecked }) => {
               </svg>
             </div>
             <div className="stat-title" style={{ opacity: 0.8 }}>
-              Area In Square Km
+              Area in{" "}
+              <span className="text-base">
+                km<sup>2</sup>
+              </span>
             </div>
-            <div className="stat-value text-info">{cons.AreaInSquareKm}</div>
+            <div className="stat-value text-accent">{cons.AreaInSquareKm}</div>
             <div className="stat-desc" style={{ opacity: 0.8 }}>
               {(
                 parseInt(cons.TotalPopulation.replace(",", "")) /
                 parseFloat(cons.AreaInSquareKm.replace(",", ""))
               ).toFixed(2)}{" "}
-              people per sq km
+              people
+              <br />
+              per square km
+            </div>
+          </div>
+
+          <div id="voter-turnout" className="stat bg-background">
+            <div className="stat-figure text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
+                />
+              </svg>
+            </div>
+            <div className="stat-title" style={{ opacity: 0.8 }}>
+              Voter Turnout 2019
+            </div>
+            <div className="stat-value text-primary">
+              {cons.VoterTurnout2019}
+            </div>
+            <div className="stat-desc" style={{ opacity: 0.8 }}>
+              {cons.NumberOfvotingAreas} voting areas <br />
+              Plurality {cons.Plurality}
             </div>
           </div>
         </div>
