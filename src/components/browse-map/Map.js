@@ -519,6 +519,7 @@ export const Map = ({ mainCon, data, conState, setConState }) => {
           >
             Click or Drag Map to Browse
           </motion.h2> */}
+          <p className="absolute inset-3/4 text-4xl">{conState.message}</p>
         </motion.div>
       )}
     </AnimatePresence>

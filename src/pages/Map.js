@@ -29,21 +29,17 @@ function getPosition(options) {
 function getUserPosition() {
   const promiseArray = []
 
-  if (navigator.standalone) {
-    promiseArray.push(
-      new Promise((resolve, reject) => {
-        const wait = setTimeout(() => {
-          clearTimeout(wait)
-          reject("Location has timed out")
-        }, 2000)
-      })
-    )
-  }
+  //Safari was not respecting the timout for navigator.geolocation, so we use our own timeout
+  promiseArray.push(
+    new Promise((resolve, reject) => {
+      setTimeout(() => reject, 2500)
+    })
+  )
 
   const getCurrentPositionPromise = new Promise((resolve, reject) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(resolve, reject, {
-        timeout: 5000,
+        timeout: 2000,
         maximumAge: 2000,
         //enableHighAccuracy: true, Do not use high accuracy
       })
@@ -64,6 +60,7 @@ const BrowseMap = ({ location }) => {
   const [conState, setConState] = useState({
     Number: null,
     direction: null,
+    message: null,
   })
 
   useEffect(() => {
@@ -94,15 +91,13 @@ const BrowseMap = ({ location }) => {
       //else if will ask for the geolocation to load one
       //This will block until the user has given permission to use their location
       if (window.navigator.geolocation) {
-        //setConState({ Number: 102, direction: null })
-        //return
         try {
           //ask phone/browser to get current position
+          //const position = await getPosition()
           const position = await getUserPosition()
 
           //use the opennorth api to get the "boundry" (constituency) that contains our current position
           //https://represent.opennorth.ca/boundaries/manitoba-electoral-districts-2018/?contains=49.802,-97.114
-
           if (position.coords.latitude && position.coords.longitude) {
             const res = await fetch(
               REPRESENT_URL +
@@ -124,7 +119,7 @@ const BrowseMap = ({ location }) => {
             }
           }
         } catch (err) {
-          console.error(err.message)
+          console.error(err?.message)
         }
       }
 
@@ -132,6 +127,7 @@ const BrowseMap = ({ location }) => {
       setConState({
         Number: Math.floor(101 + Math.random() * 56),
         direction: null,
+        message: "Sorry, we could not find your location",
       })
     }
     loadConstituency()
