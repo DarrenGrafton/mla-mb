@@ -65,7 +65,7 @@ export default function ConTemplate({ data }) {
                   {cons.CurrentRep}
                 </h3>
                 <p
-                  className="text-lg lg:text-xl"
+                  className="text-lg lg:text-xl mt-4"
                   style={{ color: `var(${partyColorVar})` }}
                 >
                   {cons.Party}
